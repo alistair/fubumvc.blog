@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Blog.Core.Constants;
+using Blog.Core.Domain;
 using Blog.Core.HtmlTags;
 using FubuCore.Reflection;
-using FubuMVC.Core.Security;
+using FubuMVC.Core.Runtime;
 using FubuMVC.Core.UI;
 using FubuMVC.Core.UI.Configuration;
 using FubuMVC.Core.UI.Navigation;
@@ -19,10 +20,9 @@ namespace Blog.Core.Extensions
         public static HtmlTag Menu(this IFubuPage page, string menuName = null)
         {
             var navigationService = page.Get<INavigationService>();
-            var securityContext = page.Get<ISecurityContext>();
+            var state = page.Get<ISessionState>();
             var items = navigationService.MenuFor(new NavigationKey(menuName ?? StringConstants.BlogName));
             var menu = new HtmlTag("ul");
-
 
             items.Each(x =>
             {
@@ -32,7 +32,7 @@ namespace Blog.Core.Extensions
                 if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available)
                 {
                     var spanTag = new HtmlTag("span");
-                    spanTag.Text(string.Format("Welcome, {0}", securityContext.CurrentIdentity.Name));
+                    spanTag.Text(string.Format("Welcome, {0}", state.Get<UserInformation>().FirstName));
                     menu.Append(spanTag);
                 }
 

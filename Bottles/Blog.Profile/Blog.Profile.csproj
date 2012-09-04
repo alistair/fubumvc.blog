@@ -55,7 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\UserInformation.cs" />
     <Compile Include="Handlers\BasicInformation\BasicInformationInputModel.cs" />
     <Compile Include="Handlers\BasicInformation\BasicInformationViewModel.cs" />
     <Compile Include="Handlers\BasicInformation\EditBasicInformationInputModel.cs" />

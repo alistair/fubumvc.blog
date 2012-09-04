@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\StringConstants.cs" />
+    <Compile Include="Domain\UserInformation.cs" />
     <Compile Include="Extensions\MapperExtensions.cs" />
     <Compile Include="Extensions\PageExtensions.cs" />
     <Compile Include="HtmlTags\TextAreaTag.cs" />

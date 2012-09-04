@@ -21,6 +21,7 @@ namespace Blog.Core.Extensions
         {
             var navigationService = page.Get<INavigationService>();
             var state = page.Get<ISessionState>();
+            var identity = state.Get<UserInformation>();
             var items = navigationService.MenuFor(new NavigationKey(menuName ?? StringConstants.BlogName));
             var menu = new HtmlTag("ul");
 
@@ -29,11 +30,11 @@ namespace Blog.Core.Extensions
                 var link = new LinkTag(x.Key, x.Url);
                 var li = new HtmlTag("li");
 
-                if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available)
+                if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available && identity != null)
                 {
-                    var spanTag = new HtmlTag("span");
-                    spanTag.Text(string.Format("Welcome, {0}", state.Get<UserInformation>().FirstName));
-                    menu.Append(spanTag);
+                    var aTag = new LinkTag( string.Format("Welcome, {0}", identity.FirstName), "/profile");
+                    aTag.AddClass("user");
+                    menu.Append(aTag);
                 }
 
                 if (x.MenuItemState == MenuItemState.Active)

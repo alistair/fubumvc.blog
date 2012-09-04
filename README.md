@@ -7,7 +7,10 @@ Sample fubu mvc project using:
 * JavaScript (require, underscore, amplify, showdown, and jQuery)
 
 <h2>Documentation:</h2>
-To run: click on: \packages\RavenDB\Start.cmd open FubuMVC.Blog.sln and click F5.
+To run:
+* Run setup.bat to install nuget packages.
+* Start the RavenDB Server by running Raven.Server.exe under the packages\RavenDB.Server.*.*.*** folder.
+* Run FubuMVC.Blog.sln, and click F5 start the project.
 
 
 <h2>TODO (v 1.0):</h2>

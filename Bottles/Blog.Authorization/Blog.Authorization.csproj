@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0C0BB87-F8C3-4225-80E3-4D5EFB10DB7C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blog.Authorization</RootNamespace>
+    <AssemblyName>Blog.Authorization</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bottles">
+      <HintPath>..\..\fubu-packages\Bottles\Bottles.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\..\packages\DotNetOpenAuth.Core.4.1.0.12182\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId">
+      <HintPath>..\..\packages\DotNetOpenAuth.OpenId.Core.4.1.0.12182\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
+      <HintPath>..\..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.0.12182\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuCore">
+      <HintPath>..\..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuLocalization">
+      <HintPath>..\..\fubu-packages\FubuMVC\FubuLocalization.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core">
+      <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizationNavigationRegistry.cs" />
+    <Compile Include="AuthorizationRegistry.cs" />
+    <Compile Include="Conventions\AuthorizationConvention.cs" />
+    <Compile Include="Handlers\AuthorizationFailure\AuthorizationFailureHandler.cs" />
+    <Compile Include="Handlers\AuthorizationFailure\AuthorizationFailureInputModel.cs" />
+    <Compile Include="Handlers\AuthorizationFailure\AuthorizationFailureViewModel.cs" />
+    <Compile Include="Handlers\AuthorizationFailure\GetHandler.cs" />
+    <Compile Include="Handlers\Login\AuthenticateInputModel.cs" />
+    <Compile Include="Handlers\Login\LoginInputModel.cs" />
+    <Compile Include="Handlers\Login\LoginViewModel.cs" />
+    <Compile Include="Handlers\Login\GetHandler.cs" />
+    <Compile Include="Handlers\Login\PostHandler.cs" />
+    <Compile Include="Handlers\Logout\GetHandler.cs" />
+    <Compile Include="Handlers\Logout\LogoutInputModel.cs" />
+    <Compile Include="Handlers\Logout\LogoutViewModel.cs" />
+    <Compile Include="Policies\AuthorizationPolicy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">
+      <Project>{57645F4F-78C2-4F07-B300-66B3293E5FA7}</Project>
+      <Name>Blog.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".package-manifest" />
+    <None Include="authorization.script.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="authorization.asset.config" />
+    <None Include="Handlers\AuthorizationFailure\authorizationfailure.spark" />
+    <None Include="Handlers\Login\login.spark" />
+    <None Include="Handlers\Logout\logout.spark" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\openid-inputicon.gif" />
+    <Content Include="Content\images\openid-providers-en.png" />
+    <Content Include="Content\scripts\login.js" />
+    <Content Include="Content\scripts\util\openid-en.js" />
+    <Content Include="Content\scripts\util\openid-jquery.js" />
+    <None Include="Content\styles\openid.less" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

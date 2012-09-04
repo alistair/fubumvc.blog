@@ -1,0 +1,24 @@
+﻿<use master=""/>
+<viewdata model="Blog.Articles.Summaries.ArticleSummariesViewModel"/>
+
+<article each="var summary in Model.Summaries">
+  <header>
+    <h2>
+      <a href="${summary.Id}">
+        ${summary.Title}
+      </a>
+    </h2>
+    <time datetime="${summary.PublishedDate}">
+      Posted On: ${summary.PublishedDateString} by
+    </time> <a href="/author" rel="author">${summary.Author}</a>
+  </header>
+  <section>
+    !{summary.Summary}
+  </section>
+  <p>
+    <a href="${summary.Id}">Continue Reading</a>
+    <a href="${summary.Id}#comments">Comments</a>
+  </p>
+</article>
+
+<script type="text/javascript" src="/content/scripts/articles.js"></script>

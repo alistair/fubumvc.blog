@@ -1,0 +1,24 @@
+﻿<viewdata model="Blog.Authorization.Login.LoginViewModel"/>
+
+# this.Asset("login");
+
+<header if="!Model.LoginSuccessful">
+  <h2>Login</h2>
+</header>
+<div if="!Model.LoginSuccessful">
+  <form action="/authorization/login" method="POST" id="openid_form">
+    <input type="hidden" name="action" value="verify" />
+    <fieldset>
+      <legend>Sign-in or Create New Account</legend>
+      <div id="openid_choice">
+        <p>Please click your account provider:</p>
+        <div id="openid_btns"></div>
+      </div>
+      <div id="openid_input_area">
+        <input id="OpenidIdentifier" name="OpenidIdentifier" type="text" value="http://" />
+        <input id="openid_submit" type="submit" value="Sign-In"/>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<input type="hidden" if="Model.LoginSuccessful" id="authorization"/>

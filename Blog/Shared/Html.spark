@@ -1,0 +1,18 @@
+﻿<html style="display: none">
+  <head>
+    <title></title>
+    <link rel="shortcut icon" href="temp.ico" />
+    <use:styles/>
+    # this.Asset("globalcss");
+    !{ this.WriteCssTags() }
+  </head>
+  <body>
+    <use:view/>
+    <script type="text/javascript">
+      var require = { baseUrl: '/_content/scripts/' };
+    </script>
+    # this.Asset("globaljs");
+    <use:scripts/>
+    !{ this.WriteScriptTags() }
+  </body>
+</html>

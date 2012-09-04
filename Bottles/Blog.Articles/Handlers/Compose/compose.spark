@@ -1,0 +1,53 @@
+﻿<viewdata model="Blog.Articles.Compose.ComposeViewModel"/>
+<use namespace="Blog.Articles.Compose"/>
+<header>
+    <h2>Compose Article</h2>
+</header>
+
+${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
+  <div>
+    ${this.InputFor(x => x.Title).WithCustomLabel("Title").Attr("tabindex", 1)}
+    ${this.InputFor(x => x.Id).WithCustomLabel("Article Url")}
+    <div>
+      <img title="Undo" src="/_content/images/edit-undo.png"/>
+      <img title="Redo" src="/_content/images/edit-redo.png"/>
+      <img src="/_content/images/seperator.png"/>
+      <img title="Bold" src="/_content/images/format-text-bold.png"/>
+      <img title="Italic" src="/_content/images/format-text-italic.png"/>
+      <img src="/_content/images/seperator.png"/>
+      <img title="Insert Url" src="/_content/images/internet-web-browser.png"/>
+      <img title="Insert Image" src="/_content/images/image-x-generic.png"/>
+      <img title="Insert Code" src="/_content/images/emblem-system.png"/>
+      <img src="/_content/images/seperator.png"/>
+      <img title="Print" src="/_content/images/document-print.png"/>
+    </div>
+    ${this.TextAreaFor<ComposeViewModel>(x => x.Body).Attr("tabindex", 2)}
+  </div>
+
+  <aside>
+    <h2>Formatting:</h2>
+    <p>
+      Write your article in markdown! Or use basic html.
+    </p>
+    <ul>
+      <li>**bold**</li>
+      <li>_italic_</li>
+      <li>paragaph: empty line</li>
+      <li>linebreak: 2 spaces at end of line</li>
+      <li>h1: #header 1#, h2: ##header 2##, etc.</li>
+      <li>code: 4 spaces</li>
+    </ul>
+  </aside>
+
+  <article id="preview">
+    <header>
+      <h2>
+      </h2>
+    </header>
+    <section>
+    </section>
+  </article>
+  <input type="button" value="Post Article"/>
+  <input type="button" value="Save Draft"/>
+
+# this.Asset("compose");

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAD69C8A-3023-425E-9F2A-C1A72C396BA6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blog.Articles</RootNamespace>
+    <AssemblyName>Blog.Articles</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\packages\AutoMapper.2.1.267\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Bottles">
+      <HintPath>..\..\fubu-packages\Bottles\Bottles.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuCore">
+      <HintPath>..\..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuLocalization">
+      <HintPath>..\..\fubu-packages\FubuMVC\FubuLocalization.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core">
+      <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight">
+      <HintPath>..\..\packages\RavenDB.Client.1.0.972\lib\net40\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArticleRegistry.cs" />
+    <Compile Include="Domain\Article.cs" />
+    <Compile Include="Handlers\Archive\ArchiveInputModel.cs" />
+    <Compile Include="Handlers\Archive\ArchiveItemViewModel.cs" />
+    <Compile Include="Handlers\Archive\ArchiveViewModel.cs" />
+    <Compile Include="Handlers\Archive\GetHandler.cs" />
+    <Compile Include="Handlers\ArticleInputModel.cs" />
+    <Compile Include="Handlers\ArticleViewModel.cs" />
+    <Compile Include="Handlers\Compose\ComposeArticleInputModel.cs" />
+    <Compile Include="Handlers\Compose\ComposeArticleResourceModel.cs" />
+    <Compile Include="Handlers\Compose\ComposeInputModel.cs" />
+    <Compile Include="Handlers\Compose\ComposeViewModel.cs" />
+    <Compile Include="Handlers\Compose\GetHandler.cs" />
+    <Compile Include="Handlers\Compose\PostHandler.cs" />
+    <Compile Include="Handlers\GetHandler.cs" />
+    <Compile Include="Handlers\Summaries\ArticleSummariesViewModel.cs" />
+    <Compile Include="Handlers\Summaries\ArticleSummaryViewModel.cs" />
+    <Compile Include="Handlers\Summaries\GetHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".package-manifest" />
+    <None Include="articles.script.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="articles.asset.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Content\styles\archive.less" />
+    <None Include="Content\styles\compose.less" />
+    <None Include="Handlers\Archive\archive.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Handlers\article.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Handlers\Compose\compose.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Handlers\Summaries\articlesummary.spark">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\document-print.png" />
+    <Content Include="Content\images\edit-redo.png" />
+    <Content Include="Content\images\edit-undo.png" />
+    <Content Include="Content\images\emblem-system.png" />
+    <Content Include="Content\images\format-text-bold.png" />
+    <Content Include="Content\images\format-text-italic.png" />
+    <Content Include="Content\images\image-x-generic.png" />
+    <Content Include="Content\images\internet-web-browser.png" />
+    <Content Include="Content\images\seperator.png" />
+    <Content Include="Content\scripts\article.js" />
+    <Content Include="Content\scripts\articles.js" />
+    <Content Include="Content\scripts\compose.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">
+      <Project>{57645F4F-78C2-4F07-B300-66B3293E5FA7}</Project>
+      <Name>Blog.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

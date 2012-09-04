@@ -1,0 +1,8 @@
+﻿<viewdata model="Blog.Authorization.Logout.LogoutViewModel"/>
+
+<header>
+  <h2>Logout Successful</h2>
+</header>
+<p>
+  You have been successfully logged out of your account.
+</p>

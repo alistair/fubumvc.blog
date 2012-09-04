@@ -1,0 +1,6 @@
+﻿<use master="Html"/>
+<div>
+  <Navigation/>
+  <BootStrapFailure/>
+  <use:view/>
+</div>

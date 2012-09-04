@@ -1,0 +1,12 @@
+﻿<viewdata model="Blog.Profile.BasicInformation.BasicInformationViewModel"/>
+<use namespace="Blog.Profile.BasicInformation"/>
+<header>
+    <h2>User Information</h2>
+</header>
+${ this.FormFor<EditBasicInformationInputModel>().AddClass('basicinformation')}
+<ul>
+  <li>${ this.InputFor(x => x.FirstName).WithCustomLabel("First Name") }</li>
+  <li>${ this.InputFor(x => x.LastName).WithCustomLabel("Last Name") }</li>
+  <li>${ this.InputFor(x => x.EmailAddress).WithCustomLabel("E-mail") }</li>
+  <li>${this.Submit()}</li>
+</ul>

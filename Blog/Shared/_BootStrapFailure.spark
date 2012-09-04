@@ -1,0 +1,7 @@
+﻿<div class="bootstrap-error">
+  <h2>Failed to load articles, possible causes:</h2>
+  <ul>
+    <li>Raven DB is not started.</li>
+    <li>Application bootstrapping failed.</li>
+  </ul>
+</div>

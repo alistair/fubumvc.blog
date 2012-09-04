@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<links xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <include>..\Bottles\Blog.Articles</include>
+  <include>..\Bottles\Blog.Authorization</include>
+  <include>..\Bottles\Blog.Comments</include>
+  <include>..\Bottles\Blog.Information</include>
+  <include>..\Bottles\Blog.Profile</include>
+  <EnvironmentAssembly>Blog</EnvironmentAssembly>
+</links>

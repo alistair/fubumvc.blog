@@ -1,0 +1,35 @@
+﻿<use master=""/>
+<use namespace="Blog.Comments"/>
+<viewdata model="Blog.Comments.CommentsViewModel"/>
+
+<span class="commentsheader">
+  Comments
+</span>
+<ul class="comments">
+  <li if="!Model.Comments.Any()">No comments yet.</li>
+  <li each="var comment in Model.Comments">
+    <h3><time datetime="${comment.PublishedDate}">${comment.PublishedDateString} BY</time> ${comment.Author}</h3>
+    ${comment.Body}
+  </li>
+</ul>
+<span class="commentsheader">
+  Leave a comment
+</span>
+${this.FormFor<CommentInputModel>()}
+${this.HiddenInputFor(x=> x.Uri)}
+<ul class="submitcomment">
+  <li>
+    ${this.InputFor<CommentInputModel>(x => x.Author)
+          .WithCustomLabel("Name")}
+  </li>
+  <li>
+    ${this.InputFor<CommentInputModel>(x => x.Email)
+          .WithCustomLabel("Email (will not be published)")}
+  </li>
+  <li>
+    ${this.TextAreaFor<CommentInputModel>(x => x.Comment)}
+  </li>
+  <li>
+    ${this.Submit()}
+  </li>
+</ul>

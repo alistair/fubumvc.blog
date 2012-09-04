@@ -1,0 +1,15 @@
+﻿<viewdata model="Blog.Articles.Archive.ArchiveViewModel"/>
+
+<header>
+    <h2>Archive</h2>
+</header>
+<ul class="archive">
+  <li each="var item in Model.Items">
+    <time>${item.Key}</time>
+    <ul class="links">
+      <li each="var value in item.Value">
+        <a href="/${value.Id}">${value.Title}</a>
+      </li>
+    </ul>
+  </li>
+</ul>

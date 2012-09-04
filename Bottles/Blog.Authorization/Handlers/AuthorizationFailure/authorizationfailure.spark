@@ -1,0 +1,7 @@
+﻿<viewdata model="Blog.Authorization.AuthorizationFailure.AuthorizationFailureViewModel"/>
+<header>
+    <h2>403</h2>
+</header>
+<p>
+  Woops, you are not allowed to be here.
+</p>

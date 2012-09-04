@@ -1,0 +1,12 @@
+﻿<viewdata model="Blog.Information.Authors.AuthorsViewModel"/>
+<header>
+    <h2>Authors</h2>
+</header>
+<ul class="authors">
+  <li>
+    <img height="30px" widht="30px"
+         src="http://a248.e.akamai.net/assets.github.com/images/gravatars/gravatar-140.png"/>
+    <a href="">name </a>
+    <p>This is a small description of the author.</p>
+  </li>
+</ul>

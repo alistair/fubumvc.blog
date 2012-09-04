@@ -1,0 +1,5 @@
+﻿<viewdata model="Blog.Information.AboutViewModel"/>
+<header>
+    <h2>About</h2>
+</header>
+<a href="information/authors">Authors</a>

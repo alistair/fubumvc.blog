@@ -1,0 +1,18 @@
+bin/
+obj/
+Indexes/
+logs/
+packages/**/
+*.user
+*.ReSharper
+_ReSharper.*
+*.suo
+*.swp
+*.swo
+ *.DotSettings
+*sass-cache/
+*.css
+*.csproj.*
+*.log
+fubu-content/
+*.chk

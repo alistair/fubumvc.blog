@@ -121,21 +121,15 @@
     <Compile Include="Behaviors\RavenDbBehavior.cs" />
     <Compile Include="BlogRegistry.cs" />
     <Compile Include="Conventions\JsonConvention.cs" />
-    <Compile Include="Handlers\Home\HomeInputModel.cs" />
     <Compile Include="NewtonSoftJsonWriter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="RavenDBRegistry.cs" />
     <None Include=".links" />
-    <None Include=".package-manifest" />
     <Content Include="app.asset.config" />
+    <None Include=".package-manifest" />
     <None Include="app.script.config" />
-    <None Include="Handlers\Home\index.spark">
-      <SubType>Designer</SubType>
-    </None>
-    <Compile Include="Handlers\Home\GetHandler.cs" />
-    <Compile Include="Handlers\Home\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
@@ -203,6 +197,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

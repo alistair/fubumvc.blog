@@ -1,6 +1,6 @@
 ﻿<viewdata model="Blog.Home.HomeViewModel" />
 <section module="/articles/summaries" class="home">
-  <aside>
-    <section module="information/authors"></section>
-  </aside>
 </section>
+<aside>
+  <section module="information/authors"></section>
+</aside>

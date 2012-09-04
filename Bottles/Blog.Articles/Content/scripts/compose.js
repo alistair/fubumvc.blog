@@ -37,8 +37,8 @@
       type: 'POST',
       data: data,
       dataType: 'json',
-      success: function () {
-        //TODO: make some awesome animation to tell the user that something happened.
+      success: function (result) {
+        window.location = result.url;
       }
     });
   });

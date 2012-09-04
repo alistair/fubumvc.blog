@@ -32,7 +32,7 @@ namespace Blog.Articles.Compose
                 PublishedDate = DateTime.Now
             });
 
-            return new ComposeArticleResourceModel();
+            return new ComposeArticleResourceModel(inputModel.Id);
         }
     }
 }

@@ -1,8 +1,13 @@
 ﻿<viewdata model="Blog.Authorization.Logout.LogoutViewModel"/>
 
+# this.Asset("logout");
+
 <header>
   <h2>Logout Successful</h2>
 </header>
 <p>
   You have been successfully logged out of your account.
+</p>
+<p>
+  Redirecting to the home page in <span id="count">5</span> seconds.
 </p>

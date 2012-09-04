@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="Content\images\openid-inputicon.gif" />
     <Content Include="Content\images\openid-providers-en.png" />
+    <Content Include="Content\scripts\logout.js" />
     <Content Include="Content\scripts\login.js" />
     <Content Include="Content\scripts\util\openid-en.js" />
     <Content Include="Content\scripts\util\openid-jquery.js" />

@@ -34,5 +34,5 @@ end
 
 desc "Start RavenDB Server for fubumvc.blog."
 task :startdb do |cmd|
-    sh "start start packages/RavenDB.Server.1.0.960/Raven.Server.exe"
+    sh "start packages/RavenDB.Server.1.0.960/Raven.Server.exe"
 end

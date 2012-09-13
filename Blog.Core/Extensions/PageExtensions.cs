@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using Blog.Core.Constants;
 using Blog.Core.Domain;
 using Blog.Core.HtmlTags;
+using FubuCore;
 using FubuCore.Reflection;
 using FubuMVC.Core.Runtime;
 using FubuMVC.Core.UI;
@@ -32,7 +33,7 @@ namespace Blog.Core.Extensions
 
                 if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available && identity != null)
                 {
-                    var aTag = new LinkTag( string.Format("Welcome, {0}", identity.FirstName), "/profile");
+                    var aTag = new LinkTag(string.Format("Welcome, {0}", identity.FirstName), "/profile");
                     aTag.AddClass("user");
                     menu.Append(aTag);
                 }
@@ -40,7 +41,7 @@ namespace Blog.Core.Extensions
                 if (x.MenuItemState == MenuItemState.Active)
                     li.AddClass("current");
 
-                if(x.MenuItemState == MenuItemState.Active || x.MenuItemState == MenuItemState.Available)
+                if (x.MenuItemState == MenuItemState.Active || x.MenuItemState == MenuItemState.Available)
                     menu.Append(li.Append(link));
 
             });
@@ -51,16 +52,23 @@ namespace Blog.Core.Extensions
         public static HtmlTag Submit(this IFubuPage page)
         {
             var submitTag = new HtmlTag("input");
-            submitTag.Attr("type","submit");
+            submitTag.Attr("type", "submit");
             submitTag.Attr("value", "Submit");
 
             return submitTag;
         }
 
-        public static TextAreaTag TextAreaFor<T>(this IFubuPage page, Expression<Func<T, object>> expression) where T : class
+        public static TextAreaTag TextAreaFor<T>(this IFubuPage<T> page, Expression<Func<T, object>> expression) where T : class
         {
-            var name = page.Get<IElementNamingConvention>().GetName(typeof (T), expression.ToAccessor());
-            return new TextAreaTag(name, string.Empty);
+            var name = page.Get<IElementNamingConvention>().GetName(typeof(T), expression.ToAccessor());
+
+            var text = page.Model.ValueOrDefault(expression).As<string>();
+
+            var textarea = new TextAreaTag(name, string.Empty);
+
+            textarea.Text(text);
+
+            return textarea;
         }
 
         public static HtmlTag WithCustomLabel(this HtmlTag tag, string text)

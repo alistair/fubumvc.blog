@@ -6,6 +6,5 @@
         {
             return new AboutViewModel();
         }
-
     }
 }

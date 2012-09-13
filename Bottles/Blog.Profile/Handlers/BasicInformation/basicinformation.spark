@@ -8,5 +8,6 @@ ${ this.FormFor<EditBasicInformationInputModel>().AddClass('basicinformation')}
   <li>${ this.InputFor(x => x.FirstName).WithCustomLabel("First Name") }</li>
   <li>${ this.InputFor(x => x.LastName).WithCustomLabel("Last Name") }</li>
   <li>${ this.InputFor(x => x.EmailAddress).WithCustomLabel("E-mail") }</li>
+  <li>${ this.TextAreaFor(x => x.Description).WithCustomLabel("Description") }</li>
   <li>${this.Submit()}</li>
 </ul>

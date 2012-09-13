@@ -21,7 +21,7 @@ ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
       <img src="/_content/images/seperator.png"/>
       <img title="Print" src="/_content/images/document-print.png"/>
     </div>
-    ${this.TextAreaFor<ComposeViewModel>(x => x.Body).Attr("tabindex", 2)}
+    ${this.TextAreaFor(x => x.Body).Attr("tabindex", 2)}
   </div>
 
   <aside>

@@ -3,10 +3,10 @@
     <h2>Authors</h2>
 </header>
 <ul class="authors">
-  <li>
+  <li each="var author in Model.Authors">
     <img height="30px" widht="30px"
          src="http://a248.e.akamai.net/assets.github.com/images/gravatars/gravatar-140.png"/>
-    <a href="">name </a>
-    <p>This is a small description of the author.</p>
+    <a href="">${author.FullName} </a>
+    <p>${author.Description ?? "No details provided by author."}</p>
   </li>
 </ul>

@@ -43,6 +43,9 @@
     <Reference Include="FubuMVC.Core">
       <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Raven.Client.Lightweight">
+      <HintPath>..\..\packages\RavenDB.Client.1.0.972\lib\net40\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\Authors\AuthorsInputModel.cs" />
+    <Compile Include="Handlers\Authors\AuthorViewModel.cs" />
     <Compile Include="InformationRegistry.cs" />
     <Compile Include="Handlers\AboutInputModel.cs" />
     <Compile Include="Handlers\GetHandler.cs" />

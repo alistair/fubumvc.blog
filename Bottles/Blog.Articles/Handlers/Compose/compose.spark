@@ -4,6 +4,7 @@
     <h2>Compose Article</h2>
 </header>
 
+<ProfileNavigation/>
 ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
   <div>
     ${this.InputFor(x => x.Title).WithCustomLabel("Title").Attr("tabindex", 1)}

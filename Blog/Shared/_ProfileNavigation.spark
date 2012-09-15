@@ -1,0 +1,4 @@
+﻿<nav class="profilenavigation">
+  ${ this.Menu(StringConstants.ProfileMenu)}
+  ${ this.Menu(StringConstants.AdminMenu)}
+</nav>

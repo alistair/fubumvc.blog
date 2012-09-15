@@ -3,6 +3,5 @@
     <h2>Profile</h2>
 </header>
 <div class="profile">
-  ${ this.Menu(StringConstants.AdminMenu)}
-  ${ this.Menu(StringConstants.ProfileMenu)}
+  <ProfileNavigation/>
 </div>

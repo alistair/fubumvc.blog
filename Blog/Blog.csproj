@@ -137,6 +137,9 @@
     <None Include="Shared\Application.spark">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Shared\_ProfileNavigation.spark">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Shared\_global.spark">
       <SubType>Designer</SubType>
     </None>

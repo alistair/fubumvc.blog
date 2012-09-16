@@ -71,6 +71,15 @@ namespace Blog.Core.Extensions
             return textarea;
         }
 
+        public static TextAreaTag TextAreaFor<T>(this IFubuPage page, Expression<Func<T, object>> expression) where T : class
+        {
+            var name = page.Get<IElementNamingConvention>().GetName(typeof(T), expression.ToAccessor());
+
+            var textarea = new TextAreaTag(name, string.Empty);
+
+            return textarea;
+        }
+
         public static HtmlTag WithCustomLabel(this HtmlTag tag, string text)
         {
             var label = new HtmlTag("label");

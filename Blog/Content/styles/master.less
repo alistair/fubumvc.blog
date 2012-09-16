@@ -27,6 +27,32 @@ legend {
   font-weight: bold;
 }
 
+table {
+  width: 80%;
+  border-collapse: collapse;
+  font-size: 12px;
+  thead {
+    .gradient(#FFF, #D8D8D8, #FFF);
+    font-weight: bold;
+    td {
+      border-bottom: solid 1px #CCC;
+      border-right: solid 1px #CCC;
+      border-left: solid 1px #CCC;
+    }
+  }
+  td, time {
+    padding: 5px;
+    border-bottom: solid 1px #CCC;
+    color: #000;
+  }
+  a {
+    font-weight: bold;
+  }
+  tr:nth-of-type(even) {
+    background-color: #F8F8F8;
+  }
+}
+
 article {
   padding: 10px;
   margin-bottom: 10px;

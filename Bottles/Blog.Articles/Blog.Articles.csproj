@@ -73,6 +73,9 @@
     <Compile Include="Handlers\Compose\GetHandler.cs" />
     <Compile Include="Handlers\Compose\PostHandler.cs" />
     <Compile Include="Handlers\GetHandler.cs" />
+    <Compile Include="Handlers\Manage\DeleteArticleInputModel.cs" />
+    <Compile Include="Handlers\Manage\DeleteArticleViewModel.cs" />
+    <Compile Include="Handlers\Manage\DeleteHandler.cs" />
     <Compile Include="Handlers\Manage\GetHandler.cs" />
     <Compile Include="Handlers\Manage\ManageArticlesInputModel.cs" />
     <Compile Include="Handlers\Manage\ManageArticlesViewModel.cs" />
@@ -124,6 +127,7 @@
     <Content Include="Content\scripts\article.js" />
     <Content Include="Content\scripts\articles.js" />
     <Content Include="Content\scripts\compose.js" />
+    <Content Include="Content\scripts\manage.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">

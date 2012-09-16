@@ -1,0 +1,18 @@
+﻿<viewdata model="Blog.Articles.Manage.ManageArticlesViewModel"/>
+<use namespace="Blog.Articles.Compose"/>
+
+<header>
+    <h2>Archive</h2>
+</header>
+<div class="managearticles">
+  <ProfileNavigation/>
+  <ul>
+    <li each="var article in Model.Articles">
+      <a href="/${article.Id}">${article.Title}</a>
+      <time>${article.PublishedDateString}</time>
+      <span>${article.Author}</span>
+      <a href="${this.Urls.UrlFor(new ComposeInputModel { Id =  article.Id} )}">Edit</a>
+      <a href="">Delete</a>
+    </li>
+  </ul>
+</div>

@@ -1,5 +1,6 @@
 using Blog.Articles.Archive;
 using Blog.Articles.Compose;
+using Blog.Articles.Manage;
 using Blog.Core.Constants;
 using FubuMVC.Core;
 using FubuMVC.Core.UI.Navigation;
@@ -17,6 +18,7 @@ namespace Blog.Articles
 
                 x.ForMenu(StringConstants.AdminMenu);
                 x.Add += MenuNode.ForInput<ComposeInputModel>("Compose");
+                x.Add += MenuNode.ForInput<ManageArticlesInputModel>("Manage Articles");
             });
     }
   }

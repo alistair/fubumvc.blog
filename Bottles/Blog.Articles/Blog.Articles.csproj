@@ -73,6 +73,10 @@
     <Compile Include="Handlers\Compose\GetHandler.cs" />
     <Compile Include="Handlers\Compose\PostHandler.cs" />
     <Compile Include="Handlers\GetHandler.cs" />
+    <Compile Include="Handlers\Manage\GetHandler.cs" />
+    <Compile Include="Handlers\Manage\ManageArticlesInputModel.cs" />
+    <Compile Include="Handlers\Manage\ManageArticlesViewModel.cs" />
+    <Compile Include="Handlers\Manage\ManageArticleViewModel.cs" />
     <Compile Include="Handlers\Summaries\ArticleSummariesViewModel.cs" />
     <Compile Include="Handlers\Summaries\ArticleSummaryViewModel.cs" />
     <Compile Include="Handlers\Summaries\GetHandler.cs" />
@@ -98,6 +102,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Handlers\Compose\compose.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Handlers\Manage\manage.spark">
       <SubType>Designer</SubType>
     </None>
     <None Include="Handlers\Summaries\articlesummary.spark">

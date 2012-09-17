@@ -74,6 +74,8 @@
     <Compile Include="Handlers\Manage\ManageCommentsViewModel.cs" />
     <Compile Include="Handlers\Manage\ManageCommentViewModel.cs" />
     <Compile Include="Handlers\Modify\GetHandler.cs" />
+    <Compile Include="Handlers\Modify\ModifyCommentInputModel.cs" />
+    <Compile Include="Handlers\Modify\ModifyCommentViewModel.cs" />
     <Compile Include="Handlers\PostHandler.cs" />
     <Compile Include="Handlers\Recent\GetHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +92,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Content\styles\comments.less" />
+    <None Include="Content\styles\modifycomment.less" />
     <None Include="Handlers\comments.spark">
       <SubType>Designer</SubType>
     </None>
@@ -97,6 +100,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Handlers\Manage\manage.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Handlers\Modify\modify.spark">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

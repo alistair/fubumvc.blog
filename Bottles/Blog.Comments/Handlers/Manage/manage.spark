@@ -3,7 +3,7 @@
 # this.Asset("managecomments");
 
 <header>
-    <h2>Archive</h2>
+    <h2>Comments</h2>
 </header>
 <div class="managearticles">
   <ProfileNavigation/>
@@ -24,7 +24,7 @@
         <td>${comment.Body}</td>
         <td><time>${comment.PublishedDateString}</time></td>
         <td>${comment.Author}</td>
-        <td><a href="">Edit</a></td>
+        <td><a href="${this.Urls.UrlFor(new Blog.Comments.Modify.ModifyCommentInputModel { Id = comment.Id })}">Edit</a></td>
         <td><a data-id="${comment.Id}" class="delete-comment" href="#">Delete</a></td>
       </tr>
     </tbody>

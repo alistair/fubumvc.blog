@@ -30,6 +30,8 @@ namespace Blog.Core.Extensions
             {
                 var link = new LinkTag(x.Key, x.Url);
                 var li = new HtmlTag("li");
+                li.AddClass(
+                    string.Format("menu-item-{0}", x.Key.Replace(" ", string.Empty).ToLowerInvariant()));
 
                 if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available && identity != null)
                 {
@@ -49,11 +51,11 @@ namespace Blog.Core.Extensions
             return menu;
         }
 
-        public static HtmlTag Submit(this IFubuPage page)
+        public static HtmlTag Submit(this IFubuPage page, string text = "Submit")
         {
             var submitTag = new HtmlTag("input");
             submitTag.Attr("type", "submit");
-            submitTag.Attr("value", "Submit");
+            submitTag.Attr("value", text);
 
             return submitTag;
         }

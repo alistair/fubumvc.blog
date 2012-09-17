@@ -1,3 +1,1 @@
-﻿define('amplify', function () {
-  return amplify;
-});
+﻿define('amplify', function () { return amplify; });

@@ -12,7 +12,7 @@ namespace Blog.Comments
             registry.Navigation(x =>
             {
                 x.ForMenu(StringConstants.AdminMenu);
-                x.Add += MenuNode.ForInput<ManageCommentsInputModel>("Manage Comments");
+                x.Add += MenuNode.ForInput<ManageCommentsInputModel>("Comments");
             });
         }
     }

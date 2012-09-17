@@ -1,0 +1,17 @@
+﻿<viewdata model="Blog.Comments.Modify.ModifyCommentViewModel"/>
+<use namespace="Blog.Comments"/>
+<header>
+    <h2>Modify Comment</h2>
+</header>
+
+<ProfileNavigation/>
+
+${this.FormFor<CommentInputModel>().AddClass("modifycomment")}
+${this.HiddenInputFor(x=> x.Uri)}
+${this.HiddenInputFor(x=> x.Id)}
+<ul class="submitcomment">
+  <li>${this.InputFor(x => x.Author).WithCustomLabel("Name")}</li>
+  <li>${this.InputFor(x => x.Email).WithCustomLabel("Email (will not be published)")}</li>
+  <li>${this.TextAreaFor(x => x.Comment)}</li>
+  <li>${this.Submit("Update")}</li>
+</ul>

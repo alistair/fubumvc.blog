@@ -18,7 +18,7 @@ namespace Blog.Articles
 
                 x.ForMenu(StringConstants.AdminMenu);
                 x.Add += MenuNode.ForInput<ComposeInputModel>("Compose");
-                x.Add += MenuNode.ForInput<ManageArticlesInputModel>("Manage Articles");
+                x.Add += MenuNode.ForInput<ManageArticlesInputModel>("Articles");
             });
         }
     }

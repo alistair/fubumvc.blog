@@ -1,3 +1,1 @@
-﻿define('underscore', function () {
-  return _;
-});
+﻿define('underscore', function () { return _; });

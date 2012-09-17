@@ -4,7 +4,7 @@
 # this.Asset("managearticles");
 
 <header>
-    <h2>Manage Articles</h2>
+    <h2>Articles</h2>
 </header>
 <div class="managearticles">
   <ProfileNavigation/>

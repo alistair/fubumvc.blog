@@ -17,6 +17,7 @@ namespace Blog.Comments
         {
             _session.Store(new Comment
             {
+                Id = inputModel.Id,
                 ArticleUri = inputModel.Uri,
                 Body = inputModel.Comment,
                 Author = inputModel.Author,

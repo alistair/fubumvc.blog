@@ -1,5 +1,5 @@
 <h1>FubuMVC.Blog</h1>
-Sample fubu mvc project using:
+A blogging web application using:
 
 * FubuMVC
 * SparkViewEngine
@@ -13,13 +13,14 @@ To run:
 * Run FubuMVC.Blog.sln, and click F5 start the project.
 
 To run via rake:
-* Run 'rake', to pull packages.
+* Run 'rake', to pull packages and build the project.
 * Run 'rake startdb', to start teh database.
 * Run FubuMVC.Blog.sln, and click F5 start the project.
 
 
 <h2>TODO (v 1.0):</h2>
-* Complete Profile Page.
+* Complete Profile Section.
+* Add permissions.
 * Add Administration Section to Profile.
 * Create user information POCO, save to RavenDB.
 * Wire up compose article quick action buttons, (undo, insert image, etc..)

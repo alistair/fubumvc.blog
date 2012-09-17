@@ -37,6 +37,10 @@
     <Reference Include="FubuCore">
       <HintPath>..\..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
     </Reference>
+    <Reference Include="FubuLocalization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\fubu-packages\FubuMVC\FubuLocalization.dll</HintPath>
+    </Reference>
     <Reference Include="FubuMVC.Core">
       <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
     </Reference>
@@ -62,8 +66,16 @@
     <Compile Include="Handlers\Count\CommentsViewModel.cs" />
     <Compile Include="Handlers\Count\GetHandler.cs" />
     <Compile Include="Handlers\GetHandler.cs" />
+    <Compile Include="Handlers\Manage\DeleteCommentInputModel.cs" />
+    <Compile Include="Handlers\Manage\DeleteCommentViewModel.cs" />
+    <Compile Include="Handlers\Manage\DeleteHandler.cs" />
+    <Compile Include="Handlers\Manage\GetHandler.cs" />
+    <Compile Include="Handlers\Manage\ManageCommentsInputModel.cs" />
+    <Compile Include="Handlers\Manage\ManageCommentsViewModel.cs" />
+    <Compile Include="Handlers\Manage\ManageCommentViewModel.cs" />
+    <Compile Include="Handlers\Modify\GetHandler.cs" />
     <Compile Include="Handlers\PostHandler.cs" />
-    <Compile Include="Handlers\RecentComments\GetHandler.cs" />
+    <Compile Include="Handlers\Recent\GetHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,10 +96,14 @@
     <None Include="comments.asset.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Handlers\Manage\manage.spark">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Content\scripts\comment.js" />
+    <Content Include="Content\scripts\managecomments.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

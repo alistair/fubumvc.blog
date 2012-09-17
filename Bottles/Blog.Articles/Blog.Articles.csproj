@@ -127,7 +127,7 @@
     <Content Include="Content\scripts\article.js" />
     <Content Include="Content\scripts\articles.js" />
     <Content Include="Content\scripts\compose.js" />
-    <Content Include="Content\scripts\manage.js" />
+    <Content Include="Content\scripts\managearticles.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">

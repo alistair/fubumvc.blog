@@ -1,0 +1,7 @@
+﻿<viewdata model="Blog.Profile.DashboardViewModel"/>
+<header>
+    <h2>Dashboard</h2>
+</header>
+<div class="dashboard">
+  <ProfileNavigation/>
+</div>

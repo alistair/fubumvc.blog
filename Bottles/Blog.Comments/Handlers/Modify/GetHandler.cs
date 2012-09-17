@@ -1,4 +1,4 @@
-﻿namespace Blog.Comments.RecentComments
+﻿namespace Blog.Comments.Modify
 {
     public class GetHandler
     {

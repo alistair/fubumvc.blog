@@ -7,10 +7,10 @@ using FubuMVC.Core.UI.Navigation;
 
 namespace Blog.Articles
 {
-  public class ArticleRegistry : IFubuRegistryExtension
-  {
-    public void Configure(FubuRegistry registry)
+    public class ArticleRegistry : IFubuRegistryExtension
     {
+        public void Configure(FubuRegistry registry)
+        {
             registry.Navigation(x =>
             {
                 x.ForMenu(StringConstants.BlogName);
@@ -20,6 +20,6 @@ namespace Blog.Articles
                 x.Add += MenuNode.ForInput<ComposeInputModel>("Compose");
                 x.Add += MenuNode.ForInput<ManageArticlesInputModel>("Manage Articles");
             });
+        }
     }
-  }
 }

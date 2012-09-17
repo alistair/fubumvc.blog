@@ -1,0 +1,32 @@
+﻿<viewdata model="Blog.Comments.Manage.ManageCommentsViewModel"/>
+
+# this.Asset("managecomments");
+
+<header>
+    <h2>Archive</h2>
+</header>
+<div class="managearticles">
+  <ProfileNavigation/>
+  <table>
+    <thead>
+      <tr>
+        <td><input type="checkbox"/></td>
+        <td>Comment</td>
+        <td>Last Modified Date</td>
+        <td>Author</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr each="var comment in Model.Comments">
+        <td><input type="checkbox"/></td>
+        <td>${comment.Body}</td>
+        <td><time>${comment.PublishedDateString}</time></td>
+        <td>${comment.Author}</td>
+        <td><a href="">Edit</a></td>
+        <td><a data-id="${comment.Id}" class="delete-comment" href="#">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

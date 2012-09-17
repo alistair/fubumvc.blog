@@ -1,9 +1,9 @@
-﻿define('manage', ['jquery'], function ($) {
-  $('.delete').click(function () {
+﻿define('managecomments', ['jquery'], function ($) {
+  $('.delete-comment').click(function () {
     var link = $(this),
       data = link.data();
     $.ajax({
-      url: '/articles/manage',
+      url: '/comments/manage',
       type: 'DELETE',
       data: { Id: data.id },
       dataType: 'json',

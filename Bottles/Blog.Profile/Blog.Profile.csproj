@@ -61,9 +61,9 @@
     <Compile Include="Handlers\BasicInformation\GetHandler.cs" />
     <Compile Include="Handlers\BasicInformation\PostHandler.cs" />
     <Compile Include="ProfileRegistry.cs" />
-    <Compile Include="Handlers\ProfileInputModel.cs" />
+    <Compile Include="Handlers\DashboardInputModel.cs" />
     <Compile Include="Handlers\GetHandler.cs" />
-    <Compile Include="Handlers\ProfileViewModel.cs" />
+    <Compile Include="Handlers\DashboardViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,7 +79,7 @@
     <None Include="Content\styles\basicinformation.less" />
     <None Include="Content\styles\profile.less" />
     <None Include="Handlers\BasicInformation\basicinformation.spark" />
-    <None Include="Handlers\profile.spark" />
+    <None Include="Handlers\dashboard.spark" />
     <None Include="profile.asset.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

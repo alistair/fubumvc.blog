@@ -1,6 +1,6 @@
 namespace Blog.Profile
 {
-    public class ProfileViewModel
+    public class DashboardViewModel
     {
     }
 }

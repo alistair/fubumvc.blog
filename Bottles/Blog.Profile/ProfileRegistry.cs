@@ -12,7 +12,7 @@ namespace Blog.Profile
             registry.Navigation(x =>
             {
                 x.ForMenu(StringConstants.ProfileMenu);
-                x.Add += MenuNode.ForInput<ProfileInputModel>("Profile");
+                x.Add += MenuNode.ForInput<DashboardInputModel>("Dashboard");
                 x.Add += MenuNode.ForInput<BasicInformationInputModel>("Edit Information");
             });
         }

@@ -2,9 +2,9 @@
 {
     public class GetHandler
     {
-        public ProfileViewModel Execute(ProfileInputModel inputModel)
+        public DashboardViewModel Execute(DashboardInputModel inputModel)
         {
-            return new ProfileViewModel();
+            return new DashboardViewModel();
         }
     }
 }

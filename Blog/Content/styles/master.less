@@ -35,15 +35,16 @@ table {
     .gradient(#FFF, #D8D8D8, #FFF);
     font-weight: bold;
     td {
-      border-bottom: solid 1px #CCC;
-      border-right: solid 1px #CCC;
-      border-left: solid 1px #CCC;
+      border: solid 1px #CCC;
+      text-shadow: #FFF 0 1px 0;
     }
   }
   td, time {
-    padding: 5px;
-    border-bottom: solid 1px #CCC;
+    padding: 7px 10px;
     color: #000;
+  }
+  td {
+    border-bottom: solid 1px #CCC;
   }
   a {
     font-weight: bold;
@@ -230,9 +231,10 @@ input[type="submit"],
 input[type="button"] {
   cursor: pointer;
   .gradient(#FFF, #CCC, #FFF);
+  text-shadow: #FFF 0 1px 0;
   border: solid 1px #CCC;
   border-radius: 3px;
-  padding: 4px 8px;
+  padding: 3px 5px;
   margin: 0;
   &:hover {
   .gradient(#FFF, #E8C17D, #FFF);

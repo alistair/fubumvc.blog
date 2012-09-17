@@ -1,7 +1,0 @@
-﻿<viewdata model="Blog.Profile.ProfileViewModel"/>
-<header>
-    <h2>Profile</h2>
-</header>
-<div class="profile">
-  <ProfileNavigation/>
-</div>

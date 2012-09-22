@@ -30,14 +30,18 @@ legend {
 table {
   width: 80%;
   border-collapse: collapse;
+  border: solid 1px #CCC;
   font-size: 12px;
-  thead {
+  thead, tfoot {
     .gradient(#FFF, #D8D8D8, #FFF);
     font-weight: bold;
     td {
-      border: solid 1px #CCC;
+      border-right: solid 1px #CCC;
       text-shadow: #FFF 0 1px 0;
     }
+  }
+  tbody {
+    border: none;
   }
   td, time {
     padding: 7px 10px;
@@ -75,7 +79,7 @@ body {
   font: .8em 'Droid Sans', arial, serif;
   > div {
     width: 960px;
-    margin: 40px auto;
+    margin: 75px auto;
   }
 }
 
@@ -141,10 +145,8 @@ article {
 
 .header {
   color: #FFF;
+  border-bottom: 4px solid #747474;
   background-color: #363636;
-  box-shadow: #000 0px -5px 10px 5px;
-  -webkit-box-shadow: #000 0px -5px 10px 5px;
-  -moz-box-shadow: #000 0px -5px 10px 5px;
   position: fixed;
   left: 0;
   right: 0;
@@ -162,7 +164,7 @@ article {
   }
   div {
     overflow: hidden;
-    margin: 5px auto;
+    margin: 20px auto;
     width: 940px;
   }
   ul {
@@ -228,7 +230,7 @@ input[type="text"], textarea {
   }
 }
 
-
+button,
 input[type="submit"],
 input[type="button"] {
   cursor: pointer;
@@ -247,4 +249,8 @@ input[value^="Post"] {
   &:hover {
   .gradient(#FFF, #7CA33C, #FFF);
   }
+}
+
+.forward {
+  background: transparent url('') no-repeat 0 0;
 }

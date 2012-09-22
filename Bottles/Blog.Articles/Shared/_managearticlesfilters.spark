@@ -1,0 +1,31 @@
+﻿<div class="managearticlefilters">
+  <div>
+    <select>
+      <option>All</option>
+      <option>Draft</option>
+      <option>Published</option>
+      <option>Trash</option>
+    </select>
+    <select>
+      <option>Bulk Actions</option>
+      <option>Delete</option>
+      <option>Publish</option>
+    </select>
+  </div>
+
+  <div>
+    <a href="">25</a>|
+    <a href="">50</a>|
+    <a href="">100</a>
+  </div>
+  <div class="paging">
+    <button><img src="/_content/images/front.png"/></button>
+    <button><img src="/_content/images/forward.png"/></button>
+    <div>
+      <input type="text" value="1"/> of <label>1</label>
+    </div>
+    
+    <button><img src="/_content/images/backward.png"/></button>
+    <button><img src="/_content/images/end.png"/></button>
+  </div>
+</div>

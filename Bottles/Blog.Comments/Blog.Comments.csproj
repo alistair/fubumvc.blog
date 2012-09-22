@@ -92,6 +92,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Content\styles\comments.less" />
+    <None Include="Content\styles\managecomments.less" />
     <None Include="Content\styles\modifycomment.less" />
     <None Include="Handlers\comments.spark">
       <SubType>Designer</SubType>
@@ -103,6 +104,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Handlers\Modify\modify.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Shared\_managecommentsfilters.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Shared\_managecommentsrow.spark">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

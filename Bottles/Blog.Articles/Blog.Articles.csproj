@@ -85,9 +85,7 @@
     <Compile Include="Handlers\Summaries\GetHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Shared\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include=".package-manifest" />
     <None Include="articles.script.config">
@@ -98,6 +96,7 @@
     </None>
     <None Include="Content\styles\archive.less" />
     <None Include="Content\styles\compose.less" />
+    <None Include="Content\styles\managearticles.less" />
     <None Include="Handlers\Archive\archive.spark">
       <SubType>Designer</SubType>
     </None>
@@ -111,6 +110,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Handlers\Summaries\articlesummary.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Shared\_managearticlesrow.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Shared\_managearticlesfilters.spark">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

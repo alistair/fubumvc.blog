@@ -1,4 +1,7 @@
-﻿using Blog.Behaviors;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Blog.Behaviors;
+using Bottles;
 using FubuMVC.Core;
 using FubuMVC.Core.Registration.Conventions;
 using FubuMVC.Core.Runtime;
@@ -14,9 +17,11 @@ namespace Blog
             Import<SparkEngine>();
             Import<LessExtension>();
             Import<HandlerConvention>();
-            Applies
-                .ToThisAssembly()
-                .ToAllPackageAssemblies();
+
+            Applies.ToThisAssembly();
+            PackageRegistry.PackageAssemblies
+                 .Where(x => x.FullName.StartsWith("Blog"))
+                 .Each(x => Applies.ToAssembly(x));
 
             Assets.CombineAllUniqueAssetRequests();
 

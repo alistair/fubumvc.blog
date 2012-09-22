@@ -27,7 +27,7 @@ namespace Blog
 
             var typeDef = output.GetType();
             if(typeDef.Namespace != null
-                && !typeDef.Namespace.Contains("Blog"))
+                && !typeDef.Namespace.StartsWith("Blog"))
             {
                 _outputWriter.Write(mimeType, JsonUtil.ToJson(output));
                 return;

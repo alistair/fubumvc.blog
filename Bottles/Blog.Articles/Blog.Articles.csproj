@@ -115,6 +115,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\articles.png" />
+    <Content Include="Content\images\compose.png" />
     <Content Include="Content\images\document-print.png" />
     <Content Include="Content\images\edit-redo.png" />
     <Content Include="Content\images\edit-undo.png" />

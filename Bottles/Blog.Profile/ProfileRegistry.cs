@@ -13,7 +13,7 @@ namespace Blog.Profile
             {
                 x.ForMenu(StringConstants.ProfileMenu);
                 x.Add += MenuNode.ForInput<DashboardInputModel>("Dashboard");
-                x.Add += MenuNode.ForInput<BasicInformationInputModel>("Edit Information");
+                x.Add += MenuNode.ForInput<BasicInformationInputModel>("Profile");
             });
         }
     }

@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Content\images\comments.png" />
     <Content Include="Content\scripts\comment.js" />
     <Content Include="Content\scripts\managecomments.js" />
   </ItemGroup>

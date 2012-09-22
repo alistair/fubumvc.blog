@@ -1,7 +1,7 @@
 ﻿<viewdata model="Blog.Articles.Manage.ManageArticlesViewModel"/>
 <use namespace="Blog.Articles.Compose"/>
 
-# this.Asset("managearticles");
+# this.Asset("managearticles.js");
 
 <header>
     <h2>Articles</h2>

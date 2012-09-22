@@ -1,6 +1,6 @@
 ﻿<viewdata model="Blog.Comments.Manage.ManageCommentsViewModel"/>
 
-# this.Asset("managecomments");
+# this.Asset("managecomments.js");
 
 <header>
     <h2>Comments</h2>

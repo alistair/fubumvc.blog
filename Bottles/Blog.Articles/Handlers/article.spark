@@ -1,7 +1,7 @@
 ﻿<viewdata model="Blog.Articles.ArticleViewModel"/>
 
-# this.Asset("article");
-# this.Asset("comment");
+# this.Asset("article.js");
+# this.Asset("comment.js");
 
 <article>
     <header>

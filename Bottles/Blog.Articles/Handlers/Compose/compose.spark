@@ -51,4 +51,4 @@ ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
   <input type="button" value="Post Article"/>
   <input type="button" value="Save Draft"/>
 
-# this.Asset("compose");
+# this.Asset("compose.js");

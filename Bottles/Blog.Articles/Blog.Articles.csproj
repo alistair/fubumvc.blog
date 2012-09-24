@@ -85,7 +85,12 @@
     <Compile Include="Handlers\Summaries\GetHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">
+      <Project>{57645F4F-78C2-4F07-B300-66B3293E5FA7}</Project>
+      <Name>Blog.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include=".package-manifest" />
     <None Include="articles.script.config">
@@ -135,12 +140,6 @@
     <Content Include="Content\scripts\articles.js" />
     <Content Include="Content\scripts\compose.js" />
     <Content Include="Content\scripts\managearticles.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">
-      <Project>{57645F4F-78C2-4F07-B300-66B3293E5FA7}</Project>
-      <Name>Blog.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

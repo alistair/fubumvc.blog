@@ -16,7 +16,9 @@ namespace Blog.Comments.Manage
 
         public ManageCommentsViewModel Execute(ManageCommentsInputModel inputModel)
         {
-            var comments = _session.Query<Comment>().ToList();
+            var comments = _session.Query<Comment>()
+                .Page(inputModel)
+                .ToList();
 
             return new ManageCommentsViewModel
             {

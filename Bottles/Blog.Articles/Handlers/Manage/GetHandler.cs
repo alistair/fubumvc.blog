@@ -16,7 +16,9 @@ namespace Blog.Articles.Manage
 
         public ManageArticlesViewModel Execute(ManageArticlesInputModel inputModel)
         {
-            var articles = _session.Query<Article>().ToList();
+            var articles = _session.Query<Article>()
+                .Page(inputModel)
+                .ToList();
 
              return new ManageArticlesViewModel
              {

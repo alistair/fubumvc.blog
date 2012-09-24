@@ -1,5 +1,8 @@
-﻿using Raven.Abstractions.Commands;
+﻿using System.Linq;
+using Blog.Core.Domain;
+using Raven.Abstractions.Commands;
 using Raven.Client;
+using Raven.Client.Linq;
 
 namespace Blog.Core.Extensions
 {
@@ -9,5 +12,12 @@ namespace Blog.Core.Extensions
          {
              session.Advanced.Defer(new DeleteCommandData { Key = id });
          }
+
+        public static IQueryable<T> Page<T>(this IRavenQueryable<T> query, IPageable pager)
+        {
+            return query
+                .Skip((pager.Page.Value - 1) * pager.Count.Value)
+                .Take(pager.Count.Value);
+        }
     }
 }

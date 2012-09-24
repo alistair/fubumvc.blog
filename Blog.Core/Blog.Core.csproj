@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\StringConstants.cs" />
+    <Compile Include="Domain\IPageable.cs" />
     <Compile Include="Domain\UserInformation.cs" />
     <Compile Include="Extensions\DatabaseExtensions.cs" />
     <Compile Include="Extensions\MapperExtensions.cs" />

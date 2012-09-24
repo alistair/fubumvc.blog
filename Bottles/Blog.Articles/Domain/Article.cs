@@ -9,5 +9,7 @@ namespace Blog.Articles.Domain
         public DateTime PublishedDate { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
+        public int CommentsCount { get; set; }
+        public bool IsPublished { get; set; }
     }
 }

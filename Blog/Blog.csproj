@@ -185,11 +185,10 @@
     <Content Include="Content\scripts\util\google-font-loader.js" />
     <Content Include="Content\scripts\util\js-loader.js" />
     <Content Include="Content\scripts\util\module-loader.js" />
-    <Content Include="Content\scripts\util\order-1.0.5.js" />
     <Content Include="Content\scripts\util\require.js" />
     <Content Include="Content\scripts\util\showdown-0.9.js" />
     <Content Include="Content\scripts\util\showdown.js" />
-    <Content Include="Content\scripts\util\underscore-1.3.1.js" />
+    <Content Include="Content\scripts\util\underscore-1.3.3.js" />
     <Content Include="Content\scripts\util\underscore.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />

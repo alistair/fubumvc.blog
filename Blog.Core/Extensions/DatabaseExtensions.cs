@@ -19,5 +19,12 @@ namespace Blog.Core.Extensions
                 .Skip((pager.Page.Value - 1) * pager.Count.Value)
                 .Take(pager.Count.Value);
         }
+
+        public static int TotalPages(this RavenQueryStatistics stats, int entriesPerPage)
+        {
+            return stats.TotalResults > entriesPerPage
+                ? stats.TotalResults/entriesPerPage + (stats.TotalResults % entriesPerPage > 0 ? 1 : 0)
+                : 1;
+        }
     }
 }

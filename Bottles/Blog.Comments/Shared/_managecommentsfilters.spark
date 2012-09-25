@@ -23,10 +23,10 @@
     <a class="button firstpage"><img src="/_content/images/front.png"/></a>
     <a class="button prevpage"><img src="/_content/images/forward.png"/></a>
     <div>
-      <input type="text" name="count" value="1"/> of <label>1</label>
+      <input type="text" name="count" value="1"/> of <label>${totalPages}</label>
     </div>
     
     <a class="button nextpage"><img src="/_content/images/backward.png"/></a>
-    <a class="button"><img src="/_content/images/end.png"/></a>
+    <a class="button lastpage"><img src="/_content/images/end.png"/></a>
   </div>
 </div>

@@ -43,8 +43,10 @@ table {
   tbody {
     border: none;
   }
-  td, time {
+  td{
     padding: 7px 10px;
+  }
+  time {
     color: #000;
   }
   td {
@@ -151,6 +153,7 @@ article {
   left: 0;
   right: 0;
   top: 0;
+  z-index: 1;
   h1 {
     float: left;
     margin: 0;
@@ -168,6 +171,7 @@ article {
     width: 940px;
   }
   ul {
+    list-style-type: none;
     float: left;
     margin: 0 10px;
     li {
@@ -244,13 +248,37 @@ input[type="button"] {
   padding: 3px 5px;
   margin: 0;
   &:hover {
-  .gradient(#FFF, #E8C17D, #FFF);
+    .gradient(#FFF, #CCDEE6, #FFF);
+    text-shadow: #FFF 0 1px 0;
+    border: solid 1px #CCDEE6;
+    border-bottom-color: #A1BFCC;
   }
 }
 
-input[value^="Post"] {
+input[value^="Post"],
+input[value^="Submit"] {
+  border-color: #7CA33C;
+  text-shadow: #A8D959 0 1px 0;
+  color: #2A3813;
+  .gradient(#A8D959, #7CA33C, #A8D959);
   &:hover {
-  .gradient(#FFF, #7CA33C, #FFF);
+    color: #2F4210;
+    border-color: #7CA33C;
+    .gradient(#BCF263, #A0CF55, #BCF263);
+    border-bottom-color: #739638;
+  }
+}
+
+input[value^="Update"],
+input[value^="Save"] {
+  border-color: #D49B00;
+  text-shadow: #EDC65A 0 1px 0;
+  color: #4A3600;
+  .gradient(#F5BB1B, #D49B00, #F5BB1B);
+  &:hover {
+    border-color: #D49B00;
+    .gradient(#FACA46, #E8B11A, #FACA46);
+    border-bottom-color: #D49B00;
   }
 }
 

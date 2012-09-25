@@ -8,7 +8,7 @@
 <div class="managecomments">
   <ProfileNavigation/>
   <div>
-    <managecommentsfilters/>
+    <managecommentsfilters totalPages="Model.TotalPages"/>
     <table>
       <thead>
         <managecommentsrow/>
@@ -27,6 +27,6 @@
         <managecommentsrow/>
       </tfoot>
     </table>
-    <managecommentsfilters/>
+    <managecommentsfilters totalPages="Model.TotalPages"/>
   </div>
 </div>

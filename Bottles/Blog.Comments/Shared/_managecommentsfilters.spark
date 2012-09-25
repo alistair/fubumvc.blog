@@ -20,13 +20,13 @@
     <a href="">100</a>
   </div>
   <div class="paging">
-    <button><img src="/_content/images/front.png"/></button>
-    <button><img src="/_content/images/forward.png"/></button>
+    <a class="button firstpage"><img src="/_content/images/front.png"/></a>
+    <a class="button prevpage"><img src="/_content/images/forward.png"/></a>
     <div>
-      <input type="text" value="1"/> of <label>1</label>
+      <input type="text" name="count" value="1"/> of <label>1</label>
     </div>
     
-    <button><img src="/_content/images/backward.png"/></button>
-    <button><img src="/_content/images/end.png"/></button>
+    <a class="button nextpage"><img src="/_content/images/backward.png"/></a>
+    <a class="button"><img src="/_content/images/end.png"/></a>
   </div>
 </div>

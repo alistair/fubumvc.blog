@@ -28,3 +28,4 @@ To run via rake:
 * Add line numbers to pretty print.
 * Convert all packages to use actual nuget packages.
 * Clean up UI.
+* Add support for Internet Explorer 8-10.

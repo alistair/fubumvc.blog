@@ -51,6 +51,15 @@ namespace Blog.Core.Extensions
             return menu;
         }
 
+        public static HtmlTag Button(this IFubuPage page, string text)
+        {
+            var submitTag = new HtmlTag("input");
+            submitTag.Attr("type", "button");
+            submitTag.Attr("value", text);
+
+            return submitTag;
+        }
+
         public static HtmlTag Submit(this IFubuPage page, string text = "Submit")
         {
             var submitTag = new HtmlTag("input");

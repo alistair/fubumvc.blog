@@ -3,14 +3,16 @@
 <header>
   <h2>User Information</h2>
 </header>
+# this.Asset("basicinformation.js");
+
 <div class="basicinformation">
   <ProfileNavigation/>
-  ${this.FormFor<EditBasicInformationInputModel>().AddClass('basicinformation')}
+  ${this.FormFor<EditBasicInformationInputModel>()}
     <ul>
       <li>${ this.InputFor(x => x.FirstName).WithCustomLabel("First Name") }</li>
       <li>${ this.InputFor(x => x.LastName).WithCustomLabel("Last Name") }</li>
       <li>${ this.InputFor(x => x.EmailAddress).WithCustomLabel("E-mail") }</li>
       <li>${ this.TextAreaFor(x => x.Description).WithCustomLabel("Description") }</li>
-      <li>${this.Submit()}</li>
+      <li>${this.Submit()} ${this.Button("Cancel")} </li>
     </ul>
   </div>

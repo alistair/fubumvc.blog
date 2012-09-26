@@ -51,4 +51,8 @@
     urlInput.val('/' + urlInput.val());
   }
 
+  $('input[value=Cancel]').bind('click', function () {
+    window.location = '/articles/manage';
+  });
+
 });

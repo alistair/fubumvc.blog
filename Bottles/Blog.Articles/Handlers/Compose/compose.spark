@@ -48,7 +48,8 @@ ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
     <section>
     </section>
   </article>
-  <input type="button" value="Post Article"/>
-  <input type="button" value="Save Draft"/>
+   ${this.Button("Cancel")}
+   ${this.Button("Post Article")}
+   ${this.Button("Save Draft")}
 
 # this.Asset("compose.js");

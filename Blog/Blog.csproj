@@ -133,14 +133,21 @@
     <Content Include="Content\images\end.png" />
     <Content Include="Content\images\forward.png" />
     <Content Include="Content\images\front.png" />
+    <Content Include="Content\scripts\messaging.js" />
+    <Content Include="Content\scripts\paging.js" />
     <Content Include="Content\scripts\util\require.query-string.js" />
     <Content Include="Content\scripts\util\jquery-1.8.1.min.js" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Content\styles\buttons.less" />
+    <None Include="Content\styles\messaging.less" />
+    <None Include="Content\styles\paging.less" />
     <None Include="Content\styles\util\gradients.less" />
     <None Include="Shared\Application.spark">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Shared\_paging.spark">
       <SubType>Designer</SubType>
     </None>
     <None Include="Shared\_ProfileNavigation.spark">

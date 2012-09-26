@@ -14,5 +14,5 @@ ${this.HiddenInputFor(x=> x.Id)}
   <li>${this.InputFor(x => x.Author).WithCustomLabel("Name")}</li>
   <li>${this.InputFor(x => x.Email).WithCustomLabel("Email (will not be published)")}</li>
   <li>${this.TextAreaFor(x => x.Comment)}</li>
-  <li>${this.Submit("Update")}</li>
+  <li>${this.Submit("Update")} ${this.Button("Cancel")}</li>
 </ul>

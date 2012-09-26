@@ -1,0 +1,19 @@
+﻿<div class="paging">
+  <div>
+    <a href="#" class="25">25</a> |
+    <a href="#" class="50">50</a> |
+    <a href="#" class="100">100</a>
+  </div>
+  <div>
+    <a class="button firstpage"><img src="/_content/images/front.png"/></a>
+    <a class="button prevpage"><img src="/_content/images/forward.png"/></a>
+    <span>
+      <input type="text" name="count" value="1"/>
+      of
+      <label>${totalPages}</label>
+    </span>
+    
+    <a class="button nextpage"><img src="/_content/images/backward.png"/></a>
+    <a class="button lastpage"><img src="/_content/images/end.png"/></a>
+  </div>
+</div>

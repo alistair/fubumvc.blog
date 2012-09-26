@@ -18,5 +18,5 @@
     <p>
     </p>
 </article>
-<section module="/comments/${Model.Id}">
+<section class="commentsection" module="/comments/${Model.Id}">
 </section>

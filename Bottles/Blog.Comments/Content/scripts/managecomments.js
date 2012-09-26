@@ -1,54 +1,61 @@
 ﻿define('managecomments', ['jquery', 'query-string'], function ($, qs) {
   var countInput = $('input[name="count"]'),
-      totalCount = parseInt($('label','.paging:first').text(), 10),
+      firstPageButton = $('.firstpage'),
+      lastPageButton = $('.lastpage'),
+      nextPageButton = $('.nextpage'),
+      previousPageButton = $('.prevpage'),
+      totalCount = parseInt($('label', '.paging:first').text(), 10),
       pageInfo = function () {
-        var data = qs.getParameters();
-
+        var params = qs.getParameters();
         return {
-          count: data.Count ? parseInt(data.Count, 10) : 25,
-          page: data.Page ? parseInt(data.Page, 10) : 1
+          count: params.Count ? parseInt(params.Count, 10) : 25,
+          page: params.Page ? parseInt(params.Page, 10) : 1
         };
       } (),
-      setPaging = function (newCount) {
-        var count = newCount || pageInfo.count,
-          initialString = '?Count=' + count + '&Page=';
-
-        $('.firstpage').attr('href', initialString + '1');
-        $('.lastpage').attr('href', initialString + totalCount);
+      querystring = '?Count=' + pageInfo.count + '&Page=',
+      setPaging = function () {
+        firstPageButton.attr('href', querystring + '1');
+        lastPageButton.attr('href', querystring + totalCount);
         countInput.val(pageInfo.page);
 
-        if(pageInfo.page < totalCount) {
-          $('.nextpage').attr('href',  initialString + (pageInfo.page + 1));
+        if (pageInfo.page < totalCount) {
+          nextPageButton.attr('href', querystring + (pageInfo.page + 1));
         }
 
         if (pageInfo.page !== 1) {
-          $('.prevpage').attr('href', initialString + (pageInfo.page - 1));
+          previousPageButton.attr('href', querystring + (pageInfo.page - 1));
         }
+      },
+      changeCommentsPerPage = function (count) {
+        window.location = '?Count=' + count + '&Page=1';
       };
 
   $('.delete-comment').click(function () {
-    var link = $(this),
-      data = link.data();
+    var link = $(this);
+
     $.ajax({
       url: '/comments/manage',
       type: 'DELETE',
-      data: { Id: data.id },
+      data: { Id: link.data().id },
       dataType: 'json',
       success: function () {
-        link.closest('tr').remove();
+        link.closest('tr').fadeOut('slow');
       }
     });
   });
 
-  setPaging();
+  $('.25').click(function () { changeCommentsPerPage(25); });
+  $('.50').click(function () { changeCommentsPerPage(50); });
+  $('.100').click(function () { changeCommentsPerPage(100); });
 
   countInput.blur(function () {
-    var val = parseInt(countInput.val(), 10);
-    if (val !== pageInfo.count && val <= totalCount && val > 0) {
-      window.location = '?Count=' + pageInfo.count + '&Page=' + val;
-    } else {
-      window.location = '?Count=' + pageInfo.count + '&Page=' + pageInfo.page;
-    }
+    var val = parseInt(countInput.val(), 10),
+      inRange = val !== pageInfo.count && val <= totalCount && val > 0;
+
+    window.location = inRange
+      ? window.location = querystring + val
+      : window.location = querystring + pageInfo.page;
   });
 
+  setPaging();
 });

@@ -53,6 +53,13 @@
             <param name="tagNames">One or more HTML element names separated by a <c>/</c> or <c>&gt;</c></param>
             <returns>The instance on which the method was called (the parent of the new tags)</returns>
         </member>
+        <member name="M:HtmlTags.HtmlTag.AppendHtml(System.String)">
+            <summary>
+            Adds a LiteralTag of unencoded html to this HtmlTag
+            </summary>
+            <param name="html"></param>
+            <returns></returns>
+        </member>
         <member name="M:HtmlTags.HtmlTag.Append(System.String,System.Action{HtmlTags.HtmlTag})">
             <summary>
             Creates nested child tags, runs <paramref name="configuration"/> on the innermost tag, and returns the tag on which the method was called. Use <see cref="M:HtmlTags.HtmlTag.Add(System.String,System.Action{HtmlTags.HtmlTag})"/> if you want to return the innermost tag.
@@ -131,6 +138,14 @@
             <param name="key">The name of the stored value</param>
             <returns>The calling tag.</returns>
         </member>
+        <member name="M:HtmlTags.HtmlTag.AddClass(System.String)">
+            <summary>
+            Adds one or more classes (separated by spaces) to the tag
+            </summary>
+            <param name="className">Valid CSS class name, JSON object, JSON array, or multiple valid CSS class names separated by spaces</param>
+            <returns>The tag for method chaining</returns>
+            <exception cref="T:System.ArgumentException">One or more CSS class names were invalid (contained invalid characters)</exception>
+        </member>
         <member name="M:HtmlTags.HtmlTag.parseClassName(System.String)">
             <summary>
             Parses a string which contains class name or multiple class names.
@@ -155,6 +170,11 @@
             <summary>
             The sibling tag that immediately follows the current tag. 
             Setting this value will remove any existing value. Use <see cref="M:HtmlTags.HtmlTag.After(HtmlTags.HtmlTag)"/> if you wish to insert a new sibling before any existing sibling.
+            </summary>
+        </member>
+        <member name="T:HtmlTags.Conventions.TagRequest">
+            <summary>
+            Will always need to implement an Equals and GetHashCode in order for this thing to work
             </summary>
         </member>
         <member name="M:HtmlTags.JsonUtil.ToUnsafeJson(System.Object)">

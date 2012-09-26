@@ -66,9 +66,6 @@
     <Reference Include="FubuMVC.Core">
       <HintPath>..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FubuMVC.Diagnostics">
-      <HintPath>..\fubu-packages\FubuMVC\FubuMVC.Diagnostics.dll</HintPath>
-    </Reference>
     <Reference Include="FubuMVC.Less">
       <HintPath>..\fubu-packages\FubuMVC.AssetTransforms\FubuMVC.Less.dll</HintPath>
     </Reference>
@@ -78,7 +75,8 @@
     <Reference Include="FubuMVC.StructureMap">
       <HintPath>..\fubu-packages\FubuMVC\FubuMVC.StructureMap.dll</HintPath>
     </Reference>
-    <Reference Include="HtmlTags, Version=1.1.0.78, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="HtmlTags, Version=1.1.0.103, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\fubu-packages\HtmlTags\HtmlTags.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
@@ -140,6 +138,8 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Content\styles\buttons.less" />
+    <None Include="Content\styles\util\gradients.less" />
     <None Include="Shared\Application.spark">
       <SubType>Designer</SubType>
     </None>

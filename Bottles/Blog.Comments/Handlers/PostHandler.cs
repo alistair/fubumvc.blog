@@ -15,6 +15,9 @@ namespace Blog.Comments
 
         public void Execute(CommentInputModel inputModel)
         {
+            var article = _session.Load<dynamic>(inputModel.Uri);
+            article.CommentsCount++;
+
             _session.Store(new Comment
             {
                 Id = inputModel.Id,

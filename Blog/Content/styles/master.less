@@ -1,9 +1,4 @@
-﻿.gradient(@color: #FFF, @start: #000, @stop: #FFF) {
-  background: @color;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @start), color-stop(1, @stop));
-  background: -ms-linear-gradient(bottom, @start, @stop);
-  background: -moz-linear-gradient(center bottom, @start 0%, @stop 100%);
-}
+﻿@import "util/gradients.less";
 
 input:focus,
 select:focus,
@@ -236,57 +231,4 @@ input[type="text"], textarea {
   &:focus {
     border: 1px solid #F90;
   }
-}
-
-button,
-.button,
-input[type="submit"],
-input[type="button"] {
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  .gradient(#FFF, #CCC, #FFF);
-  text-shadow: #FFF 0 1px 0;
-  border: solid 1px #CCC;
-  border-radius: 3px;
-  padding: 3px 5px;
-  margin: 0;
-  &:hover {
-    .gradient(#FFF, #CCDEE6, #FFF);
-    text-shadow: #FFF 0 1px 0;
-    border: solid 1px #CCDEE6;
-    border-bottom-color: #A1BFCC;
-  }
-}
-
-input[value^="Post"],
-input[value^="Submit"] {
-  border-color: #7CA33C;
-  text-shadow: #A8D959 0 1px 0;
-  color: #2A3813;
-  .gradient(#A8D959, #7CA33C, #A8D959);
-  &:hover {
-    color: #2F4210;
-    border-color: #7CA33C;
-    .gradient(#BCF263, #A0CF55, #BCF263);
-    border-bottom-color: #739638;
-  }
-}
-
-input[value^="Update"],
-input[value^="Save"] {
-  border-color: #D49B00;
-  text-shadow: #EDC65A 0 1px 0;
-  color: #4A3600;
-  .gradient(#F5BB1B, #D49B00, #F5BB1B);
-  &:hover {
-    text-shadow: #EDC65A 0 1px 0;
-    border-color: #D49B00;
-    .gradient(#FACA46, #E8B11A, #FACA46);
-    border-bottom-color: #D49B00;
-  }
-}
-
-.forward {
-  background: transparent url('') no-repeat 0 0;
 }

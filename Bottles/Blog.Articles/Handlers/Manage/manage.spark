@@ -20,7 +20,7 @@
           <td><a href="/${article.Id}">${article.Title}</a></td>
           <td><time>${article.PublishedDateString}</time></td>
           <td>${article.Author}</td>
-          <td>-</td>
+          <td>${article.CommentsCount}</td>
           <td><a href="${this.Urls.UrlFor(new ComposeInputModel { Id =  article.Id} )}">Edit</a></td>
           <td><a data-id="${article.Id}" class="delete-article" href="#">Delete</a></td>
         </tr>

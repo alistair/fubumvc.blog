@@ -117,6 +117,7 @@
   <ItemGroup>
     <Content Include="Content\images\comments.png" />
     <Content Include="Content\scripts\comment.js" />
+    <Content Include="Content\scripts\modifycomment.js" />
     <Content Include="Content\scripts\managecomments.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

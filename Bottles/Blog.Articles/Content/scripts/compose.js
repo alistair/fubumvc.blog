@@ -21,13 +21,12 @@
         urlInput.val('/' + titleInput
             .val()
             .toLowerCase()
-            .replace(/ /g, '-'));
+            .replace(/[\. ]/g, '-'));
         prettyPrint();
         showPreview();
       }, 1000);
 
   textarea.keydown(preview);
-  titleInput.keydown(setTitle);
 
   $('input[value="Post Article"]').click(function () {
     var data = form.serialize();
@@ -44,6 +43,12 @@
   });
 
   preview();
-  setTitle();
+  if (urlInput.val().length === 0) {
+    titleInput.keydown(setTitle);
+    setTitle();
+  } else {
+    urlInput.attr('disabled', 'disabled');
+    urlInput.val('/' + urlInput.val());
+  }
 
 });

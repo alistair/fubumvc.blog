@@ -5,6 +5,7 @@
 </header>
 
 <ProfileNavigation/>
+# this.Asset("modifycomment.js");
 
 ${this.FormFor<CommentInputModel>().AddClass("modifycomment")}
 ${this.HiddenInputFor(x=> x.Uri)}

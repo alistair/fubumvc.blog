@@ -192,7 +192,9 @@
     <Content Include="Content\scripts\util\underscore-1.3.3.js" />
     <Content Include="Content\scripts\util\underscore.js" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blog.Core\Blog.Core.csproj">

@@ -20,6 +20,7 @@ namespace Blog.Comments.Manage
         {
             RavenQueryStatistics stats;
             var comments = _session.Query<Comment>()
+                .OrderByDescending(x => x.PublishedDate)
                 .Statistics(out stats)
                 .Page(inputModel)
                 .ToList();

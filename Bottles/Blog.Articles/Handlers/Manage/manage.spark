@@ -9,7 +9,7 @@
 <div class="managearticles">
   <ProfileNavigation/>
   <div>
-    <managearticlesfilters/>
+    <managearticlesfilters totalPages="Model.TotalPages"/>
     <table>
       <thead>
         <managearticlesrow/>
@@ -29,6 +29,6 @@
         <managearticlesrow/>
       </tfoot>
     </table>
-    <managearticlesfilters/>
+    <managearticlesfilters totalPages="Model.TotalPages"/>
   </div>
 </div>

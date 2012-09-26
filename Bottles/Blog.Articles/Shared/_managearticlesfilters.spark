@@ -14,18 +14,18 @@
   </div>
 
   <div>
-    <a href="">25</a>|
-    <a href="">50</a>|
-    <a href="">100</a>
+    <a href="#" class="25">25</a> |
+    <a href="#" class="50">50</a> |
+    <a href="#" class="100">100</a>
   </div>
   <div class="paging">
-    <button><img src="/_content/images/front.png"/></button>
-    <button><img src="/_content/images/forward.png"/></button>
+    <a class="button firstpage"><img src="/_content/images/front.png"/></a>
+    <a class="button prevpage"><img src="/_content/images/forward.png"/></a>
     <div>
-      <input type="text" value="1"/> of <label>1</label>
+      <input type="text" name="count" value="1"/> of <label>${totalPages}</label>
     </div>
     
-    <button><img src="/_content/images/backward.png"/></button>
-    <button><img src="/_content/images/end.png"/></button>
+    <a class="button nextpage"><img src="/_content/images/backward.png"/></a>
+    <a class="button lastpage"><img src="/_content/images/end.png"/></a>
   </div>
 </div>

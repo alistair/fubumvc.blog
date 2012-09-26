@@ -2,6 +2,7 @@
 using Blog.Articles.Domain;
 using Blog.Core.Extensions;
 using Raven.Client;
+using Raven.Client.Linq;
 
 namespace Blog.Articles.Manage
 {
@@ -16,15 +17,19 @@ namespace Blog.Articles.Manage
 
         public ManageArticlesViewModel Execute(ManageArticlesInputModel inputModel)
         {
+            RavenQueryStatistics stats;
             var articles = _session.Query<Article>()
+                .OrderByDescending(x => x.PublishedDate)
+                .Statistics(out stats)
                 .Page(inputModel)
                 .ToList();
 
-             return new ManageArticlesViewModel
-             {
-                 Articles = articles.Select(x => x.DynamicMap<ManageArticleViewModel>())
-             };
-         }
+            return new ManageArticlesViewModel
+            {
+                Articles = articles.Select(x => x.DynamicMap<ManageArticleViewModel>()),
+                TotalPages = stats.TotalPages(inputModel.Count ?? 0)
+            };
+        }
 
     }
 }

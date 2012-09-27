@@ -1,12 +1,13 @@
 ﻿<viewdata model="Blog.Articles.Compose.ComposeViewModel"/>
 <use namespace="Blog.Articles.Compose"/>
 <header>
-    <h2>Compose Article</h2>
+  <h2>Compose Article</h2>
 </header>
 
 <ProfileNavigation/>
 ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
   <div>
+    ${this.HiddenInputFor(x=> x.CommentsCount)}
     ${this.InputFor(x => x.Title).WithCustomLabel("Title").Attr("tabindex", 1)}
     ${this.InputFor(x => x.Id).WithCustomLabel("Article Url")}
     <div>
@@ -48,8 +49,14 @@ ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
     <section>
     </section>
   </article>
-   ${this.Button("Cancel")}
-   ${this.Button("Post Article")}
-   ${this.Button("Save Draft")}
+  ${this.Button("Cancel")}
+  <if condition="Model.IsPublished">
+    ${this.Button("Update")}
+    ${this.Button("Archive")}
+  </if>
+  <else>
+    ${this.Button("Post Article")}
+    ${this.Button("Save Draft")}
+  </else>
 
-# this.Asset("compose.js");
+  # this.Asset("compose.js");

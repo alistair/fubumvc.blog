@@ -11,6 +11,7 @@ namespace Blog.Articles.Compose
 
         public string Title { get; set; }
         public string Body { get; set; }
-        public string IsDraft { get; set; }
+        public bool IsDraft { get; set; }
+        public int CommentsCount { get; set; }
     }
 }

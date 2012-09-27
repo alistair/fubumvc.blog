@@ -3,7 +3,6 @@
     <select>
       <option>All</option>
       <option>Approved</option>
-      <option>Trash</option>
       <option>Spam</option>
     </select>
     <select>

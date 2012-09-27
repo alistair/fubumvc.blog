@@ -2,10 +2,14 @@ namespace Blog.Articles.Compose
 {
     public class ComposeArticleResourceModel
     {
-        public ComposeArticleResourceModel(string url)
+
+        private string _url;
+        public string Url
         {
-            Url = string.Format("/{0}", url);
+            get { return _url; }
+            set { _url = string.Format("/{0}", value) ; }
         }
-        public string Url { get; set; }
+
+        public string ManageUrl { get; set; }
     }
 }

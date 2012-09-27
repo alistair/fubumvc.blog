@@ -3,6 +3,8 @@
     raiseMessage = function (container, message, cssClass, timeout) {
       var messageContent = $('<div></div>');
 
+      $('.messaging').remove();
+
       messageContent.click(function () {
         messageContent.remove();
       });
@@ -12,7 +14,7 @@
 
       container.prepend(messageContent);
 
-      if(timeout) {
+      if (timeout) {
         setTimeout(function () {
           messageContent.fadeOut('slow', function () {
             messageContent.remove();

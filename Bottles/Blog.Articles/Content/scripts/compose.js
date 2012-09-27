@@ -24,22 +24,29 @@
             .replace(/[\. ]/g, '-'));
         prettyPrint();
         showPreview();
-      }, 1000);
+      }, 1000),
+      compose = function (prop, location) {
+        var data = form.serialize();
+
+        $.ajax({
+          url: form.action,
+          type: 'POST',
+          data: data + prop,
+          dataType: 'json',
+          success: function (result) {
+            window.location = result[location];
+          }
+        });
+      };
 
   textarea.keydown(preview);
 
-  $('input[value="Post Article"]').click(function () {
-    var data = form.serialize();
+  $('input[value="Post Article"], input[value="Update"]').click(function () {
+    compose(undefined, 'url');
+  });
 
-    $.ajax({
-      url: form.action,
-      type: 'POST',
-      data: data,
-      dataType: 'json',
-      success: function (result) {
-        window.location = result.url;
-      }
-    });
+  $('input[value="Save Draft"], input[value="Archive"]').click(function () {
+    compose("&IsDraft=true", 'manageUrl');
   });
 
   preview();

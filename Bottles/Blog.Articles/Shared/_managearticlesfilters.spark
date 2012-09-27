@@ -4,7 +4,6 @@
       <option>All</option>
       <option>Draft</option>
       <option>Published</option>
-      <option>Trash</option>
     </select>
     <select>
       <option>Bulk Actions</option>

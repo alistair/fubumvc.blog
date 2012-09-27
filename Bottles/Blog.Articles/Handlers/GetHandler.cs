@@ -17,7 +17,7 @@ namespace Blog.Articles
     [UrlPattern("{Uri}")]
     public ArticleViewModel Execute(ArticleInputModel inputModel)
     {
-        var article = _session .Load<Article>(inputModel.Uri);
+        var article = _session.Load<Article>(inputModel.Uri);
 
         return article.DynamicMap<ArticleViewModel>();
     }

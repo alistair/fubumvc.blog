@@ -17,6 +17,7 @@ namespace Blog.Articles.Summaries
         public ArticleSummariesViewModel Execute()
         {
             var articles = _session.Query<Article>()
+                .Where(x => x.IsPublished)
                 .OrderByDescending(x => x.PublishedDate)
                 .Take(10).ToList();
             return new ArticleSummariesViewModel

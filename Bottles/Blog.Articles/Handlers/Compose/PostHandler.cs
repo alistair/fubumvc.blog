@@ -29,7 +29,8 @@ namespace Blog.Articles.Compose
                 Body = inputModel.Body,
                 Id =  inputModel.Id,
                 Title = inputModel.Title,
-                PublishedDate = DateTime.Now
+                PublishedDate = DateTime.Now,
+                IsPublished = true
             });
 
             return new ComposeArticleResourceModel(inputModel.Id);

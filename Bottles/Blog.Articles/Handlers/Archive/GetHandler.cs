@@ -21,6 +21,7 @@ namespace Blog.Articles.Archive
              return new ArchiveViewModel
              {
                  Items = articles
+                    .Where(x => x.IsPublished)
                     .GroupBy(x => x.PublishedDate.Year, x => x.DynamicMap<ArchiveItemViewModel>())
                     .ToDictionary(x => x.Key, x => x.ToList())
              };

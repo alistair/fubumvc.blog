@@ -20,5 +20,7 @@
     <a href="${summary.Id}#comments">Comments</a>
   </p>
 </article>
-
+<article if="!Model.Summaries.Any()">
+  There are no articles posted yet.
+</article>
 <script type="text/javascript" src="/content/scripts/articles.js"></script>

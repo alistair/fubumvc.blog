@@ -76,6 +76,8 @@
     <Compile Include="Handlers\Modify\GetHandler.cs" />
     <Compile Include="Handlers\Modify\ModifyCommentInputModel.cs" />
     <Compile Include="Handlers\Modify\ModifyCommentViewModel.cs" />
+    <Compile Include="Handlers\Modify\PostHandler.cs" />
+    <Compile Include="Handlers\Modify\UpdateCommentInputModel.cs" />
     <Compile Include="Handlers\PostHandler.cs" />
     <Compile Include="Handlers\Recent\GetHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

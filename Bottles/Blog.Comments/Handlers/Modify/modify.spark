@@ -1,5 +1,5 @@
 ﻿<viewdata model="Blog.Comments.Modify.ModifyCommentViewModel"/>
-<use namespace="Blog.Comments"/>
+<use namespace="Blog.Comments.Modify"/>
 <header>
     <h2>Modify Comment</h2>
 </header>
@@ -7,7 +7,7 @@
 <ProfileNavigation/>
 # this.Asset("modifycomment.js");
 
-${this.FormFor<CommentInputModel>().AddClass("modifycomment")}
+${this.FormFor<UpdateCommentInputModel>().AddClass("modifycomment")}
 ${this.HiddenInputFor(x=> x.Uri)}
 ${this.HiddenInputFor(x=> x.Id)}
 <ul class="submitcomment">

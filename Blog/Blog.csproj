@@ -133,6 +133,7 @@
     <Content Include="Content\images\end.png" />
     <Content Include="Content\images\forward.png" />
     <Content Include="Content\images\front.png" />
+    <Content Include="Content\scripts\pretty.js" />
     <Content Include="Content\scripts\messaging.js" />
     <Content Include="Content\scripts\paging.js" />
     <Content Include="Content\scripts\util\require.query-string.js" />

@@ -1,4 +1,4 @@
-﻿define('articles',['jquery', 'showdown', 'underscore'], function ($, sd, _) {
+﻿define('articles',['jquery', 'showdown', 'underscore', 'pretty'], function ($, sd, _, pretty) {
   var articles = $('section', 'article'),
       html;
 
@@ -8,7 +8,7 @@
     article.html(sd.makeHtml(html));
   });
   
-  $('pre').addClass('prettyprint');
-  prettyPrint();
+  pretty.makePagePretty();
+  pretty.makePrettyLineNumbersForPage();
 
 });

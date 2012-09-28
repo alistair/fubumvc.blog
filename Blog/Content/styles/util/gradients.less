@@ -4,3 +4,10 @@
   background: -ms-linear-gradient(bottom, @start, @stop);
   background: -moz-linear-gradient(center bottom, @start 0%, @stop 100%);
 }
+
+.gradient-horizontal(@color: #FFF, @start: #000, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear, right top, left top, color-stop(0, @start), color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom, @start, @stop);
+  background: -moz-linear-gradient(right center, @start 0%, @stop 100%);
+}

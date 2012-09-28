@@ -1,4 +1,4 @@
-﻿define('compose', ['jquery', 'underscore', 'showdown'], function ($, _, sd) {
+﻿define('compose', ['jquery', 'underscore', 'showdown', 'pretty'], function ($, _, sd, pretty) {
   var form = $('form'),
       textarea = $('textarea[name=Body]'),
       titleInput = $('input[name=Title]'),
@@ -12,8 +12,8 @@
       },
       preview = _.debounce(function () {
         previewBox.html(sd.makeHtml(textarea.val()));
-        $('pre').addClass('prettyprint');
-        prettyPrint();
+        pretty.makePagePretty();
+        pretty.makePrettyLineNumbersForPage();
         showPreview();
       }, 1000),
       setTitle = _.debounce(function () {

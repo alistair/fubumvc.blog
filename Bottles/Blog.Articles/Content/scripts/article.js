@@ -1,9 +1,9 @@
-﻿define('article', ['jquery', 'showdown'], function ($, sd) {
+﻿define('article', ['jquery', 'showdown', 'pretty'], function ($, sd, pretty) {
   var article = $('section', 'article'),
       html = article.text().trim(),
       md = sd.makeHtml(html);
   article.html(md);
 
-  $('pre').addClass('prettyprint');
-  prettyPrint();
+  pretty.makePagePretty();
+  pretty.makePrettyLineNumbersForPage();
 });

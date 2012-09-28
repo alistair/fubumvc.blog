@@ -22,10 +22,9 @@ To run via rake:
 * Complete Profile Section.
 * Add permissions.
 * Add Administration Section to Profile.
-* Create user information POCO, save to RavenDB.
+* Create settings POCO, save to RavenDB.
 * Wire up compose article quick action buttons, (undo, insert image, etc..)
 * Complete Information Pages.
-* Add line numbers to pretty print.
 * Convert all packages to use actual nuget packages.
 * Clean up UI.
 * Add support for Internet Explorer 8-10.

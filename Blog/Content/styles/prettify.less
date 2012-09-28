@@ -1,3 +1,5 @@
+@import "util/gradients.less";
+
 .pln { color: #000 }  /* plain text */
 
 @media screen {
@@ -6,8 +8,7 @@
   .com { color: #800 }  /* a comment */
   .typ { color: #606 }  /* a type name */
   .lit { color: #066 }  /* a literal value */
-  /* punctuation, lisp open bracket, lisp close bracket */
-  .pun, .opn, .clo { color: #660 }
+  .pun, .opn, .clo { color: #660 } /* punctuation, lisp open bracket, lisp close bracket */
   .tag { color: #008 }  /* a markup tag name */
   .atn { color: #606 }  /* a markup attribute name */
   .atv { color: #080 }  /* a markup attribute value */
@@ -27,18 +28,37 @@
   .atv { color: #060 }
 }
 
-pre.prettyprint {
-  padding: 10px;
+.prettyprintnumbers {
   background: #EEE;
-  overflow-y: scroll;
-}
+  overflow: auto;
+  border-left: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
+  ol, pre {
+    margin: 0px;
+    padding: 0px; 
+    list-style-type: none;
+  }
 
-ol {
-  padding: 0px;
-  list-style-type: none;
-}
+  li {
+    padding: 7px 10px;
+  }
 
-ol.linenums {
-  margin-top: 0;
-  margin-bottom: 0;
+  table {
+    border: 0;
+    width: 100%;
+    .num {
+      color: #747474;
+      font-weight: bold;
+      text-shadow: #FFF 0 1px 0;
+      border-right: 1px solid #747474;
+      .gradient-horizontal(#FFF, #D8D8D8, #FFF);
+      border-bottom: 1px solid #D8D8D8;
+    }
+    .code {
+      width: 100%;
+      border-bottom: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
 }

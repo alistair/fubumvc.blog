@@ -10,7 +10,6 @@ namespace Blog
 
     public class MvcApplication : HttpApplication
     {
-
         protected void Application_Start()
         {
             FubuApplication
@@ -25,10 +24,6 @@ namespace Blog
                 .Bootstrap();
 
             PackageRegistry.AssertNoFailures();
-        }
-
-        private static void SetupContainer(ConfigurationExpression x)
-        {
         }
     }
 }

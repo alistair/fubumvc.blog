@@ -56,6 +56,9 @@
     <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
       <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.0.12182\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.3.4.6.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
     </Reference>
@@ -117,8 +120,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Behaviors\RavenDbBehavior.cs" />
+    <Compile Include="Behaviors\ValidationBehavior`1.cs" />
     <Compile Include="BlogRegistry.cs" />
-    <Compile Include="Conventions\JsonConvention.cs" />
+    <Compile Include="BlogStructureMapRegistry.cs" />
+    <Compile Include="Policies\ValidationPolicy.cs" />
     <Compile Include="NewtonSoftJsonWriter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -133,6 +138,7 @@
     <Content Include="Content\images\end.png" />
     <Content Include="Content\images\forward.png" />
     <Content Include="Content\images\front.png" />
+    <Content Include="Content\scripts\validation.js" />
     <Content Include="Content\scripts\pretty.js" />
     <Content Include="Content\scripts\messaging.js" />
     <Content Include="Content\scripts\paging.js" />
@@ -142,6 +148,7 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Content\styles\buttons.less" />
+    <None Include="Content\styles\validation.less" />
     <None Include="Content\styles\messaging.less" />
     <None Include="Content\styles\paging.less" />
     <None Include="Content\styles\util\gradients.less" />

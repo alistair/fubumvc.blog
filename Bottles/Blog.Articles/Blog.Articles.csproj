@@ -37,6 +37,10 @@
     <Reference Include="Bottles">
       <HintPath>..\..\fubu-packages\Bottles\Bottles.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=3.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentValidation.3.4.6.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
     </Reference>
@@ -67,6 +71,7 @@
     <Compile Include="Handlers\ArticleInputModel.cs" />
     <Compile Include="Handlers\ArticleViewModel.cs" />
     <Compile Include="Handlers\Compose\ComposeArticleInputModel.cs" />
+    <Compile Include="Handlers\Compose\ComposeArticleInputModelValidator.cs" />
     <Compile Include="Handlers\Compose\ComposeArticleResourceModel.cs" />
     <Compile Include="Handlers\Compose\ComposeInputModel.cs" />
     <Compile Include="Handlers\Compose\ComposeViewModel.cs" />

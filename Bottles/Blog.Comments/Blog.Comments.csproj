@@ -65,6 +65,8 @@
     <Compile Include="Handlers\Count\CommentsCountInputModel.cs" />
     <Compile Include="Handlers\Count\CommentsViewModel.cs" />
     <Compile Include="Handlers\Count\GetHandler.cs" />
+    <Compile Include="Handlers\DeleteForArticle\DeleteCommentsForArticleInputModel.cs" />
+    <Compile Include="Handlers\DeleteForArticle\DeleteHandler.cs" />
     <Compile Include="Handlers\GetHandler.cs" />
     <Compile Include="Handlers\Manage\DeleteCommentInputModel.cs" />
     <Compile Include="Handlers\Manage\DeleteCommentViewModel.cs" />

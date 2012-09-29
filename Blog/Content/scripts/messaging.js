@@ -10,7 +10,7 @@
       });
 
       messageContent.addClass('messaging messaging-' + cssClass);
-      messageContent.text(message);
+      messageContent.html(message);
 
       container.prepend(messageContent);
 

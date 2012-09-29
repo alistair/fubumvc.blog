@@ -1,4 +1,4 @@
-﻿define('compose', ['jquery', 'underscore', 'showdown', 'pretty'], function ($, _, sd, pretty) {
+﻿define('compose', ['jquery', 'underscore', 'showdown', 'pretty', 'validation'], function ($, _, sd, pretty, validation) {
   var form = $('form'),
       textarea = $('textarea[name=Body]'),
       titleInput = $('input[name=Title]'),
@@ -21,17 +21,19 @@
         urlInput.val('/' + titleInput
             .val()
             .toLowerCase()
-            .replace(/[\. ]/g, '-'));
+            .replace(/[\.\\\/\?\!\'\"]/g, '')
+            .replace(/[ ]/g, '-'));
         prettyPrint();
         showPreview();
       }, 1000),
       compose = function (prop, location) {
         var data = form.serialize();
-
-        $.ajax({
+        
+        validation.ajax.validate({
           url: form.action,
           type: 'POST',
-          data: data + prop,
+          form: form,
+          data: prop ? data + prop : data,
           dataType: 'json',
           success: function (result) {
             window.location = result[location];

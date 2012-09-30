@@ -1,8 +1,10 @@
-﻿define('modifycomment', ['jquery', 'messaging'], function ($, messaging) {
-  $('.modifycomment').bind('submit', function () {
-    $.ajax({
+﻿define('modifycomment', ['jquery', 'messaging', 'validation'], function ($, messaging, validation) {
+  var form = $('.modifycomment');
+  form.bind('submit', function () {
+    validation.ajax.validate({
       url: this.action,
       type: 'POST',
+      form: form,
       data: $(this).serialize(),
       success: function () {
         messaging.raiseSuccess($('.modifycomment'), 'Your comment has been successfully updated.');

@@ -1,11 +1,13 @@
-﻿define('comment', ['jquery'], function ($) {
-  $('form').bind('submit', function () {
-    $.ajax({
+﻿define('comment', ['jquery', 'messaging', 'validation'], function ($, messaging, validation) {
+  var form = $('form');
+  form.bind('submit', function () {
+    validation.ajax.validate({
       url: this.action,
-      type:'POST',
+      type: 'POST',
+      form: form,
       data: $(this).serialize(),
       success: function () {
-        $('.submitcomment').text('Your comment has been submitted!');
+        messaging.raiseSuccess(form, 'Your comment has been submitted!');
       }
     });
     return false;

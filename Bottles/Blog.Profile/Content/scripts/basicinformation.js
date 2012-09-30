@@ -1,9 +1,10 @@
-﻿define('basicinformation', ['jquery', 'messaging'], function ($, messaging) {
+﻿define('basicinformation', ['jquery', 'messaging', 'validation'], function ($, messaging, validation) {
   var form = $('form', '.basicinformation');
   form.bind('submit', function () {
-    $.ajax({
+    validation.ajax.validate({
       url: this.action,
       type: 'POST',
+      form: form,
       data: $(this).serialize(),
       success: function () {
         messaging.raiseSuccess(form, 'Your profile information has been successfully updated.');

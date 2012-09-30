@@ -6,7 +6,7 @@
           add: function (errorMessage) {
             this.body.append('<li>' + errorMessage + '</li>');
           },
-          getHtml: function(){
+          getHtml: function () {
             return this.body[0].outerHTML;
           }
         };
@@ -14,11 +14,12 @@
 
   validation.ajax.validate = function (options) {
     var callback = options.success,
+      form = options.form,
       request = $.extend(options, {
         success: function (data) {
           var errors = data.errors,
               summary = buildSummary();
-
+          $('.error', form).removeClass('error');
           if (errors) {
 
             _.each(errors, function (error) {
@@ -26,7 +27,7 @@
               summary.add(error.errorMessage);
             });
 
-            messaging.raiseError(options.form, summary.getHtml());
+            messaging.raiseError(form, summary.getHtml());
           } else {
             callback(data);
           }

@@ -6,5 +6,6 @@
   <include>..\Bottles\Blog.Home</include>
   <include>..\Bottles\Blog.Information</include>
   <include>..\Bottles\Blog.Profile</include>
+  <include>..\Bottles\Blog.Settings</include>
   <EnvironmentAssembly>Blog</EnvironmentAssembly>
 </links>

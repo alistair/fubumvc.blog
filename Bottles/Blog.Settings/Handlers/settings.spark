@@ -1,0 +1,7 @@
+﻿<viewdata model="Blog.Settings.SettingsViewModel"/>
+<header>
+    <h2>Settings</h2>
+</header>
+<div class="settings">
+  <ProfileNavigation/>
+</div>

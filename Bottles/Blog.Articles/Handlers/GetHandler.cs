@@ -1,25 +1,29 @@
+using System.Linq;
 using Blog.Articles.Domain;
 using Blog.Core.Extensions;
 using FubuMVC.Core;
-using Raven.Client;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Blog.Articles
 {
-  public class GetHandler
-  {
-      private readonly IDocumentSession _session;
-
-    public GetHandler(IDocumentSession session)
+    public class GetHandler
     {
-        _session = session;
-    }
+        private readonly MongoDatabase _database;
 
-    [UrlPattern("{Uri}")]
-    public ArticleViewModel Execute(ArticleInputModel inputModel)
-    {
-        var article = _session.Load<Article>(inputModel.Uri);
+        public GetHandler(MongoDatabase database)
+        {
+            _database = database;
+        }
 
-        return article.DynamicMap<ArticleViewModel>();
+        [UrlPattern("{Uri}")]
+        public ArticleViewModel Execute(ArticleInputModel inputModel)
+        {
+            var article = _database.GetCollection("Articles")
+                .AsQueryable<Article>()
+                .FirstOrDefault(x => x.Id == inputModel.Uri);
+
+            return article.DynamicMap<ArticleViewModel>();
+        }
     }
-  }
 }

@@ -1,8 +1,10 @@
-﻿namespace Blog.Comments.Modify
+﻿using System;
+
+namespace Blog.Comments.Modify
 {
     public class UpdateCommentInputModel
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public string Uri { get; set; }
         public string Author { get; set; }
         public string Email { get; set; }

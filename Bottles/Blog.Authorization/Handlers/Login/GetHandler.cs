@@ -1,24 +1,26 @@
 using System.Linq;
+using Blog.Authorization.Domain;
 using Blog.Core.Domain;
 using DotNetOpenAuth.OpenId.RelyingParty;
 using FubuMVC.Core.Runtime;
 using FubuMVC.Core.Security;
-using Raven.Client;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Blog.Authorization.Login
 {
     public class GetHandler
     {
         private readonly IAuthenticationContext _authenticationContext;
-        private readonly IDocumentSession _session;
+        private readonly MongoDatabase _database;
         private readonly ISessionState _state;
 
         public GetHandler(IAuthenticationContext authenticationContext,
-            IDocumentSession session,
+            MongoDatabase database,
             ISessionState state)
         {
             _authenticationContext = authenticationContext;
-            _session = session;
+            _database = database;
             _state = state;
         }
 
@@ -32,13 +34,15 @@ namespace Blog.Authorization.Login
             {
                 _authenticationContext.ThisUserHasBeenAuthenticated(response.ClaimedIdentifier, false);
                 viewModel.LoginSuccessful = true;
+                //TODO: Get user out of session state.
+                //var user = _database.GetCollection("Users")
+                //    .AsQueryable<User>()
+                //    .SingleOrDefault(x => x.Id == response.ClaimedIdentifier);
 
-                _state.Set(_session.Query<UserInformation>()
-                    .SingleOrDefault(x => x.ClaimedIdentifier == response.ClaimedIdentifier)
-                    ?? new UserInformation
-                    {
-                        FirstName = "Unknown"
-                    });
+                //_state.Set(user ?? new User
+                //    {
+                //        FirstName = "Unknown"
+                //    });
             }
 
             return viewModel;

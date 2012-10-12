@@ -1,27 +1,21 @@
-using System.Linq;
 using Blog.Comments.Domain;
-using Raven.Client;
-using Raven.Client.Linq;
+using MongoDB.Driver;
 
 namespace Blog.Comments.Count
 {
-  public class GetHandler
-  {
-      private readonly IDocumentSession _session;
-
-      public GetHandler(IDocumentSession session)
+    public class GetHandler
     {
-        _session = session;
-    }
+        private readonly MongoDatabase _database;
 
-    public dynamic Execute(CommentsCountInputModel inputModel)
-    {
-        RavenQueryStatistics stats;
-        _session.Query<Comment>()
-            .Where(x => x.ArticleUri == inputModel.ArticleUri)
-            .Statistics(out stats).ToArray();
+        public GetHandler(MongoDatabase database)
+        {
+            _database = database;
+        }
 
-        return stats.TotalResults;
+        public dynamic Execute(CommentsCountInputModel inputModel)
+        {
+            return _database.GetCollection<Comment>("Comments")
+                .Count();
+        }
     }
-  }
 }

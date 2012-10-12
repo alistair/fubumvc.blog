@@ -1,34 +1,34 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Blog.Comments.Domain;
 using Blog.Core.Extensions;
-using Raven.Client;
-using Raven.Client.Linq;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Blog.Comments.Manage
 {
     public class GetHandler
     {
-        private readonly IDocumentSession _session;
+        private readonly MongoDatabase _database;
 
-        public GetHandler(IDocumentSession session)
+        public GetHandler(MongoDatabase database)
         {
-            _session = session;
+            _database = database;
         }
 
         public ManageCommentsViewModel Execute(ManageCommentsInputModel inputModel)
         {
-            RavenQueryStatistics stats;
-            var comments = _session.Query<Comment>()
+            var comments = 
+                _database.GetCollection("Comments")
+                .AsQueryable<Comment>()
                 .OrderByDescending(x => x.PublishedDate)
-                .Statistics(out stats)
-                .Page(inputModel)
+                //.Statistics(out stats)
+                //.Page(inputModel)
                 .ToList();
 
             return new ManageCommentsViewModel
             {
                 Comments = comments.Select(x => x.DynamicMap<ManageCommentViewModel>()),
-                TotalPages = stats.TotalPages(inputModel.Count ?? 0)
+                TotalPages =0// stats.TotalPages(inputModel.Count ?? 0)
             };
         }
     }

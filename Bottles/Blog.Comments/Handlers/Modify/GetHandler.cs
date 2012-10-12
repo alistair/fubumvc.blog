@@ -1,21 +1,25 @@
-﻿using Blog.Comments.Domain;
+﻿using System.Linq;
+using Blog.Comments.Domain;
 using Blog.Core.Extensions;
-using Raven.Client;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Blog.Comments.Modify
 {
     public class GetHandler
     {
-        private readonly IDocumentSession _session;
+        private readonly MongoDatabase _database;
 
-        public GetHandler(IDocumentSession session)
+        public GetHandler(MongoDatabase database)
         {
-            _session = session;
+            _database = database;
         }
 
         public ModifyCommentViewModel Execute(ModifyCommentInputModel inputModel)
         {
-            var comment = _session.Load<Comment>(inputModel.Id);
+            var comment = _database.GetCollection("Comments")
+                .AsQueryable<Comment>()
+                .First(x => x.Id == inputModel.Id);
 
             return comment.DynamicMap<ModifyCommentViewModel>();
         }

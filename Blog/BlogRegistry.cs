@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Blog.Behaviors;
 using Blog.Policies;
 using Bottles;
 using FubuMVC.Core;
@@ -24,7 +23,6 @@ namespace Blog
 
             Views.TryToAttachWithDefaultConventions();
 
-            Policies.WrapBehaviorChainsWith<RavenDbBehavior>();
             Policies.Add<ValidationPolicy>();
 
             Services(registry =>

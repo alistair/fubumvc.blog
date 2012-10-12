@@ -1,21 +1,25 @@
-﻿using Blog.Articles.Domain;
-using Blog.Core.Extensions;
-using Raven.Client;
+﻿using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 
 namespace Blog.Articles.Manage
 {
     public class DeleteHandler
     {
-        private readonly IDocumentSession _session;
+        private readonly MongoDatabase _database;
 
-        public DeleteHandler(IDocumentSession session)
+        public DeleteHandler(MongoDatabase database)
         {
-            _session = session;
+            _database = database;
         }
 
         public DeleteArticleViewModel Execute(DeleteArticleInputModel inputModel)
         {
-            _session.Delete<Article>(inputModel.Id);
+            _database.GetCollection("Articles")
+                .Remove(Query.EQ("_id", inputModel.Id));
+
+            _database.GetCollection("Comments")
+                .Remove(Query.EQ("ArticleUri", inputModel.Id));
+
             return new DeleteArticleViewModel();
         }
     }

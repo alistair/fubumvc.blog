@@ -1,36 +1,35 @@
-using Blog.Core.Domain;
 using Blog.Core.Extensions;
+using Blog.Profile.Domain;
 using FubuMVC.Core.Runtime;
 using FubuMVC.Core.Security;
-using Raven.Client;
+using MongoDB.Driver;
 
 namespace Blog.Profile.BasicInformation
 {
     public class PostHandler
     {
         private readonly ISecurityContext _securityContext;
-        private readonly IDocumentSession _session;
+        private readonly MongoDatabase _database;
         private readonly ISessionState _state;
 
-        public PostHandler(ISecurityContext securityContext, IDocumentSession session, ISessionState state)
+        public PostHandler(ISecurityContext securityContext, MongoDatabase database, ISessionState state)
         {
             _securityContext = securityContext;
-            _session = session;
+            _database = database;
             _state = state;
         }
 
         public BasicInformationViewModel Execute(EditBasicInformationInputModel inputModel)
         {
-            var identity = _state.Get<UserInformation>();
-            var userInformation = inputModel.DynamicMap<UserInformation>();
-            userInformation.Id = identity.Id;
+            var user = inputModel.DynamicMap<User>();
 
-            userInformation.ClaimedIdentifier = _securityContext.CurrentIdentity.Name;
+            user.Id = _securityContext.CurrentIdentity.Name;
 
-            _session.Store(userInformation);
-            _state.Set(userInformation);
+            _database.GetCollection("Users")
+                .Save(user);
+            //_state.Set();
 
-            return userInformation.DynamicMap<BasicInformationViewModel>();
+            return user.DynamicMap<BasicInformationViewModel>();
         }
     }
 }

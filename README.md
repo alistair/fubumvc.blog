@@ -3,18 +3,13 @@ A blogging web application using:
 
 * FubuMVC
 * SparkViewEngine
-* RavenDB
+* mongoDB
 * JavaScript (require, underscore, amplify, showdown, and jQuery)
 
 <h2>Documentation:</h2>
 To run:
-* Run 'setup.bat' to install nuget packages.
-* Start the database by running 'startdb.bat'.
-* Run FubuMVC.Blog.sln, and click F5 start the project.
-
-To run via rake:
 * Run 'rake', to pull packages and build the project.
-* Run 'rake startdb', to start teh database.
+* Run 'rake startdb', to start the database. //not working on the branch
 * Run FubuMVC.Blog.sln, and click F5 start the project.
 
 

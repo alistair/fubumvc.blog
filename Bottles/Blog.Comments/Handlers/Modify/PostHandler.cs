@@ -1,28 +1,29 @@
 ﻿using System;
 using Blog.Comments.Domain;
-using Raven.Client;
+using MongoDB.Driver;
 
 namespace Blog.Comments.Modify
 {
     public class PostHandler
     {
-        private readonly IDocumentSession _session;
+        private readonly MongoDatabase _database;
 
-        public PostHandler(IDocumentSession session)
+        public PostHandler(MongoDatabase database)
         {
-            _session = session;
+            _database = database;
         }
 
         public void Execute(UpdateCommentInputModel inputModel)
         {
-            _session.Store(new Comment
-            {
-                Id = inputModel.Id,
-                ArticleUri = inputModel.Uri,
-                Body = inputModel.Comment,
-                Author = inputModel.Author,
-                PublishedDate = new DateTimeOffset(DateTime.Now)
-            });
+            _database.GetCollection("Comments")
+                .Save(new Comment
+                {
+                    Id = inputModel.Id,
+                    ArticleUri = inputModel.Uri,
+                    Body = inputModel.Comment,
+                    Author = inputModel.Author,
+                    PublishedDate = new DateTimeOffset(DateTime.Now)
+                });
         }
     }
 }

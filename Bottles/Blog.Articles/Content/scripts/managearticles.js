@@ -15,16 +15,7 @@
       dataType: 'json',
       success: function () {
         messaging.raiseRemove($('.managearticlefilters:first').parent(), 'Article (' + id + '), has been successfully deleted.');
-        $.ajax({
-          url: '/comments/delete-for-article',
-          type: 'DELETE',
-          data: { ArticleId: id },
-          dataType: 'json',
-          success: function () {
-            link.closest('tr').fadeOut('slow');
-            messaging.raiseRemove($('.managearticlefilters:first').parent(), 'Article (' + id + '), and article comments have been successfully deleted.');
-          }
-        });
+        link.closest('tr').fadeOut('slow');
       }
     });
   });

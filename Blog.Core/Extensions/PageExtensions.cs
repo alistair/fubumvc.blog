@@ -21,8 +21,8 @@ namespace Blog.Core.Extensions
         public static HtmlTag Menu(this IFubuPage page, string menuName = null)
         {
             var navigationService = page.Get<INavigationService>();
-            var state = page.Get<ISessionState>();
-            var identity = state.Get<UserInformation>();
+            //var state = page.Get<ISessionState>();
+            //var identity = state.Get<UserInformation>();
             var items = navigationService.MenuFor(new NavigationKey(menuName ?? StringConstants.BlogName));
             var menu = new HtmlTag("ul");
 
@@ -33,12 +33,12 @@ namespace Blog.Core.Extensions
                 li.AddClass(
                     string.Format("menu-item-{0}", x.Key.Replace(" ", string.Empty).ToLowerInvariant()));
 
-                if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available && identity != null)
-                {
-                    var aTag = new LinkTag(string.Format("Welcome, {0}", identity.FirstName), "/profile");
-                    aTag.AddClass("user");
-                    menu.Append(aTag);
-                }
+                //if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available && identity != null)
+                //{
+                //    var aTag = new LinkTag(string.Format("Welcome, {0}", identity.FirstName), "/profile");
+                //    aTag.AddClass("user");
+                //    menu.Append(aTag);
+                //}
 
                 if (x.MenuItemState == MenuItemState.Active)
                     li.AddClass("current");

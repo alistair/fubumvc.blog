@@ -4,7 +4,7 @@ namespace Blog.Comments.Domain
 {
     public class Comment
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public string ArticleUri { get; set; }
         public string Author { get; set; }
         public DateTimeOffset PublishedDate { get; set; }

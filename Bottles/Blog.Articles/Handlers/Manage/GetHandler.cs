@@ -1,33 +1,34 @@
 ﻿using System.Linq;
 using Blog.Articles.Domain;
 using Blog.Core.Extensions;
-using Raven.Client;
-using Raven.Client.Linq;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Blog.Articles.Manage
 {
     public class GetHandler
     {
-        private readonly IDocumentSession _session;
+        private readonly MongoDatabase _database;
 
-        public GetHandler(IDocumentSession session)
+        public GetHandler(MongoDatabase database)
         {
-            _session = session;
+            _database = database;
         }
 
         public ManageArticlesViewModel Execute(ManageArticlesInputModel inputModel)
         {
-            RavenQueryStatistics stats;
-            var articles = _session.Query<Article>()
+            var articles = _database
+                .GetCollection("Articles")
+                .AsQueryable<Article>()
                 .OrderByDescending(x => x.PublishedDate)
-                .Statistics(out stats)
-                .Page(inputModel)
+                //.Statistics(out stats)
+                //.Page(inputModel)
                 .ToList();
 
             return new ManageArticlesViewModel
             {
                 Articles = articles.Select(x => x.DynamicMap<ManageArticleViewModel>()),
-                TotalPages = stats.TotalPages(inputModel.Count ?? 0)
+                TotalPages = 1// stats.TotalPages(inputModel.Count ?? 0)
             };
         }
 

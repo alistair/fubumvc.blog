@@ -1,7 +1,9 @@
+using System;
+
 namespace Blog.Comments.Manage
 {
     public class DeleteCommentInputModel
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

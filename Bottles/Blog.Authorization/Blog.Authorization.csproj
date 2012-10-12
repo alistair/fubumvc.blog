@@ -52,8 +52,11 @@
     <Reference Include="FubuMVC.Core">
       <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Raven.Client.Lightweight">
-      <HintPath>..\..\packages\RavenDB.Client.1.0.972\lib\net40\Raven.Client.Lightweight.dll</HintPath>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\packages\mongocsharpdriver.1.6\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\packages\mongocsharpdriver.1.6\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -67,6 +70,7 @@
     <Compile Include="AuthorizationNavigationRegistry.cs" />
     <Compile Include="AuthorizationRegistry.cs" />
     <Compile Include="Conventions\AuthorizationConvention.cs" />
+    <Compile Include="Domain\User.cs" />
     <Compile Include="Handlers\AuthorizationFailure\AuthorizationFailureHandler.cs" />
     <Compile Include="Handlers\AuthorizationFailure\AuthorizationFailureInputModel.cs" />
     <Compile Include="Handlers\AuthorizationFailure\AuthorizationFailureViewModel.cs" />

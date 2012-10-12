@@ -2,24 +2,26 @@ using System.Linq;
 using Blog.Comments.Domain;
 using Blog.Core.Extensions;
 using FubuMVC.Core;
-using Raven.Client;
-using Raven.Client.Linq;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Blog.Comments
 {
     public class GetHandler
     {
-        private readonly IDocumentSession _session;
+        private readonly MongoDatabase _database;
 
-        public GetHandler(IDocumentSession session)
+        public GetHandler(MongoDatabase database)
         {
-            _session = session;
+            _database = database;
         }
 
         [UrlPattern("comments/{Uri}")]
         public CommentsViewModel Execute(CommentsInputModel inputModel)
         {
-            var comments = _session.Query<Comment>()
+            var comments = _database
+                .GetCollection("Comments")
+                .AsQueryable<Comment>()
                 .Where(x => x.ArticleUri.Equals(inputModel.Uri))
                 .OrderByDescending(x => x.PublishedDate)
                 .ToList();

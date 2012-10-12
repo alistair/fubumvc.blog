@@ -1,23 +1,27 @@
-﻿using Blog.Articles.Domain;
+﻿using System.Linq;
+using Blog.Articles.Domain;
 using Blog.Core.Extensions;
-using Raven.Client;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace Blog.Articles.Compose
 {
     public class GetHandler
     {
-        private readonly IDocumentSession _session;
+        private readonly MongoDatabase _database;
 
-        public GetHandler(IDocumentSession session)
+        public GetHandler(MongoDatabase database)
         {
-            _session = session;
+            _database = database;
         }
 
         public ComposeViewModel Execute(ComposeInputModel inputModel)
         {
             if(string.IsNullOrEmpty(inputModel.Id)) return new ComposeViewModel();
 
-            var article = _session.Load<Article>(inputModel.Id);
+            var article = _database.GetCollection("Articles")
+                .AsQueryable<Article>()
+                .First(x => x.Id == inputModel.Id);
 
             return article.DynamicMap<ComposeViewModel>();
         }

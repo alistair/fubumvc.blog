@@ -70,7 +70,6 @@
     <Compile Include="AuthorizationNavigationRegistry.cs" />
     <Compile Include="AuthorizationRegistry.cs" />
     <Compile Include="Conventions\AuthorizationConvention.cs" />
-    <Compile Include="Domain\User.cs" />
     <Compile Include="Handlers\AuthorizationFailure\AuthorizationFailureHandler.cs" />
     <Compile Include="Handlers\AuthorizationFailure\AuthorizationFailureInputModel.cs" />
     <Compile Include="Handlers\AuthorizationFailure\AuthorizationFailureViewModel.cs" />

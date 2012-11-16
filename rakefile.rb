@@ -30,9 +30,3 @@ desc "Run unit tests for fubumvc.blog."
 task :unittests do
   #Yeah I really have to write some tests for all this.
 end
-
-
-desc "Start RavenDB Server for fubumvc.blog."
-task :startdb do |cmd|
-    #TODO
-end

@@ -1,4 +1,4 @@
-﻿namespace Blog.Authorization.Domain
+﻿namespace Blog.Core.Domain
 {
     public class User
     {

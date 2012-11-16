@@ -17,18 +17,19 @@ namespace Blog.Comments.Manage
 
         public ManageCommentsViewModel Execute(ManageCommentsInputModel inputModel)
         {
-            var comments = 
-                _database.GetCollection("Comments")
+            long totalCount;
+
+            var comments = _database.GetCollection("Comments")
+                .WithCount(out totalCount)
                 .AsQueryable<Comment>()
                 .OrderByDescending(x => x.PublishedDate)
-                //.Statistics(out stats)
-                //.Page(inputModel)
+                .Page(inputModel)
                 .ToList();
 
             return new ManageCommentsViewModel
             {
                 Comments = comments.Select(x => x.DynamicMap<ManageCommentViewModel>()),
-                TotalPages =0// stats.TotalPages(inputModel.Count ?? 0)
+                TotalPages = totalCount.TotalPages(inputModel.Count)
             };
         }
     }

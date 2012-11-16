@@ -9,7 +9,7 @@ _ReSharper.*
 *.suo
 *.swp
 *.swo
- *.DotSettings
+*.DotSettings
 *sass-cache/
 *.css
 *.csproj.*

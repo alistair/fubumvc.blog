@@ -2,7 +2,6 @@
 using Blog.Articles.Domain;
 using Blog.Core.Extensions;
 using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 namespace Blog.Articles.Compose
 {
@@ -19,8 +18,7 @@ namespace Blog.Articles.Compose
         {
             if(string.IsNullOrEmpty(inputModel.Id)) return new ComposeViewModel();
 
-            var article = _database.GetCollection("Articles")
-                .AsQueryable<Article>()
+            var article = _database.Query<Article>()
                 .First(x => x.Id == inputModel.Id);
 
             return article.DynamicMap<ComposeViewModel>();

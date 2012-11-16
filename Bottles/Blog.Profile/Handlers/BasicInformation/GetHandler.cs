@@ -3,7 +3,6 @@ using Blog.Core.Extensions;
 using Blog.Profile.Domain;
 using FubuMVC.Core.Security;
 using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 namespace Blog.Profile.BasicInformation
 {
@@ -20,8 +19,7 @@ namespace Blog.Profile.BasicInformation
 
         public BasicInformationViewModel Execute(BasicInformationInputModel inputModel)
         {
-            var user = _database.GetCollection("Users")
-                .AsQueryable<User>()
+            var user = _database.Query<User>()
                 .SingleOrDefault(x => x.Id == _securityContext.CurrentIdentity.Name) ??
                 new User();
 

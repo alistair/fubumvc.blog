@@ -2,7 +2,6 @@
 using Blog.Comments.Domain;
 using Blog.Core.Extensions;
 using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 namespace Blog.Comments.Modify
 {
@@ -17,8 +16,7 @@ namespace Blog.Comments.Modify
 
         public ModifyCommentViewModel Execute(ModifyCommentInputModel inputModel)
         {
-            var comment = _database.GetCollection("Comments")
-                .AsQueryable<Comment>()
+            var comment = _database.Query<Comment>()
                 .First(x => x.Id == inputModel.Id);
 
             return comment.DynamicMap<ModifyCommentViewModel>();

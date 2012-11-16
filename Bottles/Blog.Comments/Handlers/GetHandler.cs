@@ -3,7 +3,6 @@ using Blog.Comments.Domain;
 using Blog.Core.Extensions;
 using FubuMVC.Core;
 using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 namespace Blog.Comments
 {
@@ -20,8 +19,7 @@ namespace Blog.Comments
         public CommentsViewModel Execute(CommentsInputModel inputModel)
         {
             var comments = _database
-                .GetCollection("Comments")
-                .AsQueryable<Comment>()
+                .Query<Comment>()
                 .Where(x => x.ArticleUri.Equals(inputModel.Uri))
                 .OrderByDescending(x => x.PublishedDate)
                 .ToList();

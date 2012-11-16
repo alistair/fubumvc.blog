@@ -71,7 +71,10 @@
   <ItemGroup>
     <Compile Include="Constants\StringConstants.cs" />
     <Compile Include="Domain\IPageable.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Extensions\DatabaseExtensions.cs" />
     <Compile Include="Extensions\MapperExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\PageExtensions.cs" />
     <Compile Include="HtmlTags\TextAreaTag.cs" />
     <Compile Include="Permissions\IRequireBasicAuthorization.cs" />

@@ -3,7 +3,6 @@ using Blog.Articles.Domain;
 using Blog.Core.Extensions;
 using FubuMVC.Core;
 using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 namespace Blog.Articles
 {
@@ -19,9 +18,7 @@ namespace Blog.Articles
         [UrlPattern("{Uri}")]
         public ArticleViewModel Execute(ArticleInputModel inputModel)
         {
-            var article = _database.GetCollection("Articles")
-                .AsQueryable<Article>()
-                .FirstOrDefault(x => x.Id == inputModel.Uri);
+            var article = _database.Query<Article>().FirstOrDefault(x => x.Id == inputModel.Uri);
 
             return article.DynamicMap<ArticleViewModel>();
         }

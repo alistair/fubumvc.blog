@@ -17,18 +17,19 @@ namespace Blog.Articles.Manage
 
         public ManageArticlesViewModel Execute(ManageArticlesInputModel inputModel)
         {
-            var articles = _database
-                .GetCollection("Articles")
+            long totalCount;
+
+            var articles = _database.GetCollection("Articles")
+                .WithCount(out totalCount)
                 .AsQueryable<Article>()
                 .OrderByDescending(x => x.PublishedDate)
-                //.Statistics(out stats)
-                //.Page(inputModel)
+                .Page(inputModel)
                 .ToList();
 
             return new ManageArticlesViewModel
             {
                 Articles = articles.Select(x => x.DynamicMap<ManageArticleViewModel>()),
-                TotalPages = 1// stats.TotalPages(inputModel.Count ?? 0)
+                TotalPages = totalCount.TotalPages(inputModel.Count)
             };
         }
 

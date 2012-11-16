@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using Blog.Core.Constants;
 using Blog.Core.Domain;
 using Blog.Core.HtmlTags;
 using FubuCore;
 using FubuCore.Reflection;
-using FubuMVC.Core.Runtime;
+using FubuMVC.Core.Security;
 using FubuMVC.Core.UI;
 using FubuMVC.Core.UI.Configuration;
 using FubuMVC.Core.UI.Navigation;
 using FubuMVC.Core.View;
 using HtmlTags;
 using HtmlTags.Extended.Attributes;
+using MongoDB.Driver;
 
 namespace Blog.Core.Extensions
 {
@@ -21,8 +23,11 @@ namespace Blog.Core.Extensions
         public static HtmlTag Menu(this IFubuPage page, string menuName = null)
         {
             var navigationService = page.Get<INavigationService>();
-            //var state = page.Get<ISessionState>();
-            //var identity = state.Get<UserInformation>();
+            var security = page.Get<ISecurityContext>();
+            var user = page.Get<MongoDatabase>()
+                .Query<User>()
+                .FirstOrDefault(x => x.Id == security.CurrentIdentity.Name);
+
             var items = navigationService.MenuFor(new NavigationKey(menuName ?? StringConstants.BlogName));
             var menu = new HtmlTag("ul");
 
@@ -33,12 +38,12 @@ namespace Blog.Core.Extensions
                 li.AddClass(
                     string.Format("menu-item-{0}", x.Key.Replace(" ", string.Empty).ToLowerInvariant()));
 
-                //if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available && identity != null)
-                //{
-                //    var aTag = new LinkTag(string.Format("Welcome, {0}", identity.FirstName), "/profile");
-                //    aTag.AddClass("user");
-                //    menu.Append(aTag);
-                //}
+                if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available && user != null)
+                {
+                    var aTag = new LinkTag(string.Format("Welcome, {0}", user.FirstName), "/profile");
+                    aTag.AddClass("user");
+                    menu.Append(aTag);
+                }
 
                 if (x.MenuItemState == MenuItemState.Active)
                     li.AddClass("current");

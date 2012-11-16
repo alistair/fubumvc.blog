@@ -2,7 +2,6 @@
 using Blog.Articles.Domain;
 using Blog.Core.Extensions;
 using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 namespace Blog.Articles.Archive
 {
@@ -17,8 +16,7 @@ namespace Blog.Articles.Archive
 
         public ArchiveViewModel Execute(ArchiveInputModel inputModel)
         {
-            var articles  = _database.GetCollection("Articles")
-                .AsQueryable<Article>()
+            var articles  = _database.Query<Article>()
                 .Where(x => x.IsPublished)
                 .ToList();
 

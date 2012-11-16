@@ -9,7 +9,7 @@ A blogging web application using:
 <h2>Documentation:</h2>
 To run:
 * Run 'rake', to pull packages and build the project.
-* Run 'rake startdb', to start the database. //not working on the branch
+* Run mongoDB
 * Run FubuMVC.Blog.sln, and click F5 start the project.
 
 

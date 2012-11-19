@@ -11,7 +11,9 @@
     <ul>
       <li>${ this.InputFor(x => x.FirstName).WithCustomLabel("First Name") }</li>
       <li>${ this.InputFor(x => x.LastName).WithCustomLabel("Last Name") }</li>
+      <li>${ this.InputFor(x => x.NickName).WithCustomLabel("Nick Name") }</li>
       <li>${ this.InputFor(x => x.EmailAddress).WithCustomLabel("E-mail") }</li>
+      <li>${ this.Gravatar(Model.GravatarEmailAddress, 22)}${ this.InputFor(x => x.GravatarEmailAddress).WithCustomLabel("Gravatar E-mail") }</li>
       <li>${ this.TextAreaFor(x => x.Description).WithCustomLabel("Description") }</li>
       <li>${this.Submit()} ${this.Button("Cancel")} </li>
     </ul>

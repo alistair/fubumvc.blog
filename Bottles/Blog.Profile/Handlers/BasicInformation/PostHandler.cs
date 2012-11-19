@@ -1,5 +1,5 @@
+using Blog.Core.Domain;
 using Blog.Core.Extensions;
-using Blog.Profile.Domain;
 using FubuMVC.Core.Runtime;
 using FubuMVC.Core.Security;
 using MongoDB.Driver;
@@ -27,7 +27,6 @@ namespace Blog.Profile.BasicInformation
 
             _database.GetCollection("Users")
                 .Save(user);
-            //_state.Set();
 
             return user.DynamicMap<BasicInformationViewModel>();
         }

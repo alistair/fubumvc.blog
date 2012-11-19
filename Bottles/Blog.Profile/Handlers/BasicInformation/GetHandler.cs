@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using Blog.Core.Domain;
 using Blog.Core.Extensions;
-using Blog.Profile.Domain;
 using FubuMVC.Core.Security;
 using MongoDB.Driver;
 

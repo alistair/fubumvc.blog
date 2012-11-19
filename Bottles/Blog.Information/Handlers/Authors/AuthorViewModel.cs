@@ -4,6 +4,8 @@ namespace Blog.Information.Authors
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string NickName { get; set; }
+        public string GravatarHash { get; set; }
         public string FullName
         {
             get

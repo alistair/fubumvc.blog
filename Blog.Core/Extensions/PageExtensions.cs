@@ -20,16 +20,13 @@ namespace Blog.Core.Extensions
 {
     public static class PageExtensions
     {
+
         public static HtmlTag Menu(this IFubuPage page, string menuName = null)
         {
             var navigationService = page.Get<INavigationService>();
-            var security = page.Get<ISecurityContext>();
-            var user = page.Get<MongoDatabase>()
-                .Query<User>()
-                .FirstOrDefault(x => x.Id == security.CurrentIdentity.Name);
-
             var items = navigationService.MenuFor(new NavigationKey(menuName ?? StringConstants.BlogName));
             var menu = new HtmlTag("ul");
+            var user = page.GetUser();
 
             items.Each(x =>
             {
@@ -74,6 +71,23 @@ namespace Blog.Core.Extensions
             return submitTag;
         }
 
+        public static ImageTag Gravatar(this IFubuPage page, string email, int size = 100)
+        {
+            var user = page.GetUser();
+
+            var image = page.GravatarHash(user.GravatarHash, size);
+            image.Title("Refresh page to update, after save.");
+
+            return image;
+        }
+
+        public static ImageTag GravatarHash(this IFubuPage page, string hash, int size = 100)
+        {
+            var image = new ImageTag(string.Format("http://www.gravatar.com/avatar/{0}?s={1}&d=mm", hash, size));
+
+            return image;
+        }
+
         public static TextAreaTag TextAreaFor<T>(this IFubuPage<T> page, Expression<Func<T, object>> expression) where T : class
         {
             var name = page.Get<IElementNamingConvention>().GetName(typeof(T), expression.ToAccessor());
@@ -113,6 +127,17 @@ namespace Blog.Core.Extensions
             hiddenTag.Value(value);
 
             return hiddenTag;
+        }
+
+        private static User GetUser(this IFubuPage page)
+        {
+            var security = page.Get<ISecurityContext>();
+            var user = page.Get<MongoDatabase>()
+                .Query<User>()
+                .FirstOrDefault(x => x.Id == security.CurrentIdentity.Name);
+
+            return user;
+
         }
     }
 }

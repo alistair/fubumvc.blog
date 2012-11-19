@@ -19,6 +19,12 @@ namespace Blog.Profile.BasicInformation
                 .EmailAddress()
                 .When(x => !string.IsNullOrEmpty(x.EmailAddress))
                 .WithMessage("Please provide a valid Email Address");
+
+
+            RuleFor(x => x.GravatarEmailAddress)
+                .EmailAddress()
+                .When(x => !string.IsNullOrEmpty(x.GravatarEmailAddress))
+                .WithMessage("Please provide a valid Gravatar Email Address");
         }
     }
 }

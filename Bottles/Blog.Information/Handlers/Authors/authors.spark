@@ -4,8 +4,7 @@
 </header>
 <ul class="authors">
   <li each="var author in Model.Authors">
-    <img height="30px" widht="30px"
-         src="http://a248.e.akamai.net/assets.github.com/images/gravatars/gravatar-140.png"/>
+    ${this.GravatarHash(author.GravatarHash, 30)}
     <a href="">${author.FullName} </a>
     <p>${author.Description ?? "No details provided by author."}</p>
   </li>

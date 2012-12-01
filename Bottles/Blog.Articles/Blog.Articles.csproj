@@ -136,15 +136,6 @@
   <ItemGroup>
     <Content Include="Content\images\articles.png" />
     <Content Include="Content\images\compose.png" />
-    <Content Include="Content\images\document-print.png" />
-    <Content Include="Content\images\edit-redo.png" />
-    <Content Include="Content\images\edit-undo.png" />
-    <Content Include="Content\images\emblem-system.png" />
-    <Content Include="Content\images\format-text-bold.png" />
-    <Content Include="Content\images\format-text-italic.png" />
-    <Content Include="Content\images\image-x-generic.png" />
-    <Content Include="Content\images\internet-web-browser.png" />
-    <Content Include="Content\images\seperator.png" />
     <Content Include="Content\scripts\article.js" />
     <Content Include="Content\scripts\articles.js" />
     <Content Include="Content\scripts\compose.js" />

@@ -1,9 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog", "Blog\Blog.csproj", "{B7A5EE29-3029-41DC-AC1F-846360926915}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bottles", "Bottles", "{80676CA7-F8F3-4807-877A-F1DAFFC06D77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog", "Blog\Blog.csproj", "{B7A5EE29-3029-41DC-AC1F-846360926915}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Comments", "Bottles\Blog.Comments\Blog.Comments.csproj", "{492CB989-6705-4EE5-B633-432A991E64BE}"
 EndProject

@@ -4,7 +4,7 @@ A blogging web application using:
 * FubuMVC
 * SparkViewEngine
 * mongoDB
-* JavaScript (require, underscore, showdown, and jQuery)
+* JavaScript (require, underscore, pagedown, and jQuery)
 
 <h2>Documentation:</h2>
 To setup and run, follow these steps:
@@ -17,9 +17,8 @@ To setup and run, follow these steps:
 * Complete Profile Section.
 * Add permissions.
 * Add Administration Section to Profile.
-* Create settings POCO, save to RavenDB.
-* Wire up compose article quick action buttons, (undo, insert image, etc..)
+* Create settings POCO, save to mongo.
 * Complete Information Pages.
-* Convert all packages to use actual nuget packages.
+* Convert all packages to use actual nuget packages. Awaiting fubuMVC 1.0.
 * Clean up UI.
 * Add support for Internet Explorer 8-10.

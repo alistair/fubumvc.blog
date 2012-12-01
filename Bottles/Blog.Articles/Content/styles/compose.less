@@ -1,5 +1,34 @@
+@import "util/gradients.less";
+
 .menu-item-compose {
   background: transparent url('/_content/images/compose.png') no-repeat 0 0;
+}
+
+.btn, .btn:hover {
+  opacity: 0.85;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  border-right: solid 1px #CCC;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+#wmd-italic-button,
+#wmd-image-button,
+#wmd-redo-button,
+#wmd-hr-button {
+  border-right: none;
+}
+
+.btn-group {
+  margin: 4px 5px 4px 0;
+  .gradient(#FFF, #CCC, #FFF);
+  border: solid 1px #CCC;
+  border-radius: 3px;
+  padding: 2px;
 }
 
 .compose {
@@ -48,12 +77,6 @@
     float: left;
     padding: 0;
     margin: 0 0 10px 0;
-    div {
-      border-top: solid 1px #DDD !important;
-      background-color: #F5F5F5;
-      width: 100%;
-      clear: both;
-    }
     h2 {
       font-size: 15px !important;
       color: #A10000;
@@ -74,7 +97,7 @@
     height: 243px;
     resize: vertical;
   }
-  div {
+  & > div {
     margin-right: 2%;
     width: 78%;
   }

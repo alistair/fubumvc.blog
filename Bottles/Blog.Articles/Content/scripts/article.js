@@ -1,7 +1,7 @@
-﻿define('article', ['jquery', 'showdown', 'pretty'], function ($, sd, pretty) {
+﻿define('article', ['jquery', 'pagedown', 'pretty'], function ($, pagedown, pretty) {
   var article = $('section', 'article'),
       html = article.text().trim(),
-      md = sd.makeHtml(html);
+      md = pagedown.convert(html);
   article.html(md);
 
   pretty.makePagePretty();

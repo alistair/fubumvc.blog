@@ -10,20 +10,11 @@ ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
     ${this.HiddenInputFor(x=> x.CommentsCount)}
     ${this.InputFor(x => x.Title).WithCustomLabel("Title").Attr("tabindex", 1)}
     ${this.InputFor(x => x.Id).WithCustomLabel("Article Url")}
-    <div>
-      <img title="Undo" src="/_content/images/edit-undo.png"/>
-      <img title="Redo" src="/_content/images/edit-redo.png"/>
-      <img src="/_content/images/seperator.png"/>
-      <img title="Bold" src="/_content/images/format-text-bold.png"/>
-      <img title="Italic" src="/_content/images/format-text-italic.png"/>
-      <img src="/_content/images/seperator.png"/>
-      <img title="Insert Url" src="/_content/images/internet-web-browser.png"/>
-      <img title="Insert Image" src="/_content/images/image-x-generic.png"/>
-      <img title="Insert Code" src="/_content/images/emblem-system.png"/>
-      <img src="/_content/images/seperator.png"/>
-      <img title="Print" src="/_content/images/document-print.png"/>
+    <div id="wmd-button-bar">
     </div>
-    ${this.TextAreaFor(x => x.Body).Attr("tabindex", 2)}
+    ${this.TextAreaFor(x => x.Body)
+      .Id("wmd-input")
+      .Attr("tabindex", 2)}
   </div>
 
   <aside>
@@ -46,7 +37,7 @@ ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
       <h2>
       </h2>
     </header>
-    <section>
+    <section id="wmd-preview">
     </section>
   </article>
   ${this.Button("Cancel")}

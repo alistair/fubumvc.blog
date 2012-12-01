@@ -1,67 +1,80 @@
-﻿define('compose', ['jquery', 'underscore', 'showdown', 'pretty', 'validation'], function ($, _, sd, pretty, validation) {
-  var form = $('form'),
-      textarea = $('textarea[name=Body]'),
+﻿define('compose', ['jquery', 'underscore', 'pagedown', 'pretty', 'validation', 'textarea-selection'], function ($, _, pagedown, pretty, validation, textareaSelection) {
+    var form = $('form'),
+      textAreaSelector = '[name="Body"]',
+      textarea = $(textAreaSelector),
       titleInput = $('input[name=Title]'),
       urlInput = $('input[name=Id]'),
       previewHeader = $('#preview h2'),
       previewBox = $('#preview section'),
       showPreview = function () {
-        previewHeader.toggle(titleInput.val().length !== 0);
-        $('#preview').toggle(titleInput.val().length !== 0 ||
+          previewHeader.toggle(titleInput.val().length !== 0);
+          $('#preview').toggle(titleInput.val().length !== 0 ||
           textarea.val().length !== 0);
       },
       preview = _.debounce(function () {
-        previewBox.html(sd.makeHtml(textarea.val()));
-        pretty.makePagePretty();
-        pretty.makePrettyLineNumbersForPage();
-        showPreview();
+          //previewBox.html(sd.makeHtml(textarea.val()));
+          pretty.makePagePretty();
+          pretty.makePrettyLineNumbersForPage();
+          showPreview();
       }, 1000),
       setTitle = _.debounce(function () {
-        previewHeader.text(titleInput.val());
-        urlInput.val('/' + titleInput
+          previewHeader.text(titleInput.val());
+          urlInput.val('/' + titleInput
             .val()
             .toLowerCase()
             .replace(/[\.\\\/\?\!\'\"]/g, '')
             .replace(/[ ]/g, '-'));
-        prettyPrint();
-        showPreview();
+          prettyPrint();
+          showPreview();
       }, 1000),
       compose = function (prop, location) {
-        var data = form.serialize();
-        
-        validation.ajax.validate({
-          url: form.action,
-          type: 'POST',
-          form: form,
-          data: prop ? data + prop : data,
-          dataType: 'json',
-          success: function (result) {
-            window.location = result[location];
-          }
-        });
+          var data = form.serialize();
+
+          validation.ajax.validate({
+              url: form.action,
+              type: 'POST',
+              form: form,
+              data: prop ? data + prop : data,
+              dataType: 'json',
+              success: function (result) {
+                  window.location = result[location];
+              }
+          });
       };
+    pagedown.createEditor();
+    textarea.keydown(preview);
 
-  textarea.keydown(preview);
+    $('input[value="Post Article"], input[value="Update"]').click(function () {
+        compose(undefined, 'url');
+    });
 
-  $('input[value="Post Article"], input[value="Update"]').click(function () {
-    compose(undefined, 'url');
-  });
+    $('input[value="Save Draft"], input[value="Archive"]').click(function () {
+        compose("&IsDraft=true", 'manageUrl');
+    });
 
-  $('input[value="Save Draft"], input[value="Archive"]').click(function () {
-    compose("&IsDraft=true", 'manageUrl');
-  });
+    $('[title="Bold"]').click(function () {
+        var bold = '**';
+        textareaSelection.wrap(textAreaSelector, bold, bold);
+        preview();
+    });
 
-  preview();
-  if (urlInput.val().length === 0) {
-    titleInput.keydown(setTitle);
-    setTitle();
-  } else {
-    urlInput.attr('disabled', 'disabled');
-    urlInput.val('/' + urlInput.val());
-  }
+    $('[title="Italic"]').click(function () {
+        var italic = '_';
+        textareaSelection.wrap(textAreaSelector, italic, italic);
+        preview();
+    });
 
-  $('input[value=Cancel]').bind('click', function () {
-    window.location = '/articles/manage';
-  });
+    preview();
+    if (urlInput.val().length === 0) {
+        titleInput.keydown(setTitle);
+        setTitle();
+    } else {
+        urlInput.attr('disabled', 'disabled');
+        urlInput.val('/' + urlInput.val());
+    }
+
+    $('input[value=Cancel]').bind('click', function () {
+        window.location = '/articles/manage';
+    });
 
 });

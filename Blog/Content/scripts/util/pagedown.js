@@ -8,7 +8,10 @@ define('pagedown', [],
   function () {
     var pagedown = {},
         converter = Markdown.getSanitizingConverter();
-    
+
+    $.tooltip = function() {
+
+    };
     pagedown.createEditor = function () {
       var editor = new Markdown.Editor(converter);
       editor.run();

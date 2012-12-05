@@ -7,13 +7,10 @@ namespace Blog.Authorization.Login
     public class GetHandler
     {
         private readonly IAuthenticationContext _authenticationContext;
-        private readonly ISessionState _state;
 
-        public GetHandler(IAuthenticationContext authenticationContext,
-            ISessionState state)
+        public GetHandler(IAuthenticationContext authenticationContext)
         {
             _authenticationContext = authenticationContext;
-            _state = state;
         }
 
         public LoginViewModel Execute(LoginInputModel inputModel)

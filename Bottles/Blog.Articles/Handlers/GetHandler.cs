@@ -1,5 +1,6 @@
 using System.Linq;
 using Blog.Articles.Domain;
+using Blog.Core.Domain;
 using Blog.Core.Extensions;
 using FubuMVC.Core;
 using MongoDB.Driver;
@@ -19,8 +20,12 @@ namespace Blog.Articles
         public ArticleViewModel Execute(ArticleInputModel inputModel)
         {
             var article = _database.Query<Article>().FirstOrDefault(x => x.Id == inputModel.Uri);
+            var user = _database.Query<User>().SingleOrDefault(u => u.Id == article.AuthorId);
 
-            return article.DynamicMap<ArticleViewModel>();
+            var model = article.DynamicMap<ArticleViewModel>();
+            model.Author = user.FullName();
+
+            return model;
         }
     }
 }

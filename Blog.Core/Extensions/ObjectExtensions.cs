@@ -1,4 +1,5 @@
 using System;
+using Blog.Core.Domain;
 
 namespace Blog.Core.Extensions
 {
@@ -11,6 +12,11 @@ namespace Blog.Core.Extensions
             var pages = Math.Ceiling(d: totalItems/itemsPerPage.Value);
 
             return (int) pages;
+        }
+
+        public static string FullName(this User user)
+        {
+            return user != null ? string.Format("{0} {1}", user.FirstName, user.LastName) : "Unknown";
         }
     }
 }

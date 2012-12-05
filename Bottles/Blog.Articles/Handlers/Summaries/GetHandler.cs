@@ -1,5 +1,6 @@
 using System.Linq;
 using Blog.Articles.Domain;
+using Blog.Core.Domain;
 using Blog.Core.Extensions;
 using MongoDB.Driver;
 
@@ -21,9 +22,20 @@ namespace Blog.Articles.Summaries
                 .OrderByDescending(x => x.PublishedDate)
                 .Take(10).ToList();
 
+            var summaries = articles.Select(a =>
+            {
+                //TODO: improve
+                var user = _database.Query<User>().SingleOrDefault(u => u.Id == a.AuthorId);
+
+                var article = a.DynamicMap<ArticleSummaryViewModel>();
+
+                article.Author = user.FullName();
+                return article;
+            });
+
             return new ArticleSummariesViewModel
             {
-                Summaries = articles.Select(x => x.DynamicMap<ArticleSummaryViewModel>())
+                Summaries = summaries
             };
         }
     }

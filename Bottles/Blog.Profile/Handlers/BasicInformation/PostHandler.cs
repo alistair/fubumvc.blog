@@ -10,13 +10,11 @@ namespace Blog.Profile.BasicInformation
     {
         private readonly ISecurityContext _securityContext;
         private readonly MongoDatabase _database;
-        private readonly ISessionState _state;
 
-        public PostHandler(ISecurityContext securityContext, MongoDatabase database, ISessionState state)
+        public PostHandler(ISecurityContext securityContext, MongoDatabase database)
         {
             _securityContext = securityContext;
             _database = database;
-            _state = state;
         }
 
         public BasicInformationViewModel Execute(EditBasicInformationInputModel inputModel)

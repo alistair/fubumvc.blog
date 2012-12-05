@@ -145,7 +145,7 @@
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\Markdown.Editor.Icons.png" />
     <Content Include="Content\scripts\textarea-selection.js" />
-    <Content Include="Content\scripts\util\modal.js" />
+    <Content Include="Content\scripts\util\pagedown\pagedown.modal.js" />
     <Content Include="Content\scripts\util\tooltip.js" />
     <Content Include="Content\scripts\util\pagedown.js" />
     <Content Include="Content\scripts\util\pagedown\Markdown.Converter.js" />
@@ -162,6 +162,7 @@
     </Content>
     <None Include="Content\styles\buttons.less" />
     <Content Include="Content\styles\editor.less" />
+    <Content Include="Content\styles\modal.less" />
     <None Include="Content\styles\validation.less" />
     <None Include="Content\styles\messaging.less" />
     <None Include="Content\styles\paging.less" />

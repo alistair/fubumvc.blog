@@ -9,16 +9,15 @@ define('pagedown', [],
     var pagedown = {},
         converter = Markdown.getSanitizingConverter();
 
-    $.tooltip = function() {
+    $.tooltip = function () { }; //just show title tag
 
-    };
     pagedown.createEditor = function () {
       var editor = new Markdown.Editor(converter);
       editor.run();
     };
 
     pagedown.convert = function(text) {
-      var html = converter.makeHtml(text);
+      var html = converter.makeHtml(text.trim());
 
       return html;
     };

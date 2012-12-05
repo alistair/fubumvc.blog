@@ -1,13 +1,12 @@
 ﻿define('articles',['jquery', 'pagedown', 'underscore', 'pretty'], function ($, pagedown, _, pretty) {
-  var articles = $('section', 'article'),
-      html;
+  var articles = $('section', 'article');
 
   _.each(articles, function (article) {
     article = $(article);
-    html = article.html().trim();
-    article.html(pagedown.convert(html));
+
+    article.html(pagedown.convert(article.html()));
   });
-  
+
   pretty.makePagePretty();
   pretty.makePrettyLineNumbersForPage();
 

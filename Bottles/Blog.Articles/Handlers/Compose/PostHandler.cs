@@ -27,7 +27,7 @@ namespace Blog.Articles.Compose
             //var identity = _state.Get<UserInformation>();
 
             _database.GetCollection("Articles")
-                .Insert(new Article
+                .Save(new Article
                 {
                     //Author = identity != null
                     //    ? "string.Format("{0} {1}", identity.FirstName, identity.LastName)

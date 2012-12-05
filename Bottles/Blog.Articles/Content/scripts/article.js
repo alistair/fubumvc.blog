@@ -1,6 +1,6 @@
 ﻿define('article', ['jquery', 'pagedown', 'pretty'], function ($, pagedown, pretty) {
   var article = $('section', 'article'),
-      html = article.text().trim(),
+      html = article.text(),
       md = pagedown.convert(html);
   article.html(md);
 

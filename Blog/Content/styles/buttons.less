@@ -1,9 +1,6 @@
 ﻿@import "util/gradients.less";
 
-button,
-.button,
-input[type="submit"],
-input[type="button"] {
+.button {
   font-weight: bold;
   display: inline-block;
   text-align: center;
@@ -22,8 +19,7 @@ input[type="button"] {
   }
 }
 
-input[value^="Post"],
-input[value^="Submit"] {
+.green-button {
   border-color: #7CA33C;
   text-shadow: #A8D959 0 1px 0;
   color: #2A3813;
@@ -37,8 +33,7 @@ input[value^="Submit"] {
   }
 }
 
-input[value^="Update"],
-input[value^="Save"] {
+.orange-button {
   border-color: #D49B00;
   text-shadow: #EDC65A 0 1px 0;
   color: #4A3600;
@@ -49,6 +44,22 @@ input[value^="Save"] {
     border-bottom-color: #D49B00;
     .gradient(#FACA46, #E8B11A, #FACA46);
   }
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+  .button;
+}
+
+input[value^="Post"],
+input[value^="Submit"] {
+  .green-button;
+}
+
+input[value^="Update"],
+input[value^="Save"] {
+  .orange-button;
 }
 
 input[value^="Archive"] {

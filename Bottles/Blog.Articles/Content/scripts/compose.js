@@ -16,7 +16,7 @@
           pretty.makePagePretty();
           pretty.makePrettyLineNumbersForPage();
           showPreview();
-      }, 1000),
+      }, 500),
       setTitle = _.debounce(function () {
           previewHeader.text(titleInput.val());
           urlInput.val('/' + titleInput

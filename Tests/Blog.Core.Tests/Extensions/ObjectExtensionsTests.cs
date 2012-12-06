@@ -39,7 +39,7 @@ namespace Blog.Core.Tests.Extensions
             [Fact]
             public void Correct_page_number_per_items_per_page_when_total_items_greater_than_items_per_page()
             {
-                var items = 20l;
+                const long items = 20L;
 
                 items.TotalPages(5)
                     .Should()
@@ -49,7 +49,7 @@ namespace Blog.Core.Tests.Extensions
             [Fact]
             public void Correct_page_number_when_items_less_than_items_per_page()
             {
-                var items = 4l;
+                const long items = 4L;
 
                 items.TotalPages(5)
                     .Should()

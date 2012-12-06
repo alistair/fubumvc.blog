@@ -1,22 +1,21 @@
 ﻿using System;
 using Blog.Comments.Domain;
-using MongoDB.Driver;
+using Blog.Core.Database;
 
 namespace Blog.Comments.Modify
 {
     public class PostHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public PostHandler(MongoDatabase database)
+        public PostHandler(IDocumentDatabase database)
         {
             _database = database;
         }
 
         public void Execute(UpdateCommentInputModel inputModel)
         {
-            _database.GetCollection("Comments")
-                .Save(new Comment
+            _database.Save(new Comment
                 {
                     Id = inputModel.Id,
                     ArticleUri = inputModel.Uri,

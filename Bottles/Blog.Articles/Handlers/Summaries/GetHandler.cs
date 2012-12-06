@@ -1,16 +1,16 @@
 using System.Linq;
 using Blog.Articles.Domain;
+using Blog.Core.Database;
 using Blog.Core.Domain;
 using Blog.Core.Extensions;
-using MongoDB.Driver;
 
 namespace Blog.Articles.Summaries
 {
     public class GetHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public GetHandler(MongoDatabase database)
+        public GetHandler(IDocumentDatabase database)
         {
             _database = database;
         }

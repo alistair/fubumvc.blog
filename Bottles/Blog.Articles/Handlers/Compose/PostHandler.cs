@@ -1,19 +1,19 @@
 ﻿using System;
 using Blog.Articles.Domain;
 using Blog.Articles.Manage;
+using Blog.Core.Database;
 using FubuMVC.Core.Security;
 using FubuMVC.Core.Urls;
-using MongoDB.Driver;
 
 namespace Blog.Articles.Compose
 {
     public class PostHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
         private readonly ISecurityContext _securityContext;
         private readonly UrlRegistry _urlRegistry;
 
-        public PostHandler(MongoDatabase database, ISecurityContext securityContext,
+        public PostHandler(IDocumentDatabase database, ISecurityContext securityContext,
             UrlRegistry urlRegistry)
         {
             _database = database;
@@ -23,8 +23,7 @@ namespace Blog.Articles.Compose
 
         public ComposeArticleResourceModel Execute(ComposeArticleInputModel inputModel)
         {
-            _database.GetCollection("Articles")
-                .Save(new Article
+            _database.Save(new Article
                 {
                     AuthorId = _securityContext.CurrentIdentity.Name,
                     Body = inputModel.Body,

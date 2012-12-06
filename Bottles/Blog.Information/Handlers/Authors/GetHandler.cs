@@ -1,25 +1,22 @@
 using System.Linq;
+using Blog.Core.Database;
 using Blog.Core.Domain;
-using MongoDB.Driver;
 using Blog.Core.Extensions;
 
 namespace Blog.Information.Authors
 {
     public class GetHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public GetHandler(MongoDatabase database)
+        public GetHandler(IDocumentDatabase database)
         {
             _database = database;
         }
 
         public AuthorsViewModel Execute(AuthorsInputModel inputModel)
         {
-            var authors = _database
-                .GetCollection("Users")
-                .FindAll()
-                .ToList();
+            var authors = _database.All<User>().ToList();
 
             return new AuthorsViewModel
             {

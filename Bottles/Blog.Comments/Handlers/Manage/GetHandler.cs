@@ -1,16 +1,15 @@
 ﻿using System.Linq;
 using Blog.Comments.Domain;
+using Blog.Core.Database;
 using Blog.Core.Extensions;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 namespace Blog.Comments.Manage
 {
     public class GetHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public GetHandler(MongoDatabase database)
+        public GetHandler(IDocumentDatabase database)
         {
             _database = database;
         }
@@ -19,8 +18,8 @@ namespace Blog.Comments.Manage
         {
             long totalCount;
 
-            var comments = _database.GetCollection("Comments")
-                .WithCount(out totalCount)
+            var comments = _database
+                .WithCount<Comment>(out totalCount)
                 .AsQueryable<Comment>()
                 .OrderByDescending(x => x.PublishedDate)
                 .Page(inputModel)

@@ -1,16 +1,15 @@
 ﻿using System.Linq;
 using Blog.Articles.Domain;
+using Blog.Core.Database;
 using Blog.Core.Extensions;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 namespace Blog.Articles.Manage
 {
     public class GetHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public GetHandler(MongoDatabase database)
+        public GetHandler(IDocumentDatabase database)
         {
             _database = database;
         }
@@ -19,9 +18,8 @@ namespace Blog.Articles.Manage
         {
             long totalCount;
 
-            var articles = _database.GetCollection("Articles")
-                .WithCount(out totalCount)
-                .AsQueryable<Article>()
+            var articles = _database
+                .WithCount<Article>(out totalCount)
                 .OrderByDescending(x => x.PublishedDate)
                 .Page(inputModel)
                 .ToList();

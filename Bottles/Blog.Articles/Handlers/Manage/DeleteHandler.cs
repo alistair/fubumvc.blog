@@ -1,24 +1,22 @@
-﻿using MongoDB.Driver;
-using MongoDB.Driver.Builders;
+﻿using Blog.Articles.Domain;
+using Blog.Core.Database;
 
 namespace Blog.Articles.Manage
 {
     public class DeleteHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public DeleteHandler(MongoDatabase database)
+        public DeleteHandler(IDocumentDatabase database)
         {
             _database = database;
         }
 
         public DeleteArticleViewModel Execute(DeleteArticleInputModel inputModel)
         {
-            _database.GetCollection("Articles")
-                .Remove(Query.EQ("_id", inputModel.Id));
+            _database.Delete<Article>(inputModel.Id);
 
-            _database.GetCollection("Comments")
-                .Remove(Query.EQ("ArticleUri", inputModel.Id));
+            _database.Delete("Comments", "ArticleUri", inputModel.Id);
 
             return new DeleteArticleViewModel();
         }

@@ -70,12 +70,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\StringConstants.cs" />
+    <Compile Include="Database\IDocumentDatabase.cs" />
+    <Compile Include="Database\MongoDatabaseAdapter.cs" />
     <Compile Include="Domain\IPageable.cs" />
     <Compile Include="Domain\User.cs" />
-    <Compile Include="Extensions\DatabaseExtensions.cs" />
+    <Compile Include="Extensions\MongoDatabaseExtensions.cs" />
     <Compile Include="Extensions\MapperExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
-    <Compile Include="Extensions\PageExtensions.cs" />
+    <Compile Include="Extensions\FubuPageExtensions.cs" />
     <Compile Include="HtmlTags\TextAreaTag.cs" />
     <Compile Include="Permissions\IRequireBasicAuthorization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

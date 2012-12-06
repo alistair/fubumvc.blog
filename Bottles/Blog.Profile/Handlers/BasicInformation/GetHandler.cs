@@ -1,17 +1,17 @@
 ﻿using System.Linq;
+using Blog.Core.Database;
 using Blog.Core.Domain;
 using Blog.Core.Extensions;
 using FubuMVC.Core.Security;
-using MongoDB.Driver;
 
 namespace Blog.Profile.BasicInformation
 {
     public class GetHandler
     {
         private readonly ISecurityContext _securityContext;
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public GetHandler(ISecurityContext securityContext, MongoDatabase database)
+        public GetHandler(ISecurityContext securityContext, IDocumentDatabase database)
         {
             _securityContext = securityContext;
             _database = database;

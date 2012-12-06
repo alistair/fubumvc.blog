@@ -1,17 +1,16 @@
+using Blog.Core.Database;
 using Blog.Core.Domain;
 using Blog.Core.Extensions;
-using FubuMVC.Core.Runtime;
 using FubuMVC.Core.Security;
-using MongoDB.Driver;
 
 namespace Blog.Profile.BasicInformation
 {
     public class PostHandler
     {
         private readonly ISecurityContext _securityContext;
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public PostHandler(ISecurityContext securityContext, MongoDatabase database)
+        public PostHandler(ISecurityContext securityContext, IDocumentDatabase database)
         {
             _securityContext = securityContext;
             _database = database;
@@ -23,8 +22,7 @@ namespace Blog.Profile.BasicInformation
 
             user.Id = _securityContext.CurrentIdentity.Name;
 
-            _database.GetCollection("Users")
-                .Save(user);
+            _database.Save(user);
 
             return user.DynamicMap<BasicInformationViewModel>();
         }

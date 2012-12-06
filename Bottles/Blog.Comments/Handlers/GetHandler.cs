@@ -1,16 +1,16 @@
 using System.Linq;
 using Blog.Comments.Domain;
+using Blog.Core.Database;
 using Blog.Core.Extensions;
 using FubuMVC.Core;
-using MongoDB.Driver;
 
 namespace Blog.Comments
 {
     public class GetHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public GetHandler(MongoDatabase database)
+        public GetHandler(IDocumentDatabase database)
         {
             _database = database;
         }

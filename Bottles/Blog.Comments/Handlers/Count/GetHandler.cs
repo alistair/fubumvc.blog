@@ -1,21 +1,20 @@
 using Blog.Comments.Domain;
-using MongoDB.Driver;
+using Blog.Core.Database;
 
 namespace Blog.Comments.Count
 {
     public class GetHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public GetHandler(MongoDatabase database)
+        public GetHandler(IDocumentDatabase database)
         {
             _database = database;
         }
 
         public dynamic Execute(CommentsCountInputModel inputModel)
         {
-            return _database.GetCollection<Comment>("Comments")
-                .Count();
+            return _database.Count<Comment>();
         }
     }
 }

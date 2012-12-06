@@ -1,31 +1,26 @@
 ﻿using System.Linq;
 using Blog.Comments.Domain;
-using MongoDB.Driver;
-using MongoDB.Driver.Builders;
-using MongoDB.Driver.Linq;
+using Blog.Core.Database;
 
 namespace Blog.Comments.Manage
 {
     public class DeleteHandler
     {
-        private readonly MongoDatabase _database;
+        private readonly IDocumentDatabase _database;
 
-        public DeleteHandler(MongoDatabase database)
+        public DeleteHandler(IDocumentDatabase database)
         {
             _database = database;
         }
 
         public DeleteCommentViewModel Execute(DeleteCommentInputModel inputModel)
         {
-            var comments = _database.GetCollection<Comment>("Comments");
-            var comment = comments.AsQueryable()
+            var comment = _database.Query<Comment>()
                 .First(x => x.Id == inputModel.Id);
 
-            var update = Update.Inc("CommentsCount", -1);
-            _database.GetCollection("Articles")
-                .FindAndModify(Query.EQ("_id", comment.ArticleUri), SortBy.Null, update, false);
+            _database.Increment("Articles", comment.ArticleUri, "CommentsCount", -1);
 
-            comments.Remove(Query.EQ("_id", inputModel.Id));
+            _database.Delete<Comment>(inputModel.Id);
             return new DeleteCommentViewModel();
         }
     }

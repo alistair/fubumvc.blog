@@ -21,6 +21,7 @@ namespace Blog.Comments.Manage
             var comments = _database
                 .WithCount<Comment>(out totalCount)
                 .AsQueryable<Comment>()
+                .FilteryBySpam(inputModel.ShowSpam)
                 .OrderByDescending(x => x.PublishedDate)
                 .Page(inputModel)
                 .ToList();
@@ -28,7 +29,8 @@ namespace Blog.Comments.Manage
             return new ManageCommentsViewModel
             {
                 Comments = comments.Select(x => x.DynamicMap<ManageCommentViewModel>()),
-                TotalPages = totalCount.TotalPages(inputModel.Count)
+                TotalPages = totalCount.TotalPages(inputModel.Count),
+                ShowSpam = inputModel.ShowSpam
             };
         }
     }

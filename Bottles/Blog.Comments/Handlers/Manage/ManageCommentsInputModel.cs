@@ -6,6 +6,7 @@ namespace Blog.Comments.Manage
     {
         private int? _page;
         private int? _count;
+        public bool? ShowSpam { get; set; }
 
         public int? Page
         {

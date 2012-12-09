@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Domain\Comment.cs" />
     <Compile Include="CommentsRegistry.cs" />
+    <Compile Include="Domain\CommentExtensions.cs" />
     <Compile Include="Handlers\CommentInputModel.cs" />
     <Compile Include="Handlers\CommentInputModelValidator.cs" />
     <Compile Include="Handlers\CommentsInputModel.cs" />

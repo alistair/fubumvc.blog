@@ -30,8 +30,8 @@
             <a href="/articles/manage?ShowDraft=true">Drafts</a>
           </li>
           <li>
-            <a href="/comments/manage" class="count spamCount">0</a>
-            <a href="/comments/manage">Spam</a>
+            <a href="/comments/manage?ShowSpam=true" class="count spamCount">0</a>
+            <a href="/comments/manage?ShowSpam=true">Spam</a>
           </li>
         </ul>
       </div>

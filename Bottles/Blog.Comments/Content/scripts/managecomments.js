@@ -21,6 +21,13 @@
     paging.changeCountPerPage(count.text());
   });
 
+  $('.filter').change(function () {
+    var val = $(this).val();
+
+    window.location ='http://localhost:52680/articles/manage?ShowDraft=' + val;
+  });
+
+
   countInput.blur(function () {
     paging.goToPage($(this));
   });

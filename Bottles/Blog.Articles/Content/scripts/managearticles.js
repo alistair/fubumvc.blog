@@ -6,7 +6,9 @@
         id = link.data().id,
         proceedWithDeletion = confirm('Are you sure you want to delete (' + id + '). \r\nThis action cannot be undone.');
 
-    if (!proceedWithDeletion) return false;
+    if (!proceedWithDeletion) {
+      return false;
+    }
 
     $.ajax({
       url: '/articles/manage',
@@ -23,6 +25,13 @@
   $('.25, .50, .100').click(function () {
     var count = $(this);
     paging.changeCountPerPage(count.text());
+  });
+
+
+  $('.filter').change(function () {
+    var val = $(this).val();
+
+    window.location ='http://localhost:52680/articles/manage?ShowDraft=' + val;
   });
 
   countInput.blur(function () {

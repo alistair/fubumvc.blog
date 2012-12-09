@@ -27,7 +27,8 @@ namespace Blog.Articles.Manage
             return new ManageArticlesViewModel
             {
                 Articles = articles.Select(x => x.DynamicMap<ManageArticleViewModel>()),
-                TotalPages = totalCount.TotalPages(inputModel.Count)
+                TotalPages = totalCount.TotalPages(inputModel.Count),
+                ShowDraft = inputModel.ShowDraft
             };
         }
 

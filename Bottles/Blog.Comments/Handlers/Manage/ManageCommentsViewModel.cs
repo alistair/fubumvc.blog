@@ -6,5 +6,6 @@ namespace Blog.Comments.Manage
     {
         public IEnumerable<ManageCommentViewModel> Comments { get; set; }
         public int TotalPages { get; set; }
+        public bool? ShowSpam { get; set; }
     }
 }

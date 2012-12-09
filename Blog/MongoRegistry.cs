@@ -10,7 +10,7 @@ namespace Blog
         {
             //TODO: Clean all of this up:
             var server = MongoServer.Create("mongodb://localhost:27017/?safe=true");
-            var database = server.GetDatabase("default");
+            var database = server.GetDatabase("local");
 
             For<MongoDatabase>()
                 .Singleton().Use(database);

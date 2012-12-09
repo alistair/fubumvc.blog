@@ -1,9 +1,9 @@
 ﻿<div class="managearticlefilters">
   <div>
-    <select>
-      <option>All</option>
-      <option>Draft</option>
-      <option>Published</option>
+    <select class="filter" >
+      ${this.Option(x => x.ShowDraft, "All", null)}
+      ${this.Option(x => x.ShowDraft, "Draft", "True")}
+      ${this.Option(x => x.ShowDraft, "Published", "False")}
     </select>
     <select>
       <option>Bulk Actions</option>

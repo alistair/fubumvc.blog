@@ -128,6 +128,22 @@ namespace Blog.Core.Extensions
             return hiddenTag;
         }
 
+        public static HtmlTag Option<T>(this IFubuPage<T> page,
+            Expression<Func<T, object>> expression, string text, string value) where T : class
+        {
+            var expectedValue = page.Model.ValueOrDefault(expression) ?? string.Empty;
+            var optionValue = value ?? string.Empty;
+
+            var selected = expectedValue.ToString() == optionValue ? "selected" : string.Empty;
+
+            var tag = new HtmlTag("option");
+            tag.Attr(selected, selected);
+            tag.Text(text);
+            tag.Value(optionValue);
+
+            return tag;
+        }
+
         private static User GetUser(this IFubuPage page)
         {
             var security = page.Get<ISecurityContext>();
@@ -136,7 +152,6 @@ namespace Blog.Core.Extensions
                 .FirstOrDefault(x => x.Id == security.CurrentIdentity.Name);
 
             return user;
-
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿<div class="managecommentsfilters">
   <div>
-    <select>
-      <option>All</option>
-      <option>Approved</option>
-      <option>Spam</option>
+    <select class="filter">
+      ${this.Option(x => x.ShowSpam, "All", null)}
+      ${this.Option(x => x.ShowSpam, "Approved", "False")}
+      ${this.Option(x => x.ShowSpam, "Spam", "True")}
     </select>
     <select>
       <option>Bulk Actions</option>

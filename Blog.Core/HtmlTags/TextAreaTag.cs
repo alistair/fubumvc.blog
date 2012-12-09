@@ -12,8 +12,8 @@ namespace Blog.Core.HtmlTags
     public TextAreaTag(string name, string value)
       : this()
     {
-      this.Attr("name", (object) name);
-      this.Attr("value", (object) value);
+      Attr("name", name);
+      Attr("value", value);
     }
   }
 }

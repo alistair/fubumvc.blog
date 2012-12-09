@@ -78,6 +78,7 @@
     <None Include=".package-manifest">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Content\styles\dashboard.less" />
     <None Include="profile.script.config">
       <SubType>Designer</SubType>
     </None>
@@ -91,6 +92,7 @@
     <Content Include="Content\images\home.png" />
     <Content Include="Content\images\profile.png" />
     <Content Include="Content\scripts\basicinformation.js" />
+    <Content Include="Content\scripts\dashboard.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

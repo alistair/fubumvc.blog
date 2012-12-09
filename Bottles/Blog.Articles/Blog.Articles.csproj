@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="ArticleRegistry.cs" />
     <Compile Include="Domain\Article.cs" />
+    <Compile Include="Domain\ArticleExtensions.cs" />
     <Compile Include="Handlers\Archive\ArchiveInputModel.cs" />
     <Compile Include="Handlers\Archive\ArchiveItemViewModel.cs" />
     <Compile Include="Handlers\Archive\ArchiveViewModel.cs" />
@@ -74,6 +75,9 @@
     <Compile Include="Handlers\Compose\ComposeViewModel.cs" />
     <Compile Include="Handlers\Compose\GetHandler.cs" />
     <Compile Include="Handlers\Compose\PostHandler.cs" />
+    <Compile Include="Handlers\Count\ArticlesCountInputModel.cs" />
+    <Compile Include="Handlers\Count\ArticlesCountViewModel.cs" />
+    <Compile Include="Handlers\Count\GetHandler.cs" />
     <Compile Include="Handlers\GetHandler.cs" />
     <Compile Include="Handlers\Manage\DeleteArticleInputModel.cs" />
     <Compile Include="Handlers\Manage\DeleteArticleViewModel.cs" />
@@ -82,6 +86,10 @@
     <Compile Include="Handlers\Manage\ManageArticlesInputModel.cs" />
     <Compile Include="Handlers\Manage\ManageArticlesViewModel.cs" />
     <Compile Include="Handlers\Manage\ManageArticleViewModel.cs" />
+    <Compile Include="Handlers\RecentDrafts\GetHandler.cs" />
+    <Compile Include="Handlers\RecentDrafts\RecentDraftsInputModel.cs" />
+    <Compile Include="Handlers\RecentDrafts\RecentDraftViewModel.cs" />
+    <Compile Include="Handlers\Summaries\ArticleSummariesInputModel.cs" />
     <Compile Include="Handlers\Summaries\ArticleSummariesViewModel.cs" />
     <Compile Include="Handlers\Summaries\ArticleSummaryViewModel.cs" />
     <Compile Include="Handlers\Summaries\GetHandler.cs" />

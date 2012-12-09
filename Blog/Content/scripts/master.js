@@ -1,4 +1,4 @@
-﻿require(['module-loader', 'jquery'], function (mL, $) {
+﻿require(['jquery'], function ($) {
 
   $.ajaxSetup({
     statusCode: {
@@ -9,5 +9,4 @@
       } 
     }
   });
-  mL.load();
 });

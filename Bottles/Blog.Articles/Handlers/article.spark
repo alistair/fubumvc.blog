@@ -1,7 +1,6 @@
 ﻿<viewdata model="Blog.Articles.ArticleViewModel"/>
 
 # this.Asset("article.js");
-# this.Asset("comment.js");
 
 <article>
     <header>
@@ -18,5 +17,6 @@
     <p>
     </p>
 </article>
-<section class="commentsection" module="/comments/${Model.Id}">
+<section class="commentsection">
+  # this.Partial(new Blog.Comments.CommentsInputModel { Uri = Model.Id });
 </section>

@@ -15,7 +15,7 @@ namespace Blog.Articles.Summaries
             _database = database;
         }
 
-        public ArticleSummariesViewModel Execute()
+        public ArticleSummariesViewModel Execute(ArticleSummariesInputModel inputModel)
         {
             var articles = _database.Query<Article>()
                 .Where(x => x.IsPublished)

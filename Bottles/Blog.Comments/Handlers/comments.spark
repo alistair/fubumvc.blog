@@ -2,6 +2,8 @@
 <use namespace="Blog.Comments"/>
 <viewdata model="Blog.Comments.CommentsViewModel"/>
 
+# this.Asset("comment.js");
+
 <span class="commentsheader">
   Comments
 </span>

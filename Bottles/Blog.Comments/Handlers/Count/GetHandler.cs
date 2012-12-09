@@ -1,3 +1,4 @@
+using System.Linq;
 using Blog.Comments.Domain;
 using Blog.Core.Database;
 
@@ -14,7 +15,17 @@ namespace Blog.Comments.Count
 
         public dynamic Execute(CommentsCountInputModel inputModel)
         {
-            return _database.Count<Comment>();
+            long totalCount;
+            var spamCount = _database
+                .WithCount<Comment>(out totalCount)
+                .Where(x => x.IsPotentialSpam)
+                .LongCount();
+
+            return new CommentsCountViewModel
+            {
+                Total = totalCount,
+                Spam = spamCount
+            };
         }
     }
 }

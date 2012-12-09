@@ -65,7 +65,7 @@
     <Compile Include="Handlers\CommentsViewModel.cs" />
     <Compile Include="Handlers\CommentViewModel.cs" />
     <Compile Include="Handlers\Count\CommentsCountInputModel.cs" />
-    <Compile Include="Handlers\Count\CommentsViewModel.cs" />
+    <Compile Include="Handlers\Count\CommentsCountViewModel.cs" />
     <Compile Include="Handlers\Count\GetHandler.cs" />
     <Compile Include="Handlers\GetHandler.cs" />
     <Compile Include="Handlers\Manage\DeleteCommentInputModel.cs" />
@@ -82,7 +82,9 @@
     <Compile Include="Handlers\Modify\UpdateCommentInputModel.cs" />
     <Compile Include="Handlers\Modify\UpdateCommentInputModelValidator.cs" />
     <Compile Include="Handlers\PostHandler.cs" />
+    <Compile Include="Handlers\Recent\RecentCommentViewModel.cs" />
     <Compile Include="Handlers\Recent\GetHandler.cs" />
+    <Compile Include="Handlers\Recent\RecentCommentInputModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

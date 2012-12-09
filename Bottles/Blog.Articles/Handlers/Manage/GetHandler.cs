@@ -20,7 +20,7 @@ namespace Blog.Articles.Manage
 
             var articles = _database
                 .WithCount<Article>(out totalCount)
-                .OrderByDescending(x => x.PublishedDate)
+                .FilteryByPublished(inputModel.ShowDraft)
                 .Page(inputModel)
                 .ToList();
 

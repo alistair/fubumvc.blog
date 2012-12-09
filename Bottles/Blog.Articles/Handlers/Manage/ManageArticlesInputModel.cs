@@ -6,6 +6,7 @@ namespace Blog.Articles.Manage
     {
         private int? _page;
         private int? _count;
+        public bool? ShowDraft { get; set; }
 
         public int? Page
         {

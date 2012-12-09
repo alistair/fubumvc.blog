@@ -1,0 +1,35 @@
+.dashboard {
+  overflow: hidden;
+  ul {
+    list-style-type: none;
+  }
+  & > div {
+    float: left;
+    width: 80%;
+  }
+  .box {
+    float: left;
+    width: 48%;
+    margin: 0 1% 1%;
+    ul {
+      width: 50%;
+      float: left;
+    }
+  }
+  .count {
+    font: 22px Georgia italic;
+  }
+  .draftsCount {
+    color: #F90;
+  }
+  .spamCount {
+    color: #A10000;
+  }
+  ul.recentComments, ul.recentDrafts {
+    width: 100%;
+    li {
+      border-bottom: dotted 1px #CCC;
+      padding: 5px 0;
+    }
+  }
+}

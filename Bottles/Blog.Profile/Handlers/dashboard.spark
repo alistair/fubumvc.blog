@@ -1,7 +1,68 @@
 ﻿<viewdata model="Blog.Profile.DashboardViewModel"/>
+
+# this.Asset("dashboard.js");
+
 <header>
-    <h2>Dashboard</h2>
+  <h2>Dashboard</h2>
 </header>
 <div class="dashboard">
   <ProfileNavigation/>
+  <div>
+
+    <div class="box">
+      <header>
+        <h3>Statistics</h3>
+      </header>
+      <div>
+        <ul>
+          <li>
+            <a href="/articles/manage" class="articlesCount count">0</a>
+            <a href="/articles/manage">Articles</a>
+          </li>
+          <li>
+            <a href="/comments/manage" class="commentsCount count">0</a>
+            <a href="/comments/manage">Comments</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/articles/manage?ShowDraft=true" class="count draftsCount">0</a>
+            <a href="/articles/manage?ShowDraft=true">Drafts</a>
+          </li>
+          <li>
+            <a href="/comments/manage" class="count spamCount">0</a>
+            <a href="/comments/manage">Spam</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box">
+      <header>
+        <h3>Recent Drafts</h3>
+      </header>
+      <div>
+        <ul class="recentDrafts">
+          <li>
+            <label></label> - <a href="">Edit</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box">
+      <header>
+        <h3>Recent Comments</h3>
+      </header>
+      <div>
+        <ul class="recentComments">
+          <li>
+            Posted By: <label></label> - <a href="">Edit</a>
+            <p></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>

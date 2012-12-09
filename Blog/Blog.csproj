@@ -193,7 +193,6 @@
     <None Include="Content\styles\prettify.less" />
     <Content Include="Content\scripts\util\amplify-1.1.0.js" />
     <Content Include="Content\scripts\util\amplify.js" />
-    <Content Include="Content\scripts\util\domReady.js" />
     <Content Include="Content\scripts\util\google-code-prettify\lang-apollo.js" />
     <Content Include="Content\scripts\util\google-code-prettify\lang-clj.js" />
     <Content Include="Content\scripts\util\google-code-prettify\lang-css.js" />
@@ -214,8 +213,6 @@
     <Content Include="Content\scripts\util\google-code-prettify\lang-yaml.js" />
     <Content Include="Content\scripts\util\google-code-prettify\prettify.js" />
     <Content Include="Content\scripts\util\google-font-loader.js" />
-    <Content Include="Content\scripts\util\js-loader.js" />
-    <Content Include="Content\scripts\util\module-loader.js" />
     <Content Include="Content\scripts\util\require.js" />
     <Content Include="Content\scripts\util\underscore-1.3.3.js" />
     <Content Include="Content\scripts\util\underscore.js" />

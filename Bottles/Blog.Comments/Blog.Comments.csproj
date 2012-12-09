@@ -127,6 +127,12 @@
     <Content Include="Content\scripts\comment.js" />
     <Content Include="Content\scripts\modifycomment.js" />
     <Content Include="Content\scripts\managecomments.js" />
+    <Content Include="Content\styles\managecomments.css">
+      <DependentUpon>managecomments.less</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\managecomments.min.css">
+      <DependentUpon>managecomments.less</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

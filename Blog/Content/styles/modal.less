@@ -1,3 +1,6 @@
+@import "util.less";
+@import "buttons.less";
+
 .shade {
   width: 100%;
   z-index: 2;
@@ -10,14 +13,14 @@
   right: 0;
   opacity: 0.7;
   filter: Alpha(Opacity=70);
-  background-color: #000;
+  background-color: @black;
 }
 
 .modal {
   z-index: 3;
   position: absolute;
   margin: 0;
-  background-color: #FFF;
+  background-color: @white;
   width: 400px;
   border-radius: 5px;
   h3 {
@@ -32,12 +35,11 @@
   }
   .close {
     &:hover {
-      color: #CCC;
+      color: @gray-1;
     }
     cursor: pointer;
-    line-height: 18px;
-    line-height: 18px;
-    font-size: 20px;
+    line-height: .8em;
+    font-size: 1.8em;
     font-weight: bold;
     float: right;
 
@@ -49,14 +51,14 @@
   }
   .modal-header {
     border-radius: 5px 5px 0 0;
-    background-color: #F7F7F7;
-    border-bottm: 1px solid #DDD;
+    background-color: @gray-light-1;
+    border-bottom: 1px solid @gray-light-3;
   }
   .modal-footer {
     overflow: hidden;
     border-radius: 0 0 5px 5px;
-    background-color: #F7F7F7;
-    border-top: 1px solid #DDD;
+    background-color: @gray-light-1;
+    border-top: 1px solid @gray-light-3;
     text-align: right;
     .btn {
       float: right;

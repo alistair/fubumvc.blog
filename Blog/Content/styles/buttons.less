@@ -1,48 +1,48 @@
-﻿@import "util/gradients.less";
+﻿@import "util.less";
 
 .button {
   font-weight: bold;
   display: inline-block;
   text-align: center;
   cursor: pointer;
-  .gradient(#FFF, #CCC, #FFF);
-  text-shadow: #FFF 0 1px 0;
-  border: solid 1px #CCC;
+  .gradient(@white, @gray-1, @white);
+  text-shadow: @white 0 1px 0;
+  border: solid 1px @gray-1;
   border-radius: 3px;
   padding: 3px 5px;
   margin: 0;
   &:hover {
-    .gradient(#FFF, #CCDEE6, #FFF);
-    text-shadow: #FFF 0 1px 0;
-    border: solid 1px #CCDEE6;
-    border-bottom-color: #A1BFCC;
+    .gradient(@white, @blue-light-1, @white);
+    text-shadow: @white 0 1px 0;
+    border: solid 1px @blue-light-1;
+    border-bottom-color: @blue-light-2;
   }
 }
 
 .green-button {
-  border-color: #7CA33C;
-  text-shadow: #A8D959 0 1px 0;
-  color: #2A3813;
-  .gradient(#A8D959, #7CA33C, #A8D959);
+  border-color: @green-1;
+  text-shadow: @green-light-5 0 1px 0;
+  color: @green-dark-2;
+  .gradient(@green-light-5, @green-1, @green-light-5);
   &:hover {
-    color: #2F4210;
-    border-color: #7CA33C;
-    text-shadow: #A8D959 0 1px 0;
-    border-bottom-color: #739638;
-    .gradient(#BCF263, #A0CF55, #BCF263);
+    color: @green-dark-1;
+    border-color: @green-1;
+    text-shadow: @green-light-5 0 1px 0;
+    border-bottom-color: @green-1;
+    .gradient(@green-light-5, @green-light-6, @green-light-5);
   }
 }
 
 .orange-button {
-  border-color: #D49B00;
-  text-shadow: #EDC65A 0 1px 0;
-  color: #4A3600;
-  .gradient(#F5BB1B, #D49B00, #F5BB1B);
+  border-color: @orange-2;
+  text-shadow: @orange-light-3 0 1px 0;
+  color: @brown-1;
+  .gradient(@orange-1, @orange-2, @orange-1);
   &:hover {
-    text-shadow: #EDC65A 0 1px 0;
-    border-color: #D49B00;
-    border-bottom-color: #D49B00;
-    .gradient(#FACA46, #E8B11A, #FACA46);
+    text-shadow: @orange-light-3 0 1px 0;
+    border-color: @orange-2;
+    border-bottom-color: @orange-2;
+    .gradient(@orange-light-3, @orange-1, @orange-light-3);
   }
 }
 
@@ -63,6 +63,6 @@ input[value^="Save"] {
 }
 
 input[value^="Archive"] {
-  color: #7A0000;
-  .gradient(#FFF, #E0E0E0, #FFF);
+  color: @red-2;
+  .gradient(@white, @gray-light-3, @white);
 }

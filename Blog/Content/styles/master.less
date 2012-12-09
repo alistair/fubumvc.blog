@@ -1,4 +1,4 @@
-﻿@import "util/gradients.less";
+﻿@import "util.less";
 
 input:focus,
 select:focus,
@@ -11,31 +11,31 @@ img {
 }
 
 a {
-  color: #543E35;
+  color: @brown-light-2;
   text-decoration: none;
   outline-style: none;
   outline: none;
 }
 
 fieldset {
-  border: #DDD solid 1px;
+  border: @gray-light-3 solid 1px;
 }
 
 legend {
-  color: #543E35;
+  color: @brown-light-2;
   font-weight: bold;
 }
 
 .box-header {
-  .gradient(#FFF, #D8D8D8, #FFF);
+  .gradient(@white, @gray-light-3, @white);
   font-weight: bold;
-  text-shadow: #FFF 0 1px 0;
+  text-shadow: @white 0 1px 0;
   padding: 7px 10px;
 }
 
 .box {
   & > header {
-    border: solid 1px #CCC;
+    border: solid 1px @gray-1;
     border-bottom: 0;
     .box-header;
     h3 {
@@ -45,19 +45,19 @@ legend {
   }
   & > div {
     padding: 7px 10px;
-    border: solid 1px #CCC;
+    border: solid 1px @gray-1;
     overflow: hidden;
   }
 }
 
 table {
   border-collapse: collapse;
-  border: solid 1px #CCC;
-  font-size: 12px;
+  border: solid 1px @gray-1;
+  font-size: 0.9em;
   thead, tfoot {
     .box-header;
     td {
-      border-right: solid 1px #CCC;
+      border-right: solid 1px @gray-1;
     }
   }
   tbody {
@@ -68,23 +68,23 @@ table {
     padding: 7px 10px;
   }
   time {
-    color: #000;
+    color: @black;
   }
   td {
-    border-bottom: solid 1px #CCC;
+    border-bottom: solid 1px @gray-1;
   }
   a {
     font-weight: bold;
   }
   tr:nth-of-type(even) {
-    background-color: #F8F8F8;
+    background-color: @gray-light-1;
   }
 }
 
 article {
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #f9f9f9;
+  background-color: @gray-light-1;
   width: 600px;
   section {
     font-size: 1.2em;
@@ -113,7 +113,7 @@ header {
     margin: 0 0 10px 0;
     padding-bottom: 5px;
     font-size: 1.8em;
-    border-bottom: 1px dotted #C3C3C3;
+    border-bottom: 1px dotted @gray-1;
   }
 }
 
@@ -125,7 +125,7 @@ h3 {
 
 time {
   text-transform: uppercase;
-  color: #A89791;
+  color: @brown-light-1;
 }
 
 ul {
@@ -152,7 +152,7 @@ article {
       padding: 5px;
     }
     li:nth-of-type(odd) {
-      background-color: #f9f9f9;
+      background-color: @gray-light-1;
     }
   }
 }
@@ -164,13 +164,13 @@ article {
 }
 
 .user {
-  color: #FFF;
+  color: @white;
 }
 
 .header {
-  color: #FFF;
-  border-bottom: 4px solid #747474;
-  background-color: #363636;
+  color: @white;
+  border-bottom: 4px solid @gray-dark-1;
+  background-color: @gray-dark-2;
   position: fixed;
   left: 0;
   right: 0;
@@ -180,8 +180,8 @@ article {
     float: left;
     margin: 0;
     padding: 0;
-    font-size: 12px;
-    line-height: 17px
+    font-size: 0.9em;
+    line-height: 1.5em;
   }
   nav {
     overflow: hidden;
@@ -199,10 +199,10 @@ article {
     li {
       margin-right: 5px;
       padding-right: 5px;
-      border-right: 1px solid #4D4D4D;
+      border-right: 1px solid @gray-dark-1;
       float: left;
       a {
-        color: #FF9900;
+        color: @orange-2;
       }
     }
     li:last-of-type {
@@ -212,12 +212,12 @@ article {
 }
 
 .bootstrap-error {
-  background-color: #FFF3B0;
+  background-color: @orange-light-1;
   padding: 10px;
   display: none;
-  color: #A10000;
+  color: @red-1;
   ul {
-    line-height: 28px;
+    line-height: 3em;
     margin-left: 20px;
   }
   h2 {
@@ -227,7 +227,7 @@ article {
 .current {
   opacity: 0.5;
   a {
-    color: #E8C17D !important;
+    color: @orange-light-2 !important;
   }
 }
 
@@ -238,33 +238,33 @@ article {
   li {
     margin-bottom: 10px;
     padding-left: 25px;
-    line-height: 18px;
+    line-height: 1.5em;
   }
   .current a {
-    color: #543E35 !important;
+    color: @brown-light-2 !important;
   }
 }
 
 input[type="text"], textarea {
   padding: 2px;
-  border: 1px solid #CCC;
+  border: 1px solid @gray-1;
   &:hover {
-    border: 1px solid #E8C17D;
+    border: 1px solid @orange-light-2;
   }
   &:focus {
-    border: 1px solid #F90;
+    border: 1px solid @orange-2;
   }
 }
 
 pre::-webkit-scrollbar-thumb{
   border-radius: 3px;
-  background: #747474;
+  background: @gray-dark-1;
   cursor: pointer;
 }
 
 pre::-webkit-scrollbar{
   width: 7px;
   height: 7px;
-  background: #EEE;
+  background: @gray-light-2;
 
 }

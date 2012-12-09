@@ -1,3 +1,5 @@
+@import "util.less";
+
 .dashboard {
   overflow: hidden;
   ul {
@@ -17,18 +19,18 @@
     }
   }
   .count {
-    font: 22px Georgia italic;
+    font: 2em Georgia italic;
   }
   .draftsCount {
-    color: #F90;
+    color: @orange-2;
   }
   .spamCount {
-    color: #A10000;
+    color: @red-1;
   }
   ul.recentComments, ul.recentDrafts {
     width: 100%;
     li {
-      border-bottom: dotted 1px #CCC;
+      border-bottom: dotted 1px @gray-1;
       padding: 5px 0;
     }
   }

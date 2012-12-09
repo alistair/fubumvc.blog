@@ -1,4 +1,4 @@
-@import "util/gradients.less";
+@import "util.less";
 
 .pln { color: #000 }  /* plain text */
 
@@ -31,8 +31,8 @@
 .prettyprintnumbers {
   background: #EEE;
   overflow: auto;
-  border-left: 1px solid #D8D8D8;
-  border-right: 1px solid #D8D8D8;
+  border-left: 1px solid @gray-light-3;
+  border-right: 1px solid @gray-light-3;
   ol, pre {
     margin: 0px;
     padding: 0px; 
@@ -47,12 +47,12 @@
     border: 0;
     width: 100%;
     .num {
-      color: #747474;
+      color: @gray-dark-1;
       font-weight: bold;
-      text-shadow: #FFF 0 1px 0;
-      border-right: 1px solid #747474;
-      .gradient-horizontal(#FFF, #D8D8D8, #FFF);
-      border-bottom: 1px solid #D8D8D8;
+      text-shadow: @white 0 1px 0;
+      border-right: 1px solid @gray-dark-1;
+      .gradient-horizontal(@white, @gray-light-3, @white);
+      border-bottom: 1px solid @gray-light-3;
     }
     .code {
       width: 100%;

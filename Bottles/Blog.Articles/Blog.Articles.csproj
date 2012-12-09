@@ -141,6 +141,12 @@
     <Content Include="Content\scripts\articles.js" />
     <Content Include="Content\scripts\compose.js" />
     <Content Include="Content\scripts\managearticles.js" />
+    <Content Include="Content\styles\managearticles.css">
+      <DependentUpon>managearticles.less</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\managearticles.min.css">
+      <DependentUpon>managearticles.less</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-@import "util/gradients.less";
+@import "util.less";
 
 .menu-item-compose {
   background: transparent url('/_content/images/compose.png') no-repeat 0 0;
@@ -14,8 +14,8 @@
 
 .btn-group {
   margin: 4px 5px 4px 0;
-  .gradient(#FFF, #CCC, #FFF);
-  border: solid 1px #CCC;
+  .gradient(@white, @gray-1, @white);
+  border: solid 1px @gray-1;
   border-radius: 3px;
   padding: 2px;
     .btn, .btn:hover {
@@ -23,7 +23,7 @@
       border: 0;
       border-radius: 0;
       background: none;
-      border-right: solid 1px #CCC;
+      border-right: solid 1px @gray-1;
     }
 
     .btn:hover {
@@ -78,8 +78,8 @@
     padding: 0;
     margin: 0 0 10px 0;
     h2 {
-      font-size: 15px !important;
-      color: #A10000;
+      font-size: 1.3em !important;
+      color: @red-1;
       margin: 10px;
     }
     p {
@@ -104,9 +104,9 @@
   aside {
     height: 333px;
     width: 20%;
-    background-color: #F5F5F5;
-    border-bottom: solid 1px #DDD;
-    border-top: solid 1px #DDD;
+    background-color: @gray-light-1;
+    border-bottom: solid 1px @gray-light-3;
+    border-top: solid 1px @gray-light-3;
   }
   input[name="Id"] {
     opacity: 0.5;

@@ -93,6 +93,12 @@
     <Content Include="Content\images\profile.png" />
     <Content Include="Content\scripts\basicinformation.js" />
     <Content Include="Content\scripts\dashboard.js" />
+    <Content Include="Content\styles\dashboard.css">
+      <DependentUpon>dashboard.less</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\dashboard.min.css">
+      <DependentUpon>dashboard.less</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

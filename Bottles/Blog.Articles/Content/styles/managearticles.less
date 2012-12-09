@@ -1,3 +1,5 @@
+@import "util.less";
+
 .managearticles {
   > div {
     width: 80%;
@@ -14,7 +16,7 @@
   select, input[type=text] {
     border-radius: 2px;
     margin: 4px 0;
-    border: solid 1px #CCC;
+    border: solid 1px @gray-1;
     padding: 3px;
   }
   div {
@@ -22,11 +24,10 @@
     margin-right: 20px;
   }
   a {
-    line-height: 30px;
+    line-height: 2.4em;
   }
 }
 
 .delete-article {
-  color: #A10000;
-  text-shadow: #FFF 0 1px 0;
+  color: @red-1;
 }

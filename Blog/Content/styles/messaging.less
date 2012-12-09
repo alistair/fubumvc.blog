@@ -1,4 +1,4 @@
-﻿@import "util/gradients.less";
+﻿@import "util.less";
 
 .messaging {
   cursor: pointer;
@@ -9,30 +9,30 @@
 }
 
 .messaging-success {
-  .gradient(#EDFFE8, #C8FFBA, #EDFFE8);
-  border-color: #ABEB9B;
-  border-bottom-color: #75B565;
-  color: #198000;
-  text-shadow: #C8FFBA 0 1px 0;
+  .gradient(@green-light-1, @green-light-2, @green-light-1);
+  border-color: @green-light-3;
+  border-bottom-color: @green-light-4;
+  color: @green-2;
+  text-shadow: @green-light-2 0 1px 0;
 }
 
 
 .messaging-remove {
-  .gradient(#FFF, #E0E0E0, #FFF);
-  border-color: #DEDEDE;
-  border-bottom-color: #C7C7C7;
-  color: #7A0000;
-  text-shadow: #FFF 0 1px 0;
+  .gradient(@white, @gray-light-3, @white);
+  border-color: @gray-light-3;
+  border-bottom-color: @gray-1;
+  color: @red-2;
+  text-shadow: @white 0 1px 0;
   font-weight: bold;
 }
 
 
 .messaging-error {
-  .gradient(#CA6560, #A2322D, #CA6560);
-  border-color: #A2322D;
-  border-bottom-color: #C7C7C7;
-  color: #FFF;
-  text-shadow: #A2322D 0 1px 0;
+  .gradient(@red-light-1, @red-light-2, @red-light-1);
+  border-color: @red-light-2;
+  border-bottom-color: @gray-1;
+  color: @white;
+  text-shadow: @red-light-2 0 1px 0;
   ol {
     margin: 0;
     padding: 5px 5px 5px 30px;

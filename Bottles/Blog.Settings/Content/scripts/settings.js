@@ -1,2 +1,2 @@
-﻿define('settings', [], function () {
+﻿require([], function () {
 });

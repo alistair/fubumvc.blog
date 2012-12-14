@@ -1,4 +1,4 @@
-﻿define('login', ['jquery'], function ($) {
+﻿require(['jquery'], function ($) {
   if ($('#authorization').length > 0) {
     window.location = '/profile';
     return;

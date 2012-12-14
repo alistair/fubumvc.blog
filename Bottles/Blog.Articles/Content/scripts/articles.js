@@ -1,4 +1,4 @@
-﻿define('articles',['jquery', 'pagedown', 'underscore', 'pretty'], function ($, pagedown, _, pretty) {
+﻿require(['jquery', 'pagedown', 'underscore', 'pretty'], function ($, pagedown, _, pretty) {
   var articles = $('section', 'article');
 
   _.each(articles, function (article) {

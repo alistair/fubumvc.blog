@@ -85,7 +85,9 @@
     <None Include="Content\styles\basicinformation.less" />
     <None Include="Content\styles\profile.less" />
     <None Include="Handlers\BasicInformation\basicinformation.spark" />
-    <None Include="Handlers\dashboard.spark" />
+    <None Include="Handlers\dashboard.spark">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="profile.asset.config" />
   </ItemGroup>
   <ItemGroup>

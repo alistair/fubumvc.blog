@@ -1,4 +1,4 @@
-﻿define('basicinformation', ['jquery', 'messaging', 'validation'], function ($, messaging, validation) {
+﻿require(['jquery', 'messaging', 'validation'], function ($, messaging, validation) {
   var form = $('form', '.basicinformation');
   form.bind('submit', function () {
     validation.ajax.validate({

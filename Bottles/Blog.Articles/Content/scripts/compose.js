@@ -1,4 +1,4 @@
-﻿define('compose', ['jquery', 'underscore', 'pagedown', 'pretty', 'validation', 'textarea-selection'], function ($, _, pagedown, pretty, validation, textareaSelection) {
+﻿require(['jquery', 'underscore', 'pagedown', 'pretty', 'validation', 'textarea-selection'], function ($, _, pagedown, pretty, validation, textareaSelection) {
     var form = $('form'),
       textAreaSelector = '[name="Body"]',
       textarea = $(textAreaSelector),

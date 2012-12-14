@@ -1,4 +1,4 @@
-﻿define('logout', ['jquery'], function ($) {
+﻿require(['jquery'], function ($) {
   var count = 5,
     counter = $('#count'),
     id = setInterval(function () {

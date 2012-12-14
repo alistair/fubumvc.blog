@@ -1,4 +1,4 @@
-﻿define('managearticles', ['jquery', 'paging', 'messaging'], function ($, paging, messaging) {
+﻿require(['jquery', 'paging', 'messaging'], function ($, paging, messaging) {
   var countInput = $('input[name="count"]');
 
   $('.delete-article').click(function () {

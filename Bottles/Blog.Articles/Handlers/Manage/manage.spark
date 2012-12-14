@@ -15,8 +15,8 @@
         <managearticlesrow/>
       </thead>
       <tbody>
-        <tr each="var article in Model.Articles">
-          <td><input type="checkbox"/></td>
+        <tr each="var article in Model.Articles" class="${article.IsPublished ? '' : 'draft' }">
+          <td ><input type="checkbox"/></td>
           <td><a href="/${article.Id}">${article.Title}</a></td>
           <td><time>${article.PublishedDateString}</time></td>
           <td>${article.Author}</td>

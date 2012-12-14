@@ -6,6 +6,7 @@ namespace Blog.Articles.Manage
     {
         public string Id { get; set; }
         public DateTime PublishedDate { get; set; }
+        public bool IsPublished { get; set; }
         public string PublishedDateString { get { return PublishedDate.ToShortDateString(); } }
         public string Author { get; set; }
         public string Title { get; set; }

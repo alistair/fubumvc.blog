@@ -1,4 +1,4 @@
-﻿define('comment', ['jquery', 'messaging', 'validation'], function ($, messaging, validation) {
+﻿require(['jquery', 'messaging', 'validation'], function ($, messaging, validation) {
   var form = $('form');
   form.bind('submit', function () {
     validation.ajax.validate({

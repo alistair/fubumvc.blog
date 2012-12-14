@@ -1,4 +1,4 @@
-﻿define('dashboard', ['jquery', 'underscore'], function ($, _) {
+﻿require(['jquery', 'underscore'], function ($, _) {
   var recentCommentTemplate = $('li', '.recentComments'),
       recentDraftsTemplate = $('li', '.recentDrafts');
 

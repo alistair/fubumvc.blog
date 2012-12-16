@@ -1,36 +1,46 @@
-﻿require(['jquery', 'underscore', 'd3'], function ($, _, d3) {
-  //TODO: finish up chart code and move to dashboard, and cleanup
+﻿require(['jquery', 'underscore', 'dashboard-graph-helper'], function ($, _, graph) {
 
   var recentCommentTemplate = $('li', '.recentComments'),
       recentDraftsTemplate = $('li', '.recentDrafts'),
-      barWidth = 15,
-      maxBarHeight = 80,
-      chart,
-      data,
-      line = d3.scale.linear,
-      x = line().domain([0, 1]).range([0, barWidth]),
-      y = line().domain([0, 100]).rangeRound([0, maxBarHeight]);
 
   data = [
-    { postedArticleCount: 12 },
-    { postedArticleCount: 1 },
-    { postedArticleCount: 40 },
-    { postedArticleCount: 3 },
-    { postedArticleCount: 30 },
-    { postedArticleCount: 1 }
+    {
+      postedArticleCount: 80,
+      draftArticleCount: 12,
+      postedDate: '10/1'
+    },
+    {
+      postedArticleCount: 8,
+      draftArticleCount: 50,
+      postedDate: '10/2'
+    },
+    {
+      postedArticleCount: 40,
+      draftArticleCount: 12,
+      postedDate: '10/12'
+    },
+    {
+      postedArticleCount: 3,
+      draftArticleCount: 5,
+      postedDate: '11/1'
+    },
+    {
+      postedArticleCount: 30,
+      draftArticleCount: 5,
+      postedDate: '11/3'
+    },
+    {
+      postedArticleCount: 1,
+      draftArticleCount: 1,
+      postedDate: '11/1'
+    }
   ];
 
-  chart = d3.select("#chart").attr("height", maxBarHeight);
-
-  chart.selectAll("rect")
-    .data(data)
-    .enter()
-    .append("rect")
-       .attr('class', 'posted-article')
-       .attr("x", function(day, i) { return x(i) - .5; })
-       .attr("y", function(day) { return maxBarHeight - y(day.postedArticleCount) - .5; })
-       .attr("width", barWidth - 5)
-       .attr("height", function(day) { return y(day.postedArticleCount); });
+  graph.build('#chart', {
+    description: 'postedDate',
+    bars: ['postedArticleCount', 'draftArticleCount'],
+    data : data
+  });
 
   $.ajax({
     url: '/comments/count',

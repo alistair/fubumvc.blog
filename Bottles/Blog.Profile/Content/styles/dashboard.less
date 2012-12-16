@@ -1,11 +1,26 @@
 @import "util.less";
 
 #chart {
-  width: 751px;
+  font-size: 7px;
+  height: 80px;
+  width: 48%;
+  fill: @white;
   margin: 8px;
   overflow: hidden;
-  .posted-article {
+  shape-rendering: crispEdges;
+  .postedArticleCount {
     fill: @brown-light-2;
+    stroke: @white;
+  }
+  .draftArticleCount {
+    fill: @orange-2;
+    stroke: @white;
+  }
+  .dates text{
+    fill: @black;
+  }
+  line {
+    stroke: @gray-1;
   }
 }
 

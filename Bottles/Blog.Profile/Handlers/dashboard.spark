@@ -1,6 +1,7 @@
 ﻿<viewdata model="Blog.Profile.DashboardViewModel"/>
 
 # this.Asset("dashboard.js");
+# this.Asset("dashboard-graph-helper.js");
 
 <header>
   <h2>Dashboard</h2>

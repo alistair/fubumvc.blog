@@ -94,6 +94,7 @@
     <Content Include="Content\images\home.png" />
     <Content Include="Content\images\profile.png" />
     <Content Include="Content\scripts\basicinformation.js" />
+    <Content Include="Content\scripts\dashboard-graph-helper.js" />
     <Content Include="Content\scripts\dashboard.js" />
     <Content Include="Content\styles\dashboard.css">
       <DependentUpon>dashboard.less</DependentUpon>

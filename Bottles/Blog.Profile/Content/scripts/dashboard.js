@@ -1,46 +1,58 @@
 ﻿require(['jquery', 'underscore', 'dashboard-graph-helper'], function ($, _, graph) {
-
   var recentCommentTemplate = $('li', '.recentComments'),
-      recentDraftsTemplate = $('li', '.recentDrafts'),
+      recentDraftsTemplate = $('li', '.recentDrafts');
 
-  data = [
-    {
-      postedArticleCount: 80,
-      draftArticleCount: 12,
-      postedDate: '10/1'
-    },
-    {
-      postedArticleCount: 8,
-      draftArticleCount: 50,
-      postedDate: '10/2'
-    },
-    {
-      postedArticleCount: 40,
-      draftArticleCount: 12,
-      postedDate: '10/12'
-    },
-    {
-      postedArticleCount: 3,
-      draftArticleCount: 5,
-      postedDate: '11/1'
-    },
-    {
-      postedArticleCount: 30,
-      draftArticleCount: 5,
-      postedDate: '11/3'
-    },
-    {
-      postedArticleCount: 1,
-      draftArticleCount: 1,
-      postedDate: '11/1'
-    }
-  ];
+  //data = [
+  //  {
+  //    postedArticleCount: 80,
+  //    draftArticleCount: 12,
+  //    postedDate: '10/1'
+  //  },
+  //  {
+  //    postedArticleCount: 8,
+  //    draftArticleCount: 50,
+  //    postedDate: '10/2'
+  //  },
+  //  {
+  //    postedArticleCount: 40,
+  //    draftArticleCount: 12,
+  //    postedDate: '10/12'
+  //  },
+  //  {
+  //    postedArticleCount: 3,
+  //    draftArticleCount: 5,
+  //    postedDate: '11/1'
+  //  },
+  //  {
+  //    postedArticleCount: 30,
+  //    draftArticleCount: 5,
+  //    postedDate: '11/3'
+  //  },
+  //  {
+  //    postedArticleCount: 1,
+  //    draftArticleCount: 1,
+  //    postedDate: '11/1'
+  //  }
+  //];
 
-  graph.build('#chart', {
-    description: 'postedDate',
-    bars: ['postedArticleCount', 'draftArticleCount'],
-    data : data
-  });
+  
+  //data = [
+  //  {
+  //    postedCommentsCount: 30,
+  //    spamCount: 12,
+  //    postedDate: '10/1'
+  //  },
+  //  {
+  //    postedCommentsCount: 8,
+  //    spamCount: 12,
+  //    postedDate: '10/2'
+  //  },
+  //  {
+  //    postedCommentsCount: 20,
+  //    spamCount: 12,
+  //    postedDate: '10/12'
+  //  }
+  //];
 
   $.ajax({
     url: '/comments/count',
@@ -48,6 +60,13 @@
     success: function (stats) {
       $('.commentsCount').text(stats.total);
       $('.spamCount').text(stats.spam);
+
+      graph.build('#chart-comments', {
+        description: 'postedDate',
+        bars: ['postedCommentsCount', 'spamCount'],
+        data : []
+      });
+
     }
   });
 
@@ -75,6 +94,12 @@
     success: function (stats) {
       $('.articlesCount').text(stats.total);
       $('.draftsCount').text(stats.draft);
+
+      graph.build('#chart-articles', {
+        description: 'postedDate',
+        bars: ['postedArticleCount', 'draftArticleCount'],
+        data : stats.history
+      });
     }
   });
 

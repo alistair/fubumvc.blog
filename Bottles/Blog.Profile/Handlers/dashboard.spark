@@ -9,10 +9,12 @@
 <div class="dashboard">
   <ProfileNavigation/>
   <div>
-      <svg id="chart">
-        
+      <svg id="chart-articles">
       </svg>
 
+
+      <svg id="chart-comments">
+      </svg>
     <div class="box">
       <header>
         <h3>Statistics</h3>

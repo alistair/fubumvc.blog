@@ -1,15 +1,20 @@
 @import "util.less";
 
-#chart {
+#chart-articles, #chart-comments {
+  float: left;
   font-size: 7px;
   height: 80px;
   width: 48%;
   fill: @white;
-  margin: 8px;
+  margin: 0 1% 1%;
   overflow: hidden;
   shape-rendering: crispEdges;
-  .postedArticleCount {
+  .postedArticleCount, .postedCommentsCount {
     fill: @brown-light-2;
+    stroke: @white;
+  }
+  .spamCount {
+    fill: @red-2;
     stroke: @white;
   }
   .draftArticleCount {

@@ -8,7 +8,6 @@ namespace Blog.Articles.Manage
         public DateTime PublishedDate { get; set; }
         public bool IsPublished { get; set; }
         public string PublishedDateString { get { return PublishedDate.ToShortDateString(); } }
-        public string Author { get; set; }
         public string Title { get; set; }
         public int CommentsCount { get; set; }
     }

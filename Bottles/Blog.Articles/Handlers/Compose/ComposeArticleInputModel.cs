@@ -5,7 +5,7 @@ namespace Blog.Articles.Compose
         private string _id;
         public string Id
         {
-            get { return _id.Replace("/",string.Empty); }
+            get { return !string.IsNullOrEmpty(_id) ? _id.Replace("/",string.Empty) : string.Empty; }
             set { _id = value; }
         }
 

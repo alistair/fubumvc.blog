@@ -20,6 +20,7 @@ namespace Blog.Articles.Compose
 
             RuleFor(x => x.Id)
                 .Matches(@"^([-\w.]+)$")
+                .When(x => !string.IsNullOrEmpty(x.Id))
                 .WithMessage("You must provide a valid Url for your Article. Valid characters include alphabetical characters and hyphens.");
         }
     }

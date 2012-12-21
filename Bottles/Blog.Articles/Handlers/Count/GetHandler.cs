@@ -14,7 +14,7 @@ namespace Blog.Articles.Count
             _database = database;
         }
 
-        public dynamic Execute(ArticlesCountInputModel inputModel)
+        public ArticlesCountViewModel Execute(ArticlesCountInputModel inputModel)
         {
             long totalCount;
             var draftCount = _database
@@ -32,7 +32,6 @@ namespace Blog.Articles.Count
                     DraftArticleCount = x.Sum(a => a.IsPublished ? 0 : 1),
                     PostedArticleCount = x.Sum(a => a.IsPublished ? 1 : 0),
                 });
-
 
             return new ArticlesCountViewModel
             {

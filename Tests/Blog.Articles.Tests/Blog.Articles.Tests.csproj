@@ -37,6 +37,10 @@
     <Reference Include="AutofacContrib.CommonServiceLocator">
       <HintPath>..\..\packages\Autofac.CommonServiceLocator.Indy.2.6.3.863\lib\net40\AutofacContrib.CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=3.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentValidation.3.4.6.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
     </Reference>
@@ -79,12 +83,19 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\ArticleExtensionsTests.cs" />
     <Compile Include="Handlers\Archive\GetArchiveHandlerTest.cs" />
+    <Compile Include="Handlers\Compose\ComposeArticleInputModelValidatorTests.cs" />
     <Compile Include="Handlers\Compose\GetComposeForIdTest.cs" />
     <Compile Include="Handlers\Compose\GetComposeTest.cs" />
     <Compile Include="Handlers\Compose\PostSaveArticleHandler.cs" />
+    <Compile Include="Handlers\Count\GetCountsHandlerTest.cs" />
     <Compile Include="Handlers\GetArticleHandlerWithoutUserTest.cs" />
     <Compile Include="Handlers\GetArticleHandlerWithUserTest.cs" />
+    <Compile Include="Handlers\Manage\DeleteArticleAndRelatedCommentsHandlerTest.cs" />
+    <Compile Include="Handlers\Manage\GetsManagedArticlesHandlerTest.cs" />
+    <Compile Include="Handlers\RecentDrafts\GetMostRecentDraftsHandler.cs" />
+    <Compile Include="Handlers\Summaries\GetSummariesTest.cs" />
     <Compile Include="Handlers\TestIdentity.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@ namespace Blog.Articles.Summaries
             get
             {
                 var text = Body.Split(new[] { StringConstants.ArticleMore }, StringSplitOptions.None);
-                return text.First();
+                return text.First().Trim();
             }
         }
 

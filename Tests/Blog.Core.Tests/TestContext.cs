@@ -9,7 +9,7 @@ namespace Blog.Core.Tests
         private readonly MockRepository _mockRepository;
         readonly T _classUnderTest;
 
-        public TestContext()
+        protected TestContext()
         {
             _mockRepository = new MockRepository(MockBehavior.Default);
             _mockContainer = new AutoMockContainer(_mockRepository);

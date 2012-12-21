@@ -8,33 +8,32 @@ namespace Blog.Articles.Tests.Handlers.Compose
 {
     public class ComposeArticleInputModelValidatorTests : TestContext<ComposeArticleInputModelValidator>
     {
-        [Fact]
-        public void Valid_article_compoisition_scenario()
+        private ComposeArticleInputModel _model;
+
+        protected override void Given()
         {
-            var model = new ComposeArticleInputModel
+            _model = new ComposeArticleInputModel
             {
                 Title = "test",
                 Body = "some body",
                 CommentsCount = 1,
                 Id = "some_article"
             };
+        }
 
-            var validationResults = ClassUnderTest.Validate(model);
+        [Fact]
+        public void Valid_article_compoisition_scenario()
+        {
+            var validationResults = ClassUnderTest.Validate(_model);
             validationResults.IsValid.Should().Be.True();
         }
 
         [Fact]
         public void Title_cannot_be_empty()
         {
-            var model = new ComposeArticleInputModel
-            {
-                Title = "",
-                Body = "test",
-                CommentsCount = 1,
-                Id = "test"
-            };
+            _model.Title = string.Empty;
 
-            var validationResults = ClassUnderTest.Validate(model);
+            var validationResults = ClassUnderTest.Validate(_model);
 
             validationResults.IsValid.Should().Be.False();
             validationResults.Errors.Single(x => x.PropertyName == "Title")
@@ -44,15 +43,9 @@ namespace Blog.Articles.Tests.Handlers.Compose
         [Fact]
         public void Title_cannot_be_null()
         {
-            var model = new ComposeArticleInputModel
-            {
-                Title = null,
-                Body = "test",
-                CommentsCount = 1,
-                Id = "test"
-            };
+            _model.Title = null;
 
-            var validationResults = ClassUnderTest.Validate(model);
+            var validationResults = ClassUnderTest.Validate(_model);
 
             validationResults.IsValid.Should().Be.False();
             validationResults.Errors.Single(x => x.PropertyName == "Title")
@@ -62,15 +55,9 @@ namespace Blog.Articles.Tests.Handlers.Compose
         [Fact]
         public void Body_cannot_be_empty()
         {
-            var model = new ComposeArticleInputModel
-            {
-                Title = "test",
-                Body = "",
-                CommentsCount = 1,
-                Id = "test"
-            };
+            _model.Body = string.Empty;
 
-            var validationResults = ClassUnderTest.Validate(model);
+            var validationResults = ClassUnderTest.Validate(_model);
 
             validationResults.IsValid.Should().Be.False();
             validationResults.Errors.Single(x => x.PropertyName == "Body")
@@ -80,15 +67,9 @@ namespace Blog.Articles.Tests.Handlers.Compose
         [Fact]
         public void Body_cannot_be_null()
         {
-            var model = new ComposeArticleInputModel
-            {
-                Title = "test",
-                Body = null,
-                CommentsCount = 1,
-                Id = "test"
-            };
+            _model.Body = null;
 
-            var validationResults = ClassUnderTest.Validate(model);
+            var validationResults = ClassUnderTest.Validate(_model);
 
             validationResults.IsValid.Should().Be.False();
             validationResults.Errors.Single(x => x.PropertyName == "Body")
@@ -99,15 +80,9 @@ namespace Blog.Articles.Tests.Handlers.Compose
         [Fact]
         public void Id_cannot_be_empty()
         {
-            var model = new ComposeArticleInputModel
-            {
-                Title = "test",
-                Body = "some body",
-                CommentsCount = 1,
-                Id = ""
-            };
+            _model.Id = string.Empty;
 
-            var validationResults = ClassUnderTest.Validate(model);
+            var validationResults = ClassUnderTest.Validate(_model);
 
             validationResults.IsValid.Should().Be.False();
             validationResults.Errors.Single(x => x.PropertyName == "Id")
@@ -117,15 +92,9 @@ namespace Blog.Articles.Tests.Handlers.Compose
         [Fact]
         public void Id_cannot_be_null()
         {
-            var model = new ComposeArticleInputModel
-            {
-                Title = "test",
-                Body = "some body",
-                CommentsCount = 1,
-                Id = null
-            };
+            _model.Id = null;
 
-            var validationResults = ClassUnderTest.Validate(model);
+            var validationResults = ClassUnderTest.Validate(_model);
 
             validationResults.IsValid.Should().Be.False();
             validationResults.Errors.Single(x => x.PropertyName == "Id")
@@ -135,15 +104,9 @@ namespace Blog.Articles.Tests.Handlers.Compose
         [Fact]
         public void Id_cannot_contain_special_characters_except_dashes()
         {
-            var model = new ComposeArticleInputModel
-            {
-                Title = "test",
-                Body = "some body",
-                CommentsCount = 1,
-                Id = "+=)(*&^%$#@!~`'\"[]{}|\\/?<>.,"
-            };
+            _model.Id = "+=)(*&^%$#@!~`'\"[]{}|\\/?<>.,";
 
-            var validationResults = ClassUnderTest.Validate(model);
+            var validationResults = ClassUnderTest.Validate(_model);
 
             validationResults.IsValid.Should().Be.False();
             validationResults.Errors.Single(x => x.PropertyName == "Id")

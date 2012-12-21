@@ -78,6 +78,7 @@
     <Compile Include="Extensions\MapperExtensionsTests.cs" />
     <Compile Include="Extensions\ObjectExtensionsTests.cs" />
     <Compile Include="TestContext.cs" />
+    <Compile Include="TestIdentity.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">

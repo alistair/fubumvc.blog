@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DA123252-B20F-40FE-90B6-E51DDE52CBD6}</ProjectGuid>
+    <ProjectGuid>{60B0FACC-B468-424D-ACD2-CBAF089CC832}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Blog.Articles.Tests</RootNamespace>
-    <AssemblyName>Blog.Articles.Tests</AssemblyName>
+    <RootNamespace>Blog.Profile.Tests</RootNamespace>
+    <AssemblyName>Blog.Profile.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -83,33 +83,23 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\ArticleExtensionsTests.cs" />
-    <Compile Include="Handlers\Archive\GetArchiveHandlerTest.cs" />
-    <Compile Include="Handlers\Compose\ComposeArticleInputModelValidatorTests.cs" />
-    <Compile Include="Handlers\Compose\GetComposeForIdTest.cs" />
-    <Compile Include="Handlers\Compose\GetComposeTest.cs" />
-    <Compile Include="Handlers\Compose\PostSaveArticleHandler.cs" />
-    <Compile Include="Handlers\Count\GetCountsHandlerTest.cs" />
-    <Compile Include="Handlers\GetArticleHandlerWithoutUserTest.cs" />
-    <Compile Include="Handlers\GetArticleHandlerWithUserTest.cs" />
-    <Compile Include="Handlers\Manage\DeleteArticleAndRelatedCommentsHandlerTest.cs" />
-    <Compile Include="Handlers\Manage\GetsManagedArticlesHandlerTest.cs" />
-    <Compile Include="Handlers\RecentDrafts\GetMostRecentDraftsHandler.cs" />
-    <Compile Include="Handlers\Summaries\GetSummariesTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">
       <Project>{57645F4F-78C2-4F07-B300-66B3293E5FA7}</Project>
       <Name>Blog.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Bottles\Blog.Articles\Blog.Articles.csproj">
-      <Project>{fad69c8a-3023-425e-9f2a-c1a72c396ba6}</Project>
-      <Name>Blog.Articles</Name>
+    <ProjectReference Include="..\..\Bottles\Blog.Profile\Blog.Profile.csproj">
+      <Project>{0af432b1-89ec-4ae1-b396-05f62a4ee191}</Project>
+      <Name>Blog.Profile</Name>
     </ProjectReference>
     <ProjectReference Include="..\Blog.Core.Tests\Blog.Core.Tests.csproj">
       <Project>{10b16b11-bb0d-4293-a18a-b5a217eb252f}</Project>
       <Name>Blog.Core.Tests</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Handlers\BasicInformation\EditBasicInformationInputModelValidatorTests.cs" />
+    <Compile Include="Handlers\BasicInformation\GetBasicInformationHandlerTest.cs" />
+    <Compile Include="Handlers\BasicInformation\PostBasicInformationHandlerTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,6 @@
 ﻿using System.Security.Principal;
 
-namespace Blog.Articles.Tests.Handlers
+namespace Blog.Core.Tests
 {
     public class TestIdentity : IIdentity
     {

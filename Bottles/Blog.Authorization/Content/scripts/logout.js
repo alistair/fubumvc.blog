@@ -2,12 +2,13 @@
   var count = 5,
     counter = $('#count'),
     id = setInterval(function () {
-      if (count <= 0) {
+      count--;
+
+      if (count === 0) {
         clearInterval(id);
         window.location = "/";
       }
 
-      count--;
       counter.text(count);
     }, 1000);
 

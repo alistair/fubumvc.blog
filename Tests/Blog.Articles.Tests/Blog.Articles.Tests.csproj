@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{10B16B11-BB0D-4293-A18A-B5A217EB252F}</ProjectGuid>
+    <ProjectGuid>{DA123252-B20F-40FE-90B6-E51DDE52CBD6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Blog.Core.Tests</RootNamespace>
-    <AssemblyName>Blog.Core.Tests</AssemblyName>
+    <RootNamespace>Blog.Articles.Tests</RootNamespace>
+    <AssemblyName>Blog.Articles.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,6 +40,10 @@
     <Reference Include="FubuCore">
       <HintPath>..\..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
     </Reference>
+    <Reference Include="FubuMVC.Core, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
@@ -50,8 +54,7 @@
     <Reference Include="Moq.Contrib.Indy">
       <HintPath>..\..\packages\Moq.Contrib.Indy.1.0.4563.32860\lib\net40\Moq.Contrib.Indy.dll</HintPath>
     </Reference>
-    <Reference Include="SharpTestsEx, Version=1.1.1.0, Culture=neutral, PublicKeyToken=8c60d8070630b1c1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="SharpTestsEx">
       <HintPath>..\..\packages\SharpTestsEx.1.1.1\lib\SharpTestsEx.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
@@ -73,20 +76,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\UserTests.cs" />
-    <Compile Include="Extensions\FubuPageExtensionsTests.cs" />
-    <Compile Include="Extensions\MapperExtensionsTests.cs" />
-    <Compile Include="Extensions\ObjectExtensionsTests.cs" />
-    <Compile Include="TestContext.cs" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Handlers\Archive\GetArchiveHandlerTest.cs" />
+    <Compile Include="Handlers\Compose\GetComposeForIdTest.cs" />
+    <Compile Include="Handlers\Compose\GetComposeTest.cs" />
+    <Compile Include="Handlers\Compose\PostSaveArticleHandler.cs" />
+    <Compile Include="Handlers\GetArticleHandlerWithoutUserTest.cs" />
+    <Compile Include="Handlers\GetArticleHandlerWithUserTest.cs" />
+    <Compile Include="Handlers\TestIdentity.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">
       <Project>{57645F4F-78C2-4F07-B300-66B3293E5FA7}</Project>
       <Name>Blog.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
+    <ProjectReference Include="..\..\Bottles\Blog.Articles\Blog.Articles.csproj">
+      <Project>{fad69c8a-3023-425e-9f2a-c1a72c396ba6}</Project>
+      <Name>Blog.Articles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.Core.Tests\Blog.Core.Tests.csproj">
+      <Project>{10b16b11-bb0d-4293-a18a-b5a217eb252f}</Project>
+      <Name>Blog.Core.Tests</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

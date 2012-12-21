@@ -1,7 +1,7 @@
 ﻿require(['jquery', 'pagedown', 'pretty'], function ($, pagedown, pretty) {
   var article = $('section', 'article'),
-      html = article.text(),
-      md = pagedown.convert(html);
+      md = pagedown.convert(article.text());
+
   article.html(md);
 
   pretty.makePagePretty();

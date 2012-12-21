@@ -11,10 +11,10 @@ namespace Blog.Articles.Compose
     {
         private readonly IDocumentDatabase _database;
         private readonly ISecurityContext _securityContext;
-        private readonly UrlRegistry _urlRegistry;
+        private readonly IUrlRegistry _urlRegistry;
 
         public PostHandler(IDocumentDatabase database, ISecurityContext securityContext,
-            UrlRegistry urlRegistry)
+            IUrlRegistry urlRegistry)
         {
             _database = database;
             _securityContext = securityContext;

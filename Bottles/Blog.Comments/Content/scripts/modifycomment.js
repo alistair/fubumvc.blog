@@ -13,7 +13,7 @@
     return false;
   });
 
-  $('input[value=Cancel]').bind('click', function () {
+  $('input[value=Cancel]').click(function () {
     window.location = '/comments/manage';
   });
 });

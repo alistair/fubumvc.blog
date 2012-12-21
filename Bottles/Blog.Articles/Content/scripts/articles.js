@@ -1,8 +1,7 @@
-﻿require(['jquery', 'pagedown', 'underscore', 'pretty'], function ($, pagedown, _, pretty) {
-  var articles = $('section', 'article');
+﻿require(['jquery', 'pagedown', 'pretty'], function ($, pagedown, pretty) {
 
-  _.each(articles, function (article) {
-    article = $(article);
+  $('section', 'article').each(function () {
+    var article = $(this);
 
     article.html(pagedown.convert(article.html()));
   });

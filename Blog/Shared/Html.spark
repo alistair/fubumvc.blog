@@ -9,7 +9,17 @@
   <body>
     <use:view/>
     <script type="text/javascript">
-      var require = { baseUrl: '/_content/scripts/' };
+      var require = {
+        baseUrl: '/_content/scripts/',
+        paths: {
+          'underscore' : '/_content/scripts/util/underscore-1.3.3',
+          'd3' : '/_content/scripts/util/d3.v2.min'
+        },
+        shim: {
+          'underscore': { exports: '_' },
+          'd3': { exports: 'd3' }
+        }
+      };
     </script>
     # this.Asset("globaljs");
     <use:scripts/>

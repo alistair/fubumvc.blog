@@ -19,13 +19,12 @@ namespace Blog.Comments
             _database.Increment("Articles", inputModel.Uri, "CommentsCount", 1);
 
             _database.Save(new Comment
-                {
-                    ArticleUri = inputModel.Uri,
-                    Body = inputModel.Comment,
-                    Author = inputModel.Author,
-                    PublishedDate = new DateTimeOffset(DateTime.Now)
-                });
-
+            {
+                ArticleUri = inputModel.Uri,
+                Body = inputModel.Comment,
+                Author = inputModel.Author,
+                PublishedDate = new DateTimeOffset(DateTime.Now)
+            });
         }
     }
 }

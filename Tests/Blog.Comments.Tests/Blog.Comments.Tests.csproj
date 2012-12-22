@@ -80,7 +80,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Handlers\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +95,11 @@
       <Project>{10b16b11-bb0d-4293-a18a-b5a217eb252f}</Project>
       <Name>Blog.Core.Tests</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Handlers\CommentInputModelValidatorTests.cs" />
+    <Compile Include="Handlers\GetCommentsForArticleHandlerTest.cs" />
+    <Compile Include="Handlers\PostSaveCommentForArticleHandlerTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

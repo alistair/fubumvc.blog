@@ -10,5 +10,6 @@ namespace Blog.Articles.Manage
         public string PublishedDateString { get { return PublishedDate.ToShortDateString(); } }
         public string Title { get; set; }
         public int CommentsCount { get; set; }
+        public string Author { get; set; }
     }
 }

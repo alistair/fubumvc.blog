@@ -1,8 +1,9 @@
 require 'albacore'
 
 MAIN_SLN = "FubuMVC.Blog.sln"
+tests = FileList["**/*.Tests.dll"].exclude(/obj/)
 
-task :default => [ "nuget:install", :compile]
+task :default => [ "nuget:install", :compile, :tests]
 
 desc "Compile fubumvc.blog and run its unit test projects."
 msbuild :compile do |msb|
@@ -26,7 +27,13 @@ namespace :nuget do
 
 end
 
-desc "Run unit tests for fubumvc.blog."
-task :unittests do
-  #Yeah I really have to write some tests for all this.
+tests.uniq do |dir|
+  dir.pathmap('%f')
+end
+.each do |assembly|
+  desc "Run tests for fubumvc.blog and all included packages."
+  xunit :tests do |xunit|
+    xunit.command = "packages/xunit.console.exe"
+    xunit.assembly = assembly
+  end
 end

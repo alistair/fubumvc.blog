@@ -14,11 +14,11 @@ To setup and run, follow these steps:
 
 
 <h2>TODO (v 1.0):</h2>
-* Complete Profile Section.
-* Add permissions.
-* Add Administration Section to Profile.
-* Create settings POCO, save to mongo.
-* Complete Information Pages.
+* Add support for custom pages.
+* Remove Information bottle, in favor of custom pages.
+* Complete profile section.
+* Add support for permissions/user roles.
+* Add administration settings section bottle.
 * Convert all packages to use actual nuget packages. Awaiting fubuMVC 1.0.
 * Clean up UI.
 * Add support for Internet Explorer 8-10.

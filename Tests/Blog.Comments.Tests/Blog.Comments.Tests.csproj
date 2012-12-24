@@ -99,7 +99,10 @@
   <ItemGroup>
     <Compile Include="Handlers\CommentInputModelValidatorTests.cs" />
     <Compile Include="Handlers\GetCommentsForArticleHandlerTest.cs" />
+    <Compile Include="Handlers\Modify\GetsCommentForModificationHandlerTest.cs" />
+    <Compile Include="Handlers\Modify\PostSavesCommentsHandlerTests.cs" />
     <Compile Include="Handlers\PostSaveCommentForArticleHandlerTest.cs" />
+    <Compile Include="Handlers\Recent\GetMostRecentCommentsHandlerTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

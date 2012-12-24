@@ -17,7 +17,7 @@ namespace Blog.Comments.Modify
         public ModifyCommentViewModel Execute(ModifyCommentInputModel inputModel)
         {
             var comment = _database.Query<Comment>()
-                .First(x => x.Id == inputModel.Id);
+                .Single(x => x.Id == inputModel.Id);
 
             return comment.DynamicMap<ModifyCommentViewModel>();
         }

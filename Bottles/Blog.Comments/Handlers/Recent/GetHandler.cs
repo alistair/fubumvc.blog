@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Blog.Comments.Domain;
 using Blog.Core.Database;
 using Blog.Core.Extensions;
@@ -14,7 +15,7 @@ namespace Blog.Comments.Recent
             _database = database;
         }
 
-        public dynamic Execute(RecentCommentInputModel inputModel)
+        public IEnumerable<RecentCommentViewModel> Execute(RecentCommentInputModel inputModel)
         {
             var recentComments = _database
                 .Query<Comment>()

@@ -16,13 +16,13 @@ namespace Blog.Comments.Modify
         public void Execute(UpdateCommentInputModel inputModel)
         {
             _database.Save(new Comment
-                {
-                    Id = inputModel.Id,
-                    ArticleUri = inputModel.Uri,
-                    Body = inputModel.Comment,
-                    Author = inputModel.Author,
-                    PublishedDate = new DateTimeOffset(DateTime.Now)
-                });
+            {
+                Id = inputModel.Id,
+                ArticleUri = inputModel.Uri,
+                Body = inputModel.Comment,
+                Author = inputModel.Author,
+                PublishedDate = new DateTimeOffset(DateTime.Now)
+            });
         }
     }
 }

@@ -99,6 +99,7 @@
   <ItemGroup>
     <Compile Include="Handlers\CommentInputModelValidatorTests.cs" />
     <Compile Include="Handlers\GetCommentsForArticleHandlerTest.cs" />
+    <Compile Include="Handlers\Manage\DeleteCommentTest.cs" />
     <Compile Include="Handlers\Modify\GetsCommentForModificationHandlerTest.cs" />
     <Compile Include="Handlers\Modify\PostSavesCommentsHandlerTests.cs" />
     <Compile Include="Handlers\PostSaveCommentForArticleHandlerTest.cs" />

@@ -8,11 +8,12 @@ using Blog.Core.Domain;
 using Blog.Core.HtmlTags;
 using FubuCore;
 using FubuCore.Reflection;
+using FubuMVC.Core;
 using FubuMVC.Core.Security;
 using FubuMVC.Core.UI;
-using FubuMVC.Core.UI.Configuration;
-using FubuMVC.Core.UI.Navigation;
+using FubuMVC.Core.UI.Elements;
 using FubuMVC.Core.View;
+using FubuMVC.Navigation;
 using HtmlTags;
 using HtmlTags.Extended.Attributes;
 

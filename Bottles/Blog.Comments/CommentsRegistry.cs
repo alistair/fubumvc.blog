@@ -1,7 +1,7 @@
 using Blog.Comments.Manage;
 using Blog.Core.Constants;
 using FubuMVC.Core;
-using FubuMVC.Core.UI.Navigation;
+using FubuMVC.Navigation;
 
 namespace Blog.Comments
 {
@@ -9,11 +9,16 @@ namespace Blog.Comments
     {
         public void Configure(FubuRegistry registry)
         {
-            registry.Navigation(x =>
-            {
-                x.ForMenu(StringConstants.AdminMenu);
-                x.Add += MenuNode.ForInput<ManageCommentsInputModel>("Comments");
-            });
+            registry.Policies.Add<CommentsNavigationRegistry>();
+        }
+    }
+
+    public class CommentsNavigationRegistry : NavigationRegistry
+    {
+        public CommentsNavigationRegistry()
+        {
+            ForMenu(StringConstants.AdminMenu);
+            Add += MenuNode.ForInput<ManageCommentsInputModel>("Comments");
         }
     }
 }

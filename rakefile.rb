@@ -27,11 +27,11 @@ namespace :nuget do
 
 end
 
+desc "Run tests for fubumvc.blog and all included packages."
 tests.uniq do |dir|
   dir.pathmap('%f')
 end
 .each do |assembly|
-  desc "Run tests for fubumvc.blog and all included packages."
   xunit :tests do |xunit|
     xunit.command = "packages/xunit.console.exe"
     xunit.assembly = assembly

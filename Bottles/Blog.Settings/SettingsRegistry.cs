@@ -1,6 +1,5 @@
 using Blog.Core.Constants;
 using FubuMVC.Core;
-using FubuMVC.Core.UI.Navigation;
 
 namespace Blog.Settings
 {
@@ -8,10 +7,11 @@ namespace Blog.Settings
     {
         public void Configure(FubuRegistry registry)
         {
-            registry.Navigation(x =>
+            registry.Policies.Add(x =>
             {
-                x.ForMenu(StringConstants.ProfileMenu);
-                x.Add += MenuNode.ForInput<SettingsInputModel>("Settings");
+                //TODO: move to navigation registry:
+                //x.ForMenu(StringConstants.ProfileMenu);
+                //x.Add += MenuNode.ForInput<SettingsInputModel>("Settings");
             });
         }
     }

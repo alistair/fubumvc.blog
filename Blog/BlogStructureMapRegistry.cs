@@ -1,7 +1,5 @@
-using System.Collections.Generic;
-using System.Linq;
+using Blog.Core.Extensions;
 using Blog.Core.Validation;
-using Bottles;
 using FluentValidation;
 using StructureMap.Configuration.DSL;
 
@@ -11,14 +9,9 @@ namespace Blog
     {
         public BlogStructureMapRegistry()
         {
-            Scan(scanner =>
-            {
-                PackageRegistry.PackageAssemblies
-                    .Where(x => x.FullName.StartsWith("Blog"))
-                    .Each(scanner.Assembly);
+            Scan(s => s.ForBottles(s.Assembly)
+                .ConnectImplementationsToTypesClosing(typeof(IValidator<>)));
 
-                scanner.ConnectImplementationsToTypesClosing(typeof(IValidator<>));
-            });
             For(typeof (IValidator<>)).Use(typeof (EmptyValidator<>));
         }
     }

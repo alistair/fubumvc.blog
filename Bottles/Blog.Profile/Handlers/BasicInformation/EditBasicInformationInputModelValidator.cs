@@ -4,7 +4,6 @@ namespace Blog.Profile.BasicInformation
 {
     public class EditBasicInformationInputModelValidator : AbstractValidator<EditBasicInformationInputModel>
     {
-
         public EditBasicInformationInputModelValidator()
         {
             RuleFor(x => x.FirstName)

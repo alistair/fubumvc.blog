@@ -4,7 +4,7 @@ using Blog.Articles.Manage;
 using Blog.Articles.Summaries;
 using Blog.Core.Constants;
 using FubuMVC.Core;
-using FubuMVC.Core.UI.Navigation;
+using FubuMVC.Navigation;
 
 namespace Blog.Articles
 {
@@ -14,17 +14,22 @@ namespace Blog.Articles
         {
 
             registry.Routes.HomeIs<Summaries.GetHandler>(x => x.Execute(null));
+            registry.Policies.Add<ArticleNavigationRegistry>();
 
-            registry.Navigation(x =>
-            {
-                x.ForMenu(StringConstants.BlogName);
-                x.Add += MenuNode.ForInput<ArticleSummariesInputModel>("Home");
-                x.InsertAfter["Home"] = MenuNode.ForInput<ArchiveInputModel>("Archive");
+        }
+    }
 
-                x.ForMenu(StringConstants.AdminMenu);
-                x.Add += MenuNode.ForInput<ComposeInputModel>("Compose");
-                x.Add += MenuNode.ForInput<ManageArticlesInputModel>("Articles");
-            });
+    public class ArticleNavigationRegistry : NavigationRegistry
+    {
+        public ArticleNavigationRegistry()
+        {
+            ForMenu(StringConstants.BlogName);
+            Add += MenuNode.ForInput<ArticleSummariesInputModel>("Home");
+            InsertAfter["Home"] = MenuNode.ForInput<ArchiveInputModel>("Archive");
+
+            ForMenu(StringConstants.AdminMenu);
+            Add += MenuNode.ForInput<ComposeInputModel>("Compose");
+            Add += MenuNode.ForInput<ManageArticlesInputModel>("Articles");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿require(['jquery', 'underscore', 'pagedown', 'pretty', 'validation', 'textarea-selection'], function ($, _, pagedown, pretty, validation, textareaSelection) {
+﻿require(['jquery', 'underscore', 'pagedown', 'pretty', 'validation'], function ($, _, pagedown, pretty, validation) {
     var form = $('form'),
       textarea = $('[name="Body"]'),
       titleInput = $('input[name=Title]'),
@@ -49,11 +49,12 @@
 
     if (urlInput.val().length === 0) {
         titleInput.keydown(setTitle);
-        setTitle();
     } else {
         urlInput.attr('disabled', 'disabled');
         urlInput.val('/' + urlInput.val());
     }
+
+    setTitle();
 
     $('input[value=Cancel]').click(function () {
         window.location = '/articles/manage';

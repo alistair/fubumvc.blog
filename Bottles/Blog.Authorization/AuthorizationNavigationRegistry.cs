@@ -3,7 +3,7 @@ using Blog.Authorization.Logout;
 using Blog.Core.Constants;
 using FubuMVC.Core.Runtime.Conditionals;
 using FubuMVC.Core.Security;
-using FubuMVC.Core.UI.Navigation;
+using FubuMVC.Navigation;
 
 namespace Blog.Authorization
 {

@@ -1,6 +1,6 @@
 using Blog.Core.Constants;
 using FubuMVC.Core;
-using FubuMVC.Core.UI.Navigation;
+using FubuMVC.Navigation;
 
 namespace Blog.Information
 {
@@ -8,11 +8,16 @@ namespace Blog.Information
     {
         public void Configure(FubuRegistry registry)
         {
-            registry.Navigation(x =>
-            {
-                x.ForMenu(StringConstants.BlogName);
-                x.InsertAfter["Archive"] = MenuNode.ForInput<AboutInputModel>("About");
-            });
+            registry.Policies.Add<InformationNavigationRegistry>();
+        }
+    }
+
+    public class InformationNavigationRegistry : NavigationRegistry
+    {
+        public InformationNavigationRegistry()
+        {
+            ForMenu(StringConstants.BlogName);
+            InsertAfter["Archive"] = MenuNode.ForInput<AboutInputModel>("About");
         }
     }
 }

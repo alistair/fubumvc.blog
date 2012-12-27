@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using Blog.Core.Extensions;
 using Blog.Policies;
-using Bottles;
 using FubuMVC.Core;
-using FubuMVC.Core.Registration.Conventions;
+using FubuMVC.Core.Assets;
 using FubuMVC.Core.Runtime;
+using FubuMVC.HandlerConventions;
 
 namespace Blog
 {
@@ -14,21 +13,16 @@ namespace Blog
         {
             Import<HandlerConvention>();
 
-            Applies.ToThisAssembly();
-            PackageRegistry.PackageAssemblies
-                 .Where(x => x.FullName.StartsWith("Blog"))
-                 .Each(x => Applies.ToAssembly(x));
+            Actions.FindBy(s => s.ForBottles(a => s.Applies.ToAssembly(a))
+                .IncludeMethods(m => m.Name == "Execute"));
 
-            Assets.CombineAllUniqueAssetRequests();
-
-            Views.TryToAttachWithDefaultConventions();
+            #if !DEBUG
+                this.Assets().CombineAllUniqueAssetRequests();
+            #endif
 
             Policies.Add<ValidationPolicy>();
 
-            Services(registry =>
-            {
-                registry.SetServiceIfNone<IJsonWriter, NewtonSoftJsonWriter>();
-            });
+            Services(registry => registry.AddService<IJsonWriter, NewtonSoftJsonWriter>());
         }
     }
 }

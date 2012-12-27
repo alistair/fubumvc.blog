@@ -13,7 +13,7 @@ namespace Blog.Comments.Count
             _database = database;
         }
 
-        public dynamic Execute(CommentsCountInputModel inputModel)
+        public CommentsCountViewModel Execute(CommentsCountInputModel inputModel)
         {
             long totalCount;
             var spamCount = _database

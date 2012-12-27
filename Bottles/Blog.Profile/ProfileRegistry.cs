@@ -1,7 +1,7 @@
 using Blog.Core.Constants;
 using Blog.Profile.BasicInformation;
 using FubuMVC.Core;
-using FubuMVC.Core.UI.Navigation;
+using FubuMVC.Navigation;
 
 namespace Blog.Profile
 {
@@ -9,12 +9,16 @@ namespace Blog.Profile
     {
         public void Configure(FubuRegistry registry)
         {
-            registry.Navigation(x =>
-            {
-                x.ForMenu(StringConstants.ProfileMenu);
-                x.Add += MenuNode.ForInput<DashboardInputModel>("Dashboard");
-                x.Add += MenuNode.ForInput<BasicInformationInputModel>("Profile");
-            });
+            registry.Policies.Add<ProfileNavigationRegistry>();
+        }
+    }
+    public class ProfileNavigationRegistry : NavigationRegistry
+    {
+        public ProfileNavigationRegistry()
+        {
+            ForMenu(StringConstants.ProfileMenu);
+            Add += MenuNode.ForInput<DashboardInputModel>("Dashboard");
+            Add += MenuNode.ForInput<BasicInformationInputModel>("Profile");
         }
     }
 }

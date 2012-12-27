@@ -50,6 +50,15 @@
     <Reference Include="FubuMVC.Core">
       <HintPath>..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
     </Reference>
+    <Reference Include="FubuMVC.Core.UI">
+      <HintPath>..\fubu-packages\FubuMVC\FubuMVC.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core.View">
+      <HintPath>..\fubu-packages\FubuMVC\FubuMVC.Core.View.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Navigation">
+      <HintPath>..\fubu-packages\FubuMVC\FubuMVC.Navigation.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlTags">
       <HintPath>..\fubu-packages\HtmlTags\HtmlTags.dll</HintPath>
     </Reference>
@@ -58,6 +67,9 @@
     </Reference>
     <Reference Include="MongoDB.Driver">
       <HintPath>..\packages\mongocsharpdriver.1.6\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -78,6 +90,7 @@
     <Compile Include="Extensions\MapperExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\FubuPageExtensions.cs" />
+    <Compile Include="Extensions\RegistryExtensions.cs" />
     <Compile Include="HtmlTags\TextAreaTag.cs" />
     <Compile Include="Permissions\IRequireBasicAuthorization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

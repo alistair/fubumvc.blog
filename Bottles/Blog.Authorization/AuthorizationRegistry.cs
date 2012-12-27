@@ -9,9 +9,8 @@ namespace Blog.Authorization
     {
         public void Configure(FubuRegistry registry)
         {
-            registry.ApplyConvention<AuthorizationConvention>();
-
-            registry.Navigation<AuthorizationNavigationRegistry>();
+            registry.Policies.Add<AuthorizationConvention>();
+            registry.Policies.Add<AuthorizationNavigationRegistry>();
 
             registry.Services(x =>
             {

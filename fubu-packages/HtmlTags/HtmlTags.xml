@@ -172,6 +172,37 @@
             Setting this value will remove any existing value. Use <see cref="M:HtmlTags.HtmlTag.After(HtmlTags.HtmlTag)"/> if you wish to insert a new sibling before any existing sibling.
             </summary>
         </member>
+        <member name="M:HtmlTags.Conventions.TagLibrary`1.Category(System.String)">
+            <summary>
+            The modifiers and builders for a category of conventions 
+            </summary>
+            <param name="category">Example:  "Label", "Editor", "Display"</param>
+            <returns></returns>
+        </member>
+        <member name="M:HtmlTags.Conventions.TagLibrary`1.Add(HtmlTags.Conventions.ITagBuilderPolicy{`0})">
+            <summary>
+            Adds a builder policy to the default category and profile
+            </summary>
+            <param name="policy"> </param>
+        </member>
+        <member name="M:HtmlTags.Conventions.TagLibrary`1.Add(HtmlTags.Conventions.ITagModifier{`0})">
+            <summary>
+            Adds a modifier to the default category and profile
+            </summary>
+            <param name="modifier"></param>
+        </member>
+        <member name="M:HtmlTags.Conventions.TagLibrary`1.ForProfile(System.String)">
+            <summary>
+            Add builders and modifiers by profile
+            </summary>
+            <param name="profile"></param>
+            <returns></returns>
+        </member>
+        <member name="P:HtmlTags.Conventions.TagLibrary`1.Default">
+            <summary>
+            Access to the default category
+            </summary>
+        </member>
         <member name="T:HtmlTags.Conventions.TagRequest">
             <summary>
             Will always need to implement an Equals and GetHashCode in order for this thing to work

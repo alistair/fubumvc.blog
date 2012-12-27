@@ -1,5 +1,7 @@
 ﻿<use namespace="FubuCore" />
 ﻿<use namespace="FubuMVC.Core.UI" />
+﻿<use namespace="FubuMVC.Core.Assets" />
+﻿<use namespace="FubuMVC.Core.View" />
 <use namespace="Blog.Core.Extensions"/>
 <use namespace="Blog.Core.Constants"/>
 <use namespace="System.Linq" />

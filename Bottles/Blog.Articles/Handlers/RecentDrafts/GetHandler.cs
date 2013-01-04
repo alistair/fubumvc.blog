@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Blog.Articles.Domain;
 using Blog.Core.Database;
 using Blog.Core.Extensions;
@@ -15,15 +14,14 @@ namespace Blog.Articles.RecentDrafts
             _database = database;
         }
 
-        public IEnumerable<RecentDraftViewModel> Execute(RecentDraftsInputModel inputModel)
+        public RecentDraftsViewModel Execute(RecentDraftsInputModel inputModel)
         {
             var articles = _database.Query<Article>()
                      .OrderByDescending(x => x.PublishedDate)
                      .Where(x => !x.IsPublished)
                      .Take(5);
 
-            return articles.Select(x => x.DynamicMap<RecentDraftViewModel>());
-
+            return new RecentDraftsViewModel(articles.Select(x => x.DynamicMap<RecentDraftViewModel>()));
         }
     }
 }

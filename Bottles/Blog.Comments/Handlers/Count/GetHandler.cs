@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Blog.Comments.Domain;
 using Blog.Core.Database;
@@ -21,10 +22,23 @@ namespace Blog.Comments.Count
                 .Where(x => x.IsPotentialSpam)
                 .LongCount();
 
+
+            var history = _database.Query<Comment>()
+                .Where(x => x.PublishedDate > DateTime.Now.Subtract(new TimeSpan(30, 0, 0, 0)))
+                .ToList()
+                .GroupBy(x => x.PublishedDate.Date)
+                .Select(x => new DateCountViewModal
+                {
+                    PostedDate = x.Key.ToString("MM/dd"),
+                    SpamCount = x.Sum(a => a.IsPotentialSpam ? 1 : 0),
+                    PostedCommentsCount = x.Sum(a => a.IsApproved ? 1 : 0),
+                });
+
             return new CommentsCountViewModel
             {
                 Total = totalCount,
-                Spam = spamCount
+                Spam = spamCount,
+                History = history
             };
         }
     }

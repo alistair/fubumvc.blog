@@ -2,60 +2,11 @@
   var recentCommentTemplate = $('li', '.recentComments'),
       recentDraftsTemplate = $('li', '.recentDrafts');
 
-  //data = [
-  //  {
-  //    postedArticleCount: 80,
-  //    draftArticleCount: 12,
-  //    postedDate: '10/1'
-  //  },
-  //  {
-  //    postedArticleCount: 8,
-  //    draftArticleCount: 50,
-  //    postedDate: '10/2'
-  //  },
-  //  {
-  //    postedArticleCount: 40,
-  //    draftArticleCount: 12,
-  //    postedDate: '10/12'
-  //  },
-  //  {
-  //    postedArticleCount: 3,
-  //    draftArticleCount: 5,
-  //    postedDate: '11/1'
-  //  },
-  //  {
-  //    postedArticleCount: 30,
-  //    draftArticleCount: 5,
-  //    postedDate: '11/3'
-  //  },
-  //  {
-  //    postedArticleCount: 1,
-  //    draftArticleCount: 1,
-  //    postedDate: '11/1'
-  //  }
-  //];
 
-  
-  //data = [
-  //  {
-  //    postedCommentsCount: 30,
-  //    spamCount: 12,
-  //    postedDate: '10/1'
-  //  },
-  //  {
-  //    postedCommentsCount: 8,
-  //    spamCount: 12,
-  //    postedDate: '10/2'
-  //  },
-  //  {
-  //    postedCommentsCount: 20,
-  //    spamCount: 12,
-  //    postedDate: '10/12'
-  //  }
-  //];
 
   $.ajax({
     url: '/comments/count',
+    type: 'GET',
     dataType: 'JSON',
     success: function (stats) {
       $('.commentsCount').text(stats.total);
@@ -64,7 +15,7 @@
       graph.build('#chart-comments', {
         description: 'postedDate',
         bars: ['postedCommentsCount', 'spamCount'],
-        data : []
+        data : stats.history
       });
 
     }
@@ -72,6 +23,7 @@
 
   $.ajax({
     url: '/comments/recent',
+    type: 'GET',
     dataType: 'JSON',
     success: function (recentComments) {
       _.each(recentComments, function (comment) {
@@ -90,6 +42,7 @@
 
   $.ajax({
     url: '/articles/count',
+    type: 'GET',
     dataType: 'JSON',
     success: function (stats) {
       $('.articlesCount').text(stats.total);
@@ -105,8 +58,10 @@
 
   $.ajax({
     url: '/articles/recent-drafts',
+    type: 'GET',
     dataType: 'JSON',
     success: function (recentDrafts) {
+
       _.each(recentDrafts, function (draft) {
         var template = recentDraftsTemplate.clone();
         template.find('a').attr('href', '/articles/compose?Id=' + draft.Id);

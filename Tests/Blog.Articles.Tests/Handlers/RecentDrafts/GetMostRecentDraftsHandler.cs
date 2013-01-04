@@ -47,7 +47,9 @@ namespace Blog.Articles.Tests.Handlers.RecentDrafts
         [Fact]
         public void Gets_top_five_draft_articles()
         {
-            var result = ClassUnderTest.Execute(new RecentDraftsInputModel()).ToList();
+            var result = ClassUnderTest.Execute(new RecentDraftsInputModel())
+                .RecentDrafts
+                .ToList();
 
             result.Should().Not.Be.Empty();
             result.Count.Should().Be(5);

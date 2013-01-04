@@ -23,7 +23,7 @@ namespace Blog.Comments
                 ArticleUri = inputModel.Uri,
                 Body = inputModel.Comment,
                 Author = inputModel.Author,
-                PublishedDate = new DateTimeOffset(DateTime.Now)
+                PublishedDate = DateTime.Now
             });
         }
     }

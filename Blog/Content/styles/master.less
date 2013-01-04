@@ -35,8 +35,8 @@ legend {
 
 .box {
   & > header {
+    border-radius: 3px 3px 0 0;
     border: solid 1px @gray-1;
-    border-bottom: 0;
     .box-header;
     h3 {
       padding: 0;
@@ -45,8 +45,18 @@ legend {
   }
   & > div {
     padding: 7px 10px;
-    border: solid 1px @gray-1;
+    border-left: solid 1px @gray-1;
+    border-right: solid 1px @gray-1;
     overflow: hidden;
+  }
+  & > footer {
+    text-align: right;
+    font-size: 11px;
+    padding: 7px 10px;
+    border-radius: 0 0 3px 3px;
+    border: solid 1px @gray-1;
+    border-top: solid 1px @gray-light-3;
+    background-color: @gray-light-2;
   }
 }
 

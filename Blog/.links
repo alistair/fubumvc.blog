@@ -4,6 +4,7 @@
   <include>..\Bottles\Blog.Authorization</include>
   <include>..\Bottles\Blog.Comments</include>
   <include>..\Bottles\Blog.Information</include>
+  <include>..\Bottles\Blog.Pages</include>
   <include>..\Bottles\Blog.Profile</include>
   <include>..\Bottles\Blog.Settings</include>
   <EnvironmentAssembly>Blog</EnvironmentAssembly>

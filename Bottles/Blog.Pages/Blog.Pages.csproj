@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E1A4CCCC-B5D9-46F3-82FF-6E0CFE2CB7C4}</ProjectGuid>
+    <ProjectGuid>{3C16F949-837A-4E78-9774-3D95D622E6E2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Blog.Settings</RootNamespace>
-    <AssemblyName>Blog.Settings</AssemblyName>
+    <RootNamespace>Blog.Pages</RootNamespace>
+    <AssemblyName>Blog.Pages</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,10 +34,6 @@
     <Reference Include="Bottles">
       <HintPath>..\..\fubu-packages\Bottles\Bottles.dll</HintPath>
     </Reference>
-    <Reference Include="FluentValidation, Version=3.4.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\FluentValidation.3.4.6.0\lib\Net40\FluentValidation.dll</HintPath>
-    </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
     </Reference>
@@ -47,8 +43,7 @@
     <Reference Include="FubuMVC.Core">
       <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FubuMVC.Navigation, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="FubuMVC.Navigation">
       <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -60,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handlers\SettingsInputModel.cs" />
-    <Compile Include="Handlers\GetHandler.cs" />
-    <Compile Include="Handlers\SettingsViewModel.cs" />
+    <Compile Include="Handlers\Manage\GetHandler.cs" />
+    <Compile Include="Handlers\Manage\ManagePagesInputModel.cs" />
+    <Compile Include="Handlers\Manage\ManagePagesViewModel.cs" />
+    <Compile Include="PagesRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsRegistry.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Blog.Core\Blog.Core.csproj">
@@ -76,14 +71,15 @@
     <None Include=".package-manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Content\styles\settings.less" />
-    <None Include="Handlers\settings.spark" />
-    <None Include="settings.asset.config" />
-    <None Include="settings.script.config" />
+    <None Include="Content\styles\pages.less" />
+    <None Include="Handlers\Manage\manage.spark" />
+    <None Include="pages.asset.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\images\settings.png" />
-    <Content Include="Content\scripts\settings.js" />
+    <Folder Include="Content\scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\pages.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

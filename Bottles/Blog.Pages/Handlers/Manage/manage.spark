@@ -1,0 +1,8 @@
+﻿<viewdata model="Blog.Pages.Manage.ManagePagesViewModel"/>
+
+<header>
+    <h2>Pages</h2>
+</header>
+<div class="managepages">
+  <ProfileNavigation/>
+</div>

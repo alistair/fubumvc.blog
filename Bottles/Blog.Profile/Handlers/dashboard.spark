@@ -41,6 +41,9 @@
           </li>
         </ul>
       </div>
+      <footer>
+        
+      </footer>
     </div>
 
     <div class="box">
@@ -54,6 +57,9 @@
           </li>
         </ul>
       </div>
+      <footer>
+        <a href="">View All</a>
+      </footer>
     </div>
 
     <div class="box">
@@ -68,6 +74,9 @@
           </li>
         </ul>
       </div>
+      <footer>
+        <a href="">View All</a>
+      </footer>
     </div>
 
   </div>

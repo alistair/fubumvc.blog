@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bottles">
-      <HintPath>..\..\fubu-packages\Bottles\Bottles.dll</HintPath>
+      <HintPath>..\..\packages\Bottles.1.0.0.441\lib\Bottles.dll</HintPath>
     </Reference>
     <Reference Include="DotNetOpenAuth.Core">
       <HintPath>..\..\packages\DotNetOpenAuth.Core.4.1.0.12182\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
@@ -44,16 +44,16 @@
       <HintPath>..\..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.0.12182\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
     </Reference>
     <Reference Include="FubuCore">
-      <HintPath>..\..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
+      <HintPath>..\..\packages\FubuCore.1.0.0.225\lib\FubuCore.dll</HintPath>
     </Reference>
     <Reference Include="FubuLocalization">
-      <HintPath>..\..\fubu-packages\FubuMVC\FubuLocalization.dll</HintPath>
+      <HintPath>..\..\packages\FubuLocalization.0.9.5.124\lib\FubuLocalization.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Core">
-      <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Core.dll</HintPath>
+      <HintPath>..\..\packages\FubuMVC.Core.1.0.0.1401\lib\net40\FubuMVC.Core.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Navigation">
-      <HintPath>..\..\fubu-packages\FubuMVC\FubuMVC.Navigation.dll</HintPath>
+      <HintPath>..\..\packages\FubuMVC.Navigation.0.9.0.82\lib\net40\FubuMVC.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

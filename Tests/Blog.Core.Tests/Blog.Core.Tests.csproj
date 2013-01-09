@@ -38,7 +38,7 @@
       <HintPath>..\..\packages\Autofac.CommonServiceLocator.Indy.2.6.3.863\lib\net40\AutofacContrib.CommonServiceLocator.dll</HintPath>
     </Reference>
     <Reference Include="FubuCore">
-      <HintPath>..\..\fubu-packages\FubuCore\FubuCore.dll</HintPath>
+      <HintPath>..\..\packages\FubuCore.1.0.0.225\lib\FubuCore.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>

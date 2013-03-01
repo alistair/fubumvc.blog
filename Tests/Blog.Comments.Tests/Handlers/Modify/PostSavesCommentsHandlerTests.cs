@@ -1,7 +1,7 @@
 ﻿using Blog.Comments.Domain;
 using Blog.Comments.Modify;
-using Blog.Core.Database;
 using Blog.Core.Tests;
+using MongoAdapt;
 using Moq;
 using Xunit;
 

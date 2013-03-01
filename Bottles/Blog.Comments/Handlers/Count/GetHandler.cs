@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using Blog.Comments.Domain;
-using Blog.Core.Database;
+using MongoAdapt;
 
 namespace Blog.Comments.Count
 {
@@ -18,7 +18,8 @@ namespace Blog.Comments.Count
         {
             long totalCount;
             var spamCount = _database
-                .WithCount<Comment>(out totalCount)
+                .Query<Comment>()
+                //.WithCount<Comment>(out totalCount)
                 .Where(x => x.IsPotentialSpam)
                 .LongCount();
 
@@ -36,7 +37,7 @@ namespace Blog.Comments.Count
 
             return new CommentsCountViewModel
             {
-                Total = totalCount,
+                //TODO: Total = totalCount,
                 Spam = spamCount,
                 History = history
             };

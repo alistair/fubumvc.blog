@@ -1,4 +1,4 @@
-﻿using Blog.Core.Database;
+﻿using MongoAdapt;
 
 namespace Blog.Pages.Manage
 {

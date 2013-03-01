@@ -83,7 +83,7 @@
       <HintPath>..\packages\FubuMVC.Core.View.1.0.0.145\lib\net40\FubuMVC.Core.View.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.HandlerConventions">
-      <HintPath>..\fubu-packages\FubuMVC.HandlerConventions.dll</HintPath>
+      <HintPath>..\external-packages\FubuMVC.HandlerConventions.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Less">
       <HintPath>..\packages\FubuMVC.Less.0.0.1.632\lib\net40\FubuMVC.Less.dll</HintPath>
@@ -103,11 +103,16 @@
     <Reference Include="HtmlTags">
       <HintPath>..\packages\HtmlTags.1.2.0.145\lib\4.0\HtmlTags.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Bson">
-      <HintPath>..\packages\mongocsharpdriver.1.6\lib\net35\MongoDB.Bson.dll</HintPath>
+    <Reference Include="MongoAdapt">
+      <HintPath>..\external-packages\MongoAdapt.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\packages\mongocsharpdriver.1.6\lib\net35\MongoDB.Driver.dll</HintPath>
+    <Reference Include="MongoDB.Bson, Version=1.6.0.4624, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.7.1\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.6.0.4624, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.7.1\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -144,12 +149,12 @@
     <Compile Include="Behaviors\ValidationBehavior`1.cs" />
     <Compile Include="BlogRegistry.cs" />
     <Compile Include="BlogStructureMapRegistry.cs" />
+    <Compile Include="MongoDbRegistry.cs" />
     <Compile Include="Policies\ValidationPolicy.cs" />
     <Compile Include="NewtonSoftJsonWriter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="MongoRegistry.cs" />
     <None Include=".links" />
     <Content Include="app.asset.config" />
     <None Include=".package-manifest" />

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Blog.Core.Constants;
-using Blog.Core.Database;
 using Blog.Core.Domain;
 using Blog.Core.HtmlTags;
 using FubuCore;
@@ -16,6 +15,7 @@ using FubuMVC.Core.View;
 using FubuMVC.Navigation;
 using HtmlTags;
 using HtmlTags.Extended.Attributes;
+using MongoAdapt;
 
 namespace Blog.Core.Extensions
 {
@@ -149,8 +149,7 @@ namespace Blog.Core.Extensions
         {
             var security = page.Get<ISecurityContext>();
             var user = page.Get<IDocumentDatabase>()
-                .Query<User>()
-                .FirstOrDefault(x => x.Id == security.CurrentIdentity.Name);
+                .Load<User>(security.CurrentIdentity.Name);
 
             return user;
         }

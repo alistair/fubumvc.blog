@@ -4,6 +4,11 @@ namespace Blog.Comments.Domain
 {
     public class Comment
     {
+        public Comment(Guid id)
+        {
+            Id = id;
+        }
+
         public Guid Id { get; set; }
         public string ArticleUri { get; set; }
         public string Author { get; set; }

@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using Blog.Articles.Domain;
-using Blog.Core.Database;
+using MongoAdapt;
 
 namespace Blog.Articles.Count
 {
@@ -18,7 +18,8 @@ namespace Blog.Articles.Count
         {
             long totalCount;
             var draftCount = _database
-                .WithCount<Article>(out totalCount)
+                .Query<Article>()
+                //.WithCount<Article>(out totalCount)
                 .Where(x => !x.IsPublished)
                 .LongCount();
 
@@ -35,7 +36,7 @@ namespace Blog.Articles.Count
 
             return new ArticlesCountViewModel
             {
-                Total = totalCount,
+                //Total = totalCount,
                 Draft = draftCount,
                 History = history
             };

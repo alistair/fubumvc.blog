@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Blog.Articles.Domain;
 using Blog.Articles.RecentDrafts;
-using Blog.Core.Database;
 using Blog.Core.Tests;
+using MongoAdapt;
 using SharpTestsEx;
 using Xunit;
 

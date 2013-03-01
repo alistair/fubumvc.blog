@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Blog.Comments.Domain;
-using Blog.Core.Database;
 using Blog.Core.Tests;
+using MongoAdapt;
 using SharpTestsEx;
 using Xunit;
 
@@ -18,10 +18,9 @@ namespace Blog.Comments.Tests.Handlers
         {
             _articleId = "test";
 
-            _comment = new Comment
+            _comment = new Comment(Guid.NewGuid())
             {
                 ArticleUri = _articleId,
-                Id = Guid.NewGuid(),
                 Author = "test",
                 Body = "some body",
                 IsApproved = true,
@@ -34,7 +33,7 @@ namespace Blog.Comments.Tests.Handlers
                      .Returns(new EnumerableQuery<Comment>(new[]
                      {
                         _comment,
-                        new Comment { ArticleUri = "blah" }
+                        new Comment(_comment.Id) { ArticleUri = "blah" }
                      }));
         }
 

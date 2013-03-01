@@ -1,7 +1,6 @@
-﻿using System.Linq;
-using Blog.Comments.Domain;
-using Blog.Core.Database;
+﻿using Blog.Comments.Domain;
 using Blog.Core.Extensions;
+using MongoAdapt;
 
 namespace Blog.Comments.Modify
 {
@@ -16,8 +15,7 @@ namespace Blog.Comments.Modify
 
         public ModifyCommentViewModel Execute(ModifyCommentInputModel inputModel)
         {
-            var comment = _database.Query<Comment>()
-                .Single(x => x.Id == inputModel.Id);
+            var comment = _database.Load<Comment>(inputModel.Id);
 
             return comment.DynamicMap<ModifyCommentViewModel>();
         }

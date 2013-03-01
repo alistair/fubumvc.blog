@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using Blog.Core.Database;
 using Blog.Core.Domain;
 using Blog.Core.Extensions;
 using Blog.Core.Tests;
 using Blog.Profile.BasicInformation;
 using FubuMVC.Core.Security;
+using MongoAdapt;
 using SharpTestsEx;
 using Xunit;
 

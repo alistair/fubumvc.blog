@@ -49,6 +49,9 @@
     <Reference Include="FubuMVC.Navigation">
       <HintPath>..\..\packages\FubuMVC.Navigation.0.9.0.82\lib\net40\FubuMVC.Navigation.dll</HintPath>
     </Reference>
+    <Reference Include="MongoAdapt">
+      <HintPath>..\..\external-packages\MongoAdapt.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

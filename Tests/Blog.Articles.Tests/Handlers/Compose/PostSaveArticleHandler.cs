@@ -1,8 +1,8 @@
 ﻿using Blog.Articles.Compose;
 using Blog.Articles.Domain;
-using Blog.Core.Database;
 using Blog.Core.Tests;
 using FubuMVC.Core.Security;
+using MongoAdapt;
 using Moq;
 using SharpTestsEx;
 using Xunit;

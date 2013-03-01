@@ -1,7 +1,7 @@
 using System.Linq;
-using Blog.Core.Database;
 using Blog.Core.Domain;
 using Blog.Core.Extensions;
+using MongoAdapt;
 
 namespace Blog.Information.Authors
 {
@@ -16,7 +16,7 @@ namespace Blog.Information.Authors
 
         public AuthorsViewModel Execute(AuthorsInputModel inputModel)
         {
-            var authors = _database.All<User>().ToList();
+            var authors = _database.Query<User>().ToList();
 
             return new AuthorsViewModel
             {

@@ -2,8 +2,8 @@
 using System.Linq;
 using Blog.Comments.Domain;
 using Blog.Comments.Modify;
-using Blog.Core.Database;
 using Blog.Core.Tests;
+using MongoAdapt;
 using SharpTestsEx;
 using Xunit;
 
@@ -15,10 +15,7 @@ namespace Blog.Comments.Tests.Handlers.Modify
 
         protected override void Given()
         {
-            _comment = new Comment
-            {
-                Id = Guid.NewGuid()
-            };
+            _comment = new Comment(Guid.NewGuid());
 
             Container.GetMock<IDocumentDatabase>()
                      .Setup(x => x.Query<Comment>())

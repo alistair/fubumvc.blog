@@ -1,9 +1,9 @@
 using System.Linq;
 using Blog.Articles.Domain;
-using Blog.Core.Database;
 using Blog.Core.Domain;
 using Blog.Core.Extensions;
 using FubuMVC.Core;
+using MongoAdapt;
 
 namespace Blog.Articles
 {

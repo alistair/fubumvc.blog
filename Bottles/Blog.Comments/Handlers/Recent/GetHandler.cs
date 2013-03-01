@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Blog.Comments.Domain;
-using Blog.Core.Database;
 using Blog.Core.Extensions;
+using MongoAdapt;
 
 namespace Blog.Comments.Recent
 {

@@ -1,7 +1,7 @@
-using Blog.Core.Database;
 using Blog.Core.Domain;
 using Blog.Core.Extensions;
 using FubuMVC.Core.Security;
+using MongoAdapt;
 
 namespace Blog.Profile.BasicInformation
 {

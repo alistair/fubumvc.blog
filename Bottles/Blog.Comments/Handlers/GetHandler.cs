@@ -1,8 +1,8 @@
 using System.Linq;
 using Blog.Comments.Domain;
-using Blog.Core.Database;
 using Blog.Core.Extensions;
 using FubuMVC.Core;
+using MongoAdapt;
 
 namespace Blog.Comments
 {

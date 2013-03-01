@@ -1,6 +1,6 @@
 ﻿using System;
 using Blog.Comments.Domain;
-using Blog.Core.Database;
+using MongoAdapt;
 
 namespace Blog.Comments.Modify
 {
@@ -15,9 +15,8 @@ namespace Blog.Comments.Modify
 
         public void Execute(UpdateCommentInputModel inputModel)
         {
-            _database.Save(new Comment
+            _database.Save(new Comment(inputModel.Id)
             {
-                Id = inputModel.Id,
                 ArticleUri = inputModel.Uri,
                 Body = inputModel.Comment,
                 Author = inputModel.Author,

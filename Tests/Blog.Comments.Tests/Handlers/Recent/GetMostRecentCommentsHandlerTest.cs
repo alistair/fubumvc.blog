@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Blog.Comments.Domain;
 using Blog.Comments.Recent;
-using Blog.Core.Database;
 using Blog.Core.Tests;
+using MongoAdapt;
 using SharpTestsEx;
 using Xunit;
 
@@ -20,9 +20,8 @@ namespace Blog.Comments.Tests.Handlers.Recent
 
             for (var i = 0; i < 5; i++)
             {
-                _comments.Add(new Comment
+                _comments.Add(new Comment(Guid.NewGuid())
                 {
-                    Id = Guid.NewGuid(),
                     PublishedDate = DateTime.Today.AddDays(-i),
                     Author = "test",
                     ArticleUri = "test",

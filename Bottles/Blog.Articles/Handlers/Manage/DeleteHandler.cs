@@ -1,5 +1,5 @@
 ﻿using Blog.Articles.Domain;
-using Blog.Core.Database;
+using MongoAdapt;
 
 namespace Blog.Articles.Manage
 {
@@ -14,9 +14,9 @@ namespace Blog.Articles.Manage
 
         public DeleteArticleViewModel Execute(DeleteArticleInputModel inputModel)
         {
-            _database.Delete<Article>(inputModel.Id);
+            _database.Delete(new Article(inputModel.Id));
 
-            _database.Delete("Comments", "ArticleUri", inputModel.Id);
+            //_database.Delete("Comments", "ArticleUri", inputModel.Id);
 
             return new DeleteArticleViewModel();
         }

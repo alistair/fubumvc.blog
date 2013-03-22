@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Blog.Articles.Domain;
+using Blog.Core.Domain;
 using SharpTestsEx;
 using Xunit;
 

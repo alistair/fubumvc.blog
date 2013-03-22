@@ -1,4 +1,5 @@
 ﻿using Blog.Comments.Domain;
+using Blog.Core.Domain;
 using Blog.Core.Extensions;
 using MongoAdapt;
 

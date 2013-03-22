@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Blog.Comments.Domain;
+using Blog.Core.Domain;
 using MongoAdapt;
 
 namespace Blog.Comments.Manage
@@ -16,11 +17,14 @@ namespace Blog.Comments.Manage
         public DeleteCommentViewModel Execute(DeleteCommentInputModel inputModel)
         {
             var comment = _database.Query<Comment>()
-                .First(x => x.Id == inputModel.Id);
+                .FirstOrDefault(x => x.Id == inputModel.Id);
 
-            //_database.Increment("Articles", comment.ArticleUri, "CommentsCount", -1);
+            if (comment != null)
+            {
+                //_database.Increment("Articles", comment.ArticleUri, "CommentsCount", -1);
+                _database.Delete(comment);
+            }
 
-            _database.Delete(new Comment(inputModel.Id));
             return new DeleteCommentViewModel();
         }
     }

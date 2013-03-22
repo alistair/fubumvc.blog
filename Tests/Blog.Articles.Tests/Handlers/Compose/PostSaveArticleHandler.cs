@@ -1,5 +1,6 @@
 ﻿using Blog.Articles.Compose;
 using Blog.Articles.Domain;
+using Blog.Core.Domain;
 using Blog.Core.Tests;
 using FubuMVC.Core.Security;
 using MongoAdapt;

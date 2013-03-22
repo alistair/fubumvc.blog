@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Blog.Comments.Domain;
+using Blog.Core.Domain;
 using MongoAdapt;
 
 namespace Blog.Comments.Count

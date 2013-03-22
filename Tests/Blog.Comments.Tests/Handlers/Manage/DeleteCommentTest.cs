@@ -2,6 +2,7 @@
 using System.Linq;
 using Blog.Comments.Domain;
 using Blog.Comments.Manage;
+using Blog.Core.Domain;
 using Blog.Core.Tests;
 using MongoAdapt;
 using Xunit;

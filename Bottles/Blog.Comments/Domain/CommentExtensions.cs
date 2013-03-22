@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Blog.Core.Domain;
 
 namespace Blog.Comments.Domain
 {

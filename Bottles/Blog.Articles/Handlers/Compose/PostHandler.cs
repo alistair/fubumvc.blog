@@ -1,6 +1,7 @@
 ﻿using System;
 using Blog.Articles.Domain;
 using Blog.Articles.Manage;
+using Blog.Core.Domain;
 using FubuMVC.Core.Security;
 using FubuMVC.Core.Urls;
 using MongoAdapt;

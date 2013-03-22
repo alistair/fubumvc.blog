@@ -2,6 +2,7 @@
 using System.Linq;
 using Blog.Comments.Domain;
 using Blog.Comments.Modify;
+using Blog.Core.Domain;
 using Blog.Core.Tests;
 using MongoAdapt;
 using SharpTestsEx;
@@ -18,8 +19,8 @@ namespace Blog.Comments.Tests.Handlers.Modify
             _comment = new Comment(Guid.NewGuid());
 
             Container.GetMock<IDocumentDatabase>()
-                     .Setup(x => x.Query<Comment>())
-                     .Returns(new EnumerableQuery<Comment>(new[] { _comment }));
+                     .Setup(x => x.Load<Comment>(_comment.Id))
+                     .Returns(_comment);
         }
 
         [Fact]

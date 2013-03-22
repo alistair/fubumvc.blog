@@ -2,6 +2,8 @@
 using System.Linq;
 using Blog.Articles.Count;
 using Blog.Articles.Domain;
+using Blog.Articles.Tests.Domain;
+using Blog.Core.Domain;
 using Blog.Core.Tests;
 using MongoAdapt;
 using SharpTestsEx;
@@ -42,11 +44,11 @@ namespace Blog.Articles.Tests.Handlers.Count
                 oldArticle
             };
 
-            var totalCount = articles.LongCount();
+            IDocumentCollection totalCount = new Stats(articles.LongCount());
 
-            //TODO: Container.GetMock<IDocumentDatabase>()
-            //    .Setup(x => x.WithCount<Article>(out totalCount))
-            //    .Returns(new EnumerableQuery<Article>(articles));
+            TODO: Container.GetMock<IDocumentDatabase>()
+                .Setup(x => x.Statistics<Article>(out totalCount))
+                .Returns(new EnumerableQuery<Article>(articles));
 
             Container.GetMock<IDocumentDatabase>()                .Setup(x => x.Query<Article>())                .Returns(new EnumerableQuery<Article>(articles));        }
         [Fact]

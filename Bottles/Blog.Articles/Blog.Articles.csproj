@@ -66,7 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticleRegistry.cs" />
-    <Compile Include="Domain\Article.cs" />
     <Compile Include="Domain\ArticleExtensions.cs" />
     <Compile Include="Handlers\Archive\ArchiveInputModel.cs" />
     <Compile Include="Handlers\Archive\ArchiveItemViewModel.cs" />

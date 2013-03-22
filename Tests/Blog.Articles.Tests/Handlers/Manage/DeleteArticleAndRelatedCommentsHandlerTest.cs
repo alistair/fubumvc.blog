@@ -1,7 +1,12 @@
-﻿using Blog.Articles.Domain;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Blog.Articles.Domain;
 using Blog.Articles.Manage;
+using Blog.Core.Domain;
 using Blog.Core.Tests;
 using MongoAdapt;
+using Moq;
 using Xunit;
 
 namespace Blog.Articles.Tests.Handlers.Manage
@@ -13,6 +18,15 @@ namespace Blog.Articles.Tests.Handlers.Manage
         protected override void Given()
         {
             _articleId = "test";
+            Container.GetMock<IDocumentDatabase>()
+                     .Setup(x => x.Query<Comment>())
+                     .Returns(new List<Comment>
+                         {
+                             new Comment(Guid.NewGuid())
+                                 {
+                                     ArticleUri = _articleId,
+                                 }
+                         }.AsQueryable());
         }
 
         [Fact]
@@ -24,10 +38,10 @@ namespace Blog.Articles.Tests.Handlers.Manage
             });
 
             Container.GetMock<IDocumentDatabase>()
-                .Verify(x => x.Delete(new Article{ Id = _articleId}));
+                .Verify(x => x.Delete<Article>(_articleId));
 
-            //TODO: Container.GetMock<IDocumentDatabase>()
-            //    .Verify(x => x.Delete("Comments", "ArticleUri", _articleId));
+            Container.GetMock<IDocumentDatabase>()
+                .Verify(x => x.Delete(It.IsAny<Comment>()));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Blog.Articles.Domain;
+using Blog.Core.Domain;
 using Blog.Core.Tests;
 using MongoAdapt;
 using SharpTestsEx;

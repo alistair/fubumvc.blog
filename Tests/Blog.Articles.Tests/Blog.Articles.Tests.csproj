@@ -53,6 +53,9 @@
     <Reference Include="MongoAdapt">
       <HintPath>..\..\external-packages\MongoAdapt.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\Blog\bin\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="Moq, Version=4.0.10827.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
@@ -86,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\ArticleExtensionsTests.cs" />
+    <Compile Include="Domain\Stats.cs" />
     <Compile Include="Handlers\Archive\GetArchiveHandlerTest.cs" />
     <Compile Include="Handlers\Compose\ComposeArticleInputModelValidatorTests.cs" />
     <Compile Include="Handlers\Compose\GetComposeForIdTest.cs" />

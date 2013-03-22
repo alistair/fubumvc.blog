@@ -1,5 +1,6 @@
 using System.Linq;
 using Blog.Comments.Domain;
+using Blog.Core.Domain;
 using Blog.Core.Extensions;
 using FubuMVC.Core;
 using MongoAdapt;

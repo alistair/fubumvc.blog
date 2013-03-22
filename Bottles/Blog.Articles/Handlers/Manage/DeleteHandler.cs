@@ -1,4 +1,7 @@
-﻿using Blog.Articles.Domain;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Blog.Articles.Domain;
+using Blog.Core.Domain;
 using MongoAdapt;
 
 namespace Blog.Articles.Manage
@@ -14,9 +17,11 @@ namespace Blog.Articles.Manage
 
         public DeleteArticleViewModel Execute(DeleteArticleInputModel inputModel)
         {
-            _database.Delete(new Article(inputModel.Id));
+            _database.Delete<Article>(inputModel.Id);
 
-            //_database.Delete("Comments", "ArticleUri", inputModel.Id);
+            _database.Query<Comment>()
+                     .Where(x => x.ArticleUri == inputModel.Id)
+                     .Each(x => _database.Delete(x));
 
             return new DeleteArticleViewModel();
         }

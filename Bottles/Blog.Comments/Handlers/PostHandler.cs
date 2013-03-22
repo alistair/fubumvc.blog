@@ -1,5 +1,6 @@
 ﻿using System;
 using Blog.Comments.Domain;
+using Blog.Core.Domain;
 using MongoAdapt;
 
 namespace Blog.Comments

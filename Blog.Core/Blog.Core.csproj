@@ -82,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\StringConstants.cs" />
+    <Compile Include="Domain\Article.cs" />
+    <Compile Include="Domain\Comment.cs" />
     <Compile Include="Domain\IPageable.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Extensions\MongoDatabaseExtensions.cs" />

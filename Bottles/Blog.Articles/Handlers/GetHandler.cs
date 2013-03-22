@@ -20,12 +20,17 @@ namespace Blog.Articles
         public ArticleViewModel Execute(ArticleInputModel inputModel)
         {
             var article = _database.Query<Article>().FirstOrDefault(x => x.Id == inputModel.Uri);
+
+            if (article == null)
+                return new ArticleViewModel();
+
             var user = _database.Query<User>().SingleOrDefault(u => u.Id == article.AuthorId);
 
             var model = article.DynamicMap<ArticleViewModel>();
             model.Author = user.FullName();
 
             return model;
+
         }
     }
 }

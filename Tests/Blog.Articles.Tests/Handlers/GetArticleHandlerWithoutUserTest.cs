@@ -46,5 +46,14 @@ namespace Blog.Articles.Tests.Handlers
             articlesViewModel.PublishedDateString.Should().Be(_article.PublishedDate.ToString("MMMM dd, yyyy"));
             articlesViewModel.Title.Should().Be(_article.Title);
         }
+
+        [Fact]
+        public void Expect_no_article_view_data_for_no_uri()
+        {
+            var articlesViewModel = ClassUnderTest.Execute(new ArticleInputModel());
+
+            articlesViewModel.Should().Not.Be.Null();
+            articlesViewModel.Id.Should().Be.Null();
+        }
     }
 }

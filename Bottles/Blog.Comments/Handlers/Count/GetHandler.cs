@@ -17,10 +17,9 @@ namespace Blog.Comments.Count
 
         public CommentsCountViewModel Execute(CommentsCountInputModel inputModel)
         {
-            long totalCount;
+            IDocumentCollection info;
             var spamCount = _database
-                .Query<Comment>()
-                //.WithCount<Comment>(out totalCount)
+                .Statistics<Comment>(out info)
                 .Where(x => x.IsPotentialSpam)
                 .LongCount();
 
@@ -38,7 +37,7 @@ namespace Blog.Comments.Count
 
             return new CommentsCountViewModel
             {
-                //TODO: Total = totalCount,
+                Total = info.Count,
                 Spam = spamCount,
                 History = history
             };

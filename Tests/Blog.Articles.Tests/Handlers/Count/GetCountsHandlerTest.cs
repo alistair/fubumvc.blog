@@ -46,7 +46,7 @@ namespace Blog.Articles.Tests.Handlers.Count
 
             IDocumentCollection totalCount = new Stats(articles.LongCount());
 
-            TODO: Container.GetMock<IDocumentDatabase>()
+            Container.GetMock<IDocumentDatabase>()
                 .Setup(x => x.Statistics<Article>(out totalCount))
                 .Returns(new EnumerableQuery<Article>(articles));
 

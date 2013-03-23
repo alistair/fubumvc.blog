@@ -17,7 +17,7 @@ namespace Blog.Comments
         public void Execute(CommentInputModel inputModel)
         {
 
-            //_database.Increment("Articles", inputModel.Uri, "CommentsCount", 1);
+            _database.Increment<Article>(inputModel.Uri, x => x.CommentsCount);
 
             _database.Save(new Comment(Guid.NewGuid())
             {

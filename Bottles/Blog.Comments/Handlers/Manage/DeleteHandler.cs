@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using Blog.Comments.Domain;
 using Blog.Core.Domain;
 using MongoAdapt;
 
@@ -21,7 +20,7 @@ namespace Blog.Comments.Manage
 
             if (comment != null)
             {
-                //_database.Increment("Articles", comment.ArticleUri, "CommentsCount", -1);
+                _database.Decrement<Article>(comment.ArticleUri, x => x.CommentsCount);
                 _database.Delete(comment);
             }
 

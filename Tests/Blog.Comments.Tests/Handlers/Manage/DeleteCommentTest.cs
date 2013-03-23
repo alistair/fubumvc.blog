@@ -33,8 +33,8 @@ namespace Blog.Comments.Tests.Handlers.Manage
                 Id = _comment.Id
             });
 
-            //TODO: Container.GetMock<IDocumentDatabase>()
-            //    .Verify(x => x.Increment("Articles", _comment.ArticleUri, "CommentsCount", -1));
+            Container.GetMock<IDocumentDatabase>()
+                .Verify(x => x.Decrement<Article>(_comment.ArticleUri, a => a.CommentsCount));
 
             Container.GetMock<IDocumentDatabase>()
                 .Verify(x => x.Delete(_comment));

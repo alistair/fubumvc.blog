@@ -24,8 +24,8 @@ namespace Blog.Comments.Tests.Handlers
         {
             ClassUnderTest.Execute(_commentInputModel);
 
-            //TODO: Container.GetMock<IDocumentDatabase>()
-            //    .Verify(x => x.Increment("Articles", _commentInputModel.Uri, "CommentsCount", 1));
+            Container.GetMock<IDocumentDatabase>()
+                .Verify(x => x.Increment<Article>(_commentInputModel.Uri, a => a.CommentsCount));
 
             Container.GetMock<IDocumentDatabase>()
                 .Verify(x => x.Save(It.IsAny<Comment>()));

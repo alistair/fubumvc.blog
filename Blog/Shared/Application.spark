@@ -2,5 +2,8 @@
 <div>
   <Navigation/>
   <BootStrapFailure/>
-  <use:view/>
+
+  <div class="container">
+    <use:view/>
+  </div>
 </div>

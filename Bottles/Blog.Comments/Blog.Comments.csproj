@@ -102,9 +102,6 @@
     <None Include="comment.script.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Content\styles\comments.less" />
-    <None Include="Content\styles\managecomments.less" />
-    <None Include="Content\styles\modifycomment.less" />
     <None Include="Handlers\comments.spark">
       <SubType>Designer</SubType>
     </None>
@@ -124,18 +121,14 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\styles\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\comments.png" />
     <Content Include="Content\scripts\comment.js" />
     <Content Include="Content\scripts\modifycomment.js" />
     <Content Include="Content\scripts\managecomments.js" />
-    <Content Include="Content\styles\managecomments.css">
-      <DependentUpon>managecomments.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\managecomments.min.css">
-      <DependentUpon>managecomments.less</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

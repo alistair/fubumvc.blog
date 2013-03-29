@@ -83,12 +83,9 @@
     <None Include=".package-manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Content\styles\dashboard.less" />
     <None Include="profile.script.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Content\styles\basicinformation.less" />
-    <None Include="Content\styles\profile.less" />
     <None Include="Handlers\BasicInformation\basicinformation.spark" />
     <None Include="Handlers\dashboard.spark">
       <SubType>Designer</SubType>
@@ -101,14 +98,10 @@
     <Content Include="Content\scripts\basicinformation.js" />
     <Content Include="Content\scripts\dashboard-graph-helper.js" />
     <Content Include="Content\scripts\dashboard.js" />
-    <Content Include="Content\styles\dashboard.css">
-      <DependentUpon>dashboard.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\dashboard.min.css">
-      <DependentUpon>dashboard.less</DependentUpon>
-    </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\styles\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

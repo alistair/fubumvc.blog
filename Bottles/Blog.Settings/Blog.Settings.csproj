@@ -71,7 +71,6 @@
     <None Include=".package-manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Content\styles\settings.less" />
     <None Include="Handlers\settings.spark" />
     <None Include="settings.asset.config" />
     <None Include="settings.script.config" />
@@ -79,6 +78,9 @@
   <ItemGroup>
     <Content Include="Content\images\settings.png" />
     <Content Include="Content\scripts\settings.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\styles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

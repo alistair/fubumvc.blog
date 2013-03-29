@@ -1,8 +1,8 @@
-﻿<div class="header">
-  <div>
-    <h1>MY BLOG</h1>
-    <nav>
-      ${this.Menu()}
-    </nav>
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="~/">MY BLOG</a>
+      ${this.Menu().AddClass("nav")}
+    </div>
   </div>
 </div>

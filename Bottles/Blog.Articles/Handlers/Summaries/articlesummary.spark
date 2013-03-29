@@ -10,7 +10,7 @@
           ${summary.Title}
         </a>
       </h2>
-      <time datetime="${summary.PublishedDate}">
+      <time class="date" datetime="${summary.PublishedDate}">
         Posted On: ${summary.PublishedDateString} by
       </time>
       <a href="/author" rel="author">${summary.Author}</a>
@@ -19,14 +19,11 @@
       !{summary.Summary}
     </section>
     <p>
-      <a href="${summary.Id}">Continue Reading</a>
-      <a href="${summary.Id}#comments">Comments</a>
+      <a href="${summary.Id}" class="btn btn-info btn-mini">Continue Reading</a>
+      <a href="${summary.Id}#comments" class="btn btn-mini">Comments</a>
     </p>
   </article>
   <article if="!Model.Summaries.Any()">
     There are no articles posted yet.
   </article>
 </section>
-<aside>
-  # this.Partial<Blog.Information.Authors.AuthorsInputModel>();
-</aside>

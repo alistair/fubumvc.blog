@@ -74,12 +74,12 @@
     <None Include=".package-manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Content\styles\pages.less" />
     <None Include="Handlers\Manage\manage.spark" />
     <None Include="pages.asset.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\scripts\" />
+    <Folder Include="Content\styles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\pages.png" />

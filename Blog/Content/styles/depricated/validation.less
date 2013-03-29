@@ -1,0 +1,10 @@
+﻿@import "util.less";
+
+input, select, textarea{
+  &.error {
+    border: solid 1px @red-1;
+    &:hover, &:focus {
+      border: solid 1px @red-light-1;
+    }
+  }
+}

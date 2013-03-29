@@ -78,7 +78,6 @@
     <None Include=".package-manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Content\styles\authors.less" />
     <None Include="Handlers\about.spark" />
     <None Include="Handlers\Authors\authors.spark">
       <SubType>Designer</SubType>
@@ -86,12 +85,7 @@
     <None Include="information.asset.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\styles\authors.css">
-      <DependentUpon>authors.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\authors.min.css">
-      <DependentUpon>authors.less</DependentUpon>
-    </Content>
+    <Folder Include="Content\styles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

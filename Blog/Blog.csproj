@@ -85,8 +85,9 @@
     <Reference Include="FubuMVC.HandlerConventions">
       <HintPath>..\external-packages\FubuMVC.HandlerConventions.dll</HintPath>
     </Reference>
-    <Reference Include="FubuMVC.Less">
-      <HintPath>..\packages\FubuMVC.Less.0.0.1.632\lib\net40\FubuMVC.Less.dll</HintPath>
+    <Reference Include="FubuMVC.Less, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external-packages\FubuMVC.Less.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Media">
       <HintPath>..\packages\FubuMVC.Media.0.9.5.309\lib\net40\FubuMVC.Media.dll</HintPath>
@@ -164,8 +165,22 @@
     <Content Include="Content\images\end.png" />
     <Content Include="Content\images\forward.png" />
     <Content Include="Content\images\front.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\Markdown.Editor.Icons.png" />
+    <Content Include="Content\scripts\bootstrap-affix.js" />
+    <Content Include="Content\scripts\bootstrap-alert.js" />
+    <Content Include="Content\scripts\bootstrap-button.js" />
+    <Content Include="Content\scripts\bootstrap-carousel.js" />
+    <Content Include="Content\scripts\bootstrap-collapse.js" />
+    <Content Include="Content\scripts\bootstrap-dropdown.js" />
+    <Content Include="Content\scripts\bootstrap-modal.js" />
+    <Content Include="Content\scripts\bootstrap-popover.js" />
+    <Content Include="Content\scripts\bootstrap-scrollspy.js" />
+    <Content Include="Content\scripts\bootstrap-tab.js" />
+    <Content Include="Content\scripts\bootstrap-tooltip.js" />
+    <Content Include="Content\scripts\bootstrap-transition.js" />
+    <Content Include="Content\scripts\bootstrap-typeahead.js" />
     <Content Include="Content\scripts\util\d3.v2.min.js" />
     <Content Include="Content\scripts\util\pagedown\jquery.pagedown.modal.js" />
     <Content Include="Content\scripts\util\pagedown\jquery.pagedown.tooltip.js" />
@@ -179,90 +194,51 @@
     <Content Include="Content\scripts\paging.js" />
     <Content Include="Content\scripts\util\require.query-string.js" />
     <Content Include="Content\scripts\util\jquery-1.8.1.min.js" />
-    <Content Include="Content\styles\buttons.css">
-      <DependentUpon>buttons.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\buttons.min.css">
-      <DependentUpon>buttons.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\Copy of editor.css">
-      <DependentUpon>util.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\Copy of editor.min.css">
-      <DependentUpon>util.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\editor.css">
-      <DependentUpon>editor.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\editor.min.css">
-      <DependentUpon>editor.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\master.css">
-      <DependentUpon>master.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\master.min.css">
-      <DependentUpon>master.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\messaging.css">
-      <DependentUpon>messaging.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\messaging.min.css">
-      <DependentUpon>messaging.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\modal.css">
-      <DependentUpon>modal.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\modal.min.css">
-      <DependentUpon>modal.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\paging.css">
-      <DependentUpon>paging.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\paging.min.css">
-      <DependentUpon>paging.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\prettify.css">
-      <DependentUpon>prettify.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\prettify.min.css">
-      <DependentUpon>prettify.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\util.css">
-      <DependentUpon>util.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\util.min.css">
-      <DependentUpon>util.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\util\colors.css">
-      <DependentUpon>colors.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\util\colors.min.css">
-      <DependentUpon>colors.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\util\gradients.css">
-      <DependentUpon>gradients.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\util\gradients.min.css">
-      <DependentUpon>gradients.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\validation.css">
-      <DependentUpon>validation.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\validation.min.css">
-      <DependentUpon>validation.less</DependentUpon>
-    </Content>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Content\styles\buttons.less" />
-    <Content Include="Content\styles\editor.less" />
-    <Content Include="Content\styles\modal.less" />
-    <Content Include="Content\styles\util\colors.less" />
-    <Content Include="Content\styles\util.less" />
-    <None Include="Content\styles\validation.less" />
-    <None Include="Content\styles\messaging.less" />
-    <None Include="Content\styles\paging.less" />
-    <None Include="Content\styles\util\gradients.less" />
+    <Content Include="Content\styles\accordion.less" />
+    <Content Include="Content\styles\alerts.less" />
+    <Content Include="Content\styles\bootstrap.less" />
+    <Content Include="Content\styles\breadcrumbs.less" />
+    <Content Include="Content\styles\button-groups.less" />
+    <Content Include="Content\styles\buttons.less" />
+    <Content Include="Content\styles\carousel.less" />
+    <Content Include="Content\styles\close.less" />
+    <Content Include="Content\styles\code.less" />
+    <Content Include="Content\styles\component-animations.less" />
+    <Content Include="Content\styles\dropdowns.less" />
+    <Content Include="Content\styles\forms.less" />
+    <Content Include="Content\styles\grid.less" />
+    <Content Include="Content\styles\hero-unit.less" />
+    <Content Include="Content\styles\labels-badges.less" />
+    <Content Include="Content\styles\layouts.less" />
+    <Content Include="Content\styles\media.less" />
+    <Content Include="Content\styles\mixins.less" />
+    <Content Include="Content\styles\modals.less" />
+    <Content Include="Content\styles\navbar.less" />
+    <Content Include="Content\styles\navs.less" />
+    <Content Include="Content\styles\pager.less" />
+    <Content Include="Content\styles\pagination.less" />
+    <Content Include="Content\styles\popovers.less" />
+    <Content Include="Content\styles\progress-bars.less" />
+    <Content Include="Content\styles\reset.less" />
+    <Content Include="Content\styles\responsive-1200px-min.less" />
+    <Content Include="Content\styles\responsive-767px-max.less" />
+    <Content Include="Content\styles\responsive-768px-979px.less" />
+    <Content Include="Content\styles\responsive-navbar.less" />
+    <Content Include="Content\styles\responsive-utilities.less" />
+    <Content Include="Content\styles\responsive.less" />
+    <Content Include="Content\styles\scaffolding.less" />
+    <Content Include="Content\styles\sprites.less" />
+    <Content Include="Content\styles\tables.less" />
+    <Content Include="Content\styles\thumbnails.less" />
+    <Content Include="Content\styles\tooltip.less" />
+    <Content Include="Content\styles\type.less" />
+    <Content Include="Content\styles\utilities.less" />
+    <Content Include="Content\styles\variables.less" />
+    <Content Include="Content\styles\wells.less" />
+    <Content Include="Content\styles\master.less" />
     <None Include="Shared\Application.spark">
       <SubType>Designer</SubType>
     </None>
@@ -281,8 +257,6 @@
     <None Include="Shared\Html.spark" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\styles\master.less" />
-    <None Include="Content\styles\prettify.less" />
     <Content Include="Content\scripts\util\google-code-prettify\lang-apollo.js" />
     <Content Include="Content\scripts\util\google-code-prettify\lang-clj.js" />
     <Content Include="Content\scripts\util\google-code-prettify\lang-css.js" />

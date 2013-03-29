@@ -1,0 +1,68 @@
+﻿@import "util.less";
+
+.button {
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  .gradient(@white, @gray-1, @white);
+  text-shadow: @white 0 1px 0;
+  border: solid 1px @gray-1;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin: 0;
+  &:hover {
+    .gradient(@white, @blue-light-1, @white);
+    text-shadow: @white 0 1px 0;
+    border: solid 1px @blue-light-1;
+    border-bottom-color: @blue-light-2;
+  }
+}
+
+.green-button {
+  border-color: @green-1;
+  text-shadow: @green-light-5 0 1px 0;
+  color: @green-dark-2;
+  .gradient(@green-light-5, @green-1, @green-light-5);
+  &:hover {
+    color: @green-dark-1;
+    border-color: @green-1;
+    text-shadow: @green-light-5 0 1px 0;
+    border-bottom-color: @green-1;
+    .gradient(@green-light-5, @green-light-6, @green-light-5);
+  }
+}
+
+.orange-button {
+  border-color: @orange-2;
+  text-shadow: @orange-light-3 0 1px 0;
+  color: @brown-1;
+  .gradient(@orange-1, @orange-2, @orange-1);
+  &:hover {
+    text-shadow: @orange-light-3 0 1px 0;
+    border-color: @orange-2;
+    border-bottom-color: @orange-2;
+    .gradient(@orange-light-3, @orange-1, @orange-light-3);
+  }
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+  .button;
+}
+
+input[value^="Post"],
+input[value^="Submit"] {
+  .green-button;
+}
+
+input[value^="Update"],
+input[value^="Save"] {
+  .orange-button;
+}
+
+input[value^="Archive"] {
+  color: @red-2;
+  .gradient(@white, @gray-light-3, @white);
+}

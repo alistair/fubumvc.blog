@@ -114,9 +114,6 @@
     <None Include="articles.asset.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Content\styles\archive.less" />
-    <None Include="Content\styles\compose.less" />
-    <None Include="Content\styles\managearticles.less" />
     <None Include="Handlers\Archive\archive.spark">
       <SubType>Designer</SubType>
     </None>
@@ -146,12 +143,9 @@
     <Content Include="Content\scripts\articles.js" />
     <Content Include="Content\scripts\compose.js" />
     <Content Include="Content\scripts\managearticles.js" />
-    <Content Include="Content\styles\managearticles.css">
-      <DependentUpon>managearticles.less</DependentUpon>
-    </Content>
-    <Content Include="Content\styles\managearticles.min.css">
-      <DependentUpon>managearticles.less</DependentUpon>
-    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\styles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

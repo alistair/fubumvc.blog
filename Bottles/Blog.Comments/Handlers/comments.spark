@@ -4,34 +4,35 @@
 
 # this.Asset("comment.js");
 
-<span class="commentsheader">
-  Comments
-</span>
-<ul class="comments">
+<legend>Comments</legend>
+<ul class="unstyled">
   <li if="!Model.Comments.Any()">No comments yet.</li>
   <li each="var comment in Model.Comments">
-    <h3><time datetime="${comment.PublishedDate}">${comment.PublishedDateString} BY</time> ${comment.Author}</h3>
-    ${comment.Body}
+    <em><time datetime="${comment.PublishedDate}">${comment.PublishedDateString} BY</time> ${comment.Author}</em>
+    <p>
+      ${comment.Body}
+    </p>
   </li>
 </ul>
-<span class="commentsheader">
-  Leave a comment
-</span>
+
 ${this.FormFor<CommentInputModel>()}
-${this.HiddenInputFor(x=> x.Uri)}
-<ul class="submitcomment">
-  <li>
+  <legend>Leave a comment</legend>
+  ${this.HiddenInputFor(x=> x.Uri)}
+  <p>
     ${this.InputFor<CommentInputModel>(x => x.Author)
+          .AddClass("input-block-level input-large")
           .WithCustomLabel("Name")}
-  </li>
-  <li>
+  </p>
+  <p>
     ${this.InputFor<CommentInputModel>(x => x.Email)
+          .AddClass("input-block-level input-large")
           .WithCustomLabel("Email (will not be published)")}
-  </li>
-  <li>
-    ${this.TextAreaFor<CommentInputModel>(x => x.Comment)}
-  </li>
-  <li>
-    ${this.Submit()}
-  </li>
-</ul>
+  </p>
+  <p>
+    ${this.TextAreaFor<CommentInputModel>(x => x.Comment)
+          .AddClass("input-block-level")
+          .Attr("rows", "10")}
+  </p>
+  <p>
+    ${this.Submit().AddClass("btn btn-primary")}
+  </p>

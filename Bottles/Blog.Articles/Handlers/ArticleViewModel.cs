@@ -13,7 +13,12 @@ namespace Blog.Articles
 
     public string Body
     {
-      get { return _body.Replace(StringConstants.ArticleMore, string.Empty); }
+      get
+      {
+          return string.IsNullOrEmpty(_body) 
+              ? string.Empty 
+              : _body.Replace(StringConstants.ArticleMore, string.Empty);
+      }
       set { _body = value; }
     }
 

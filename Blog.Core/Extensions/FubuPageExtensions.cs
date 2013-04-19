@@ -21,6 +21,7 @@ namespace Blog.Core.Extensions
 {
     public static class FubuPageExtensions
     {
+        //TODO: this is super ugly needs alot of cleanup:
         public static HtmlTag Menu(this IFubuPage page, string menuName = null)
         {
             var navigationService = page.Get<INavigationService>();
@@ -30,10 +31,11 @@ namespace Blog.Core.Extensions
 
             items.Each(x =>
             {
-                var link = new LinkTag(x.Key, x.Url);
                 var li = new HtmlTag("li");
-                li.AddClass(
-                    string.Format("menu-item-{0}", x.Key.Replace(" ", string.Empty).ToLowerInvariant()));
+                var icon = new HtmlTag("i");
+                icon.AddClass(string.Format("icon-{0}", x.Key.Replace(" ", string.Empty).ToLowerInvariant()));
+                var link = new LinkTag(string.Empty, x.Url);
+                link.AppendHtml(icon.ToHtmlString() + x.Key);
 
                 if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available && user != null)
                 {

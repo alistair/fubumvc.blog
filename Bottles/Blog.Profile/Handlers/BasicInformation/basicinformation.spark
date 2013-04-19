@@ -1,20 +1,27 @@
 ﻿<viewdata model="Blog.Profile.BasicInformation.BasicInformationViewModel"/>
 <use namespace="Blog.Profile.BasicInformation"/>
 <header>
-  <h2>User Information</h2>
+  <h2><i class="icon-profile"></i> User Information</h2>
 </header>
 # this.Asset("basicinformation.js");
 
-<div class="basicinformation">
+<div class="row">
   <ProfileNavigation/>
+  <div class="span10">
   ${this.FormFor<EditBasicInformationInputModel>()}
-    <ul>
-      <li>${ this.InputFor(x => x.FirstName).WithCustomLabel("First Name") }</li>
-      <li>${ this.InputFor(x => x.LastName).WithCustomLabel("Last Name") }</li>
-      <li>${ this.InputFor(x => x.NickName).WithCustomLabel("Nick Name") }</li>
-      <li>${ this.InputFor(x => x.EmailAddress).WithCustomLabel("E-mail") }</li>
-      <li>${ this.Gravatar(Model.GravatarEmailAddress, 22)}${ this.InputFor(x => x.GravatarEmailAddress).WithCustomLabel("Gravatar E-mail") }</li>
-      <li>${ this.TextAreaFor(x => x.Description).WithCustomLabel("Description") }</li>
-      <li>${this.Submit()} ${this.Button("Cancel")} </li>
+    <ul class="unstyled">
+      <li>${ this.InputFor(x => x.FirstName).AddClass("input-block-level input-large").WithCustomLabel("First Name") }</li>
+      <li>${ this.InputFor(x => x.LastName).AddClass("input-block-level input-large").WithCustomLabel("Last Name") }</li>
+      <li>${ this.InputFor(x => x.NickName).AddClass("input-block-level input-large").WithCustomLabel("Nick Name") }</li>
+      <li>${ this.InputFor(x => x.EmailAddress).AddClass("input-block-level input-xlarge").WithCustomLabel("E-mail") }</li>
+      <li>
+          ${ this.Gravatar(Model.GravatarEmailAddress, 22)}
+          ${ this.InputFor(x => x.GravatarEmailAddress)
+            .AddClass("input-block-level input-xlarge")
+            .WithCustomLabel("Gravatar E-mail") }
+      </li>
+      <li>${ this.TextAreaFor(x => x.Description).Attr("rows", 5).AddClass("input-block-level input-xxlarge").WithCustomLabel("Description") }</li>
+      <li>${this.Submit().AddClass("btn btn-success")} ${this.Button("Cancel").AddClass("btn")} </li>
     </ul>
   </div>
+</div>

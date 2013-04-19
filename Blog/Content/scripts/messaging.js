@@ -9,7 +9,8 @@
         messageContent.remove();
       });
 
-      messageContent.addClass('messaging messaging-' + cssClass);
+      messageContent.addClass('alert alert-' + cssClass);
+      messageContent.css('width', '100%');
       messageContent.html(message);
 
       container.prepend(messageContent);
@@ -24,7 +25,7 @@
     };
 
   messaging.raiseError = function (container, message) {
-    raiseMessage(container, message, 'error');
+    raiseMessage(container, message, 'danger');
   };
 
   messaging.raiseWarning = function (container, message) {
@@ -36,12 +37,11 @@
   };
 
   messaging.raiseRemove = function (container, message) {
-    raiseMessage(container, message, 'remove', 5000);
+    raiseMessage(container, message, 'default', 5000);
   };
 
-
   messaging.raiseInformation = function (container, message) {
-    raiseMessage(container, message, 'information', 10000);
+    raiseMessage(container, message, 'info', 10000);
   };
 
   return messaging;

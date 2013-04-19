@@ -1,8 +1,10 @@
 ﻿<viewdata model="Blog.Pages.Manage.ManagePagesViewModel"/>
 
 <header>
-    <h2>Pages</h2>
+  <h2><i class="icon-pages"></i> Pages</h2>
 </header>
-<div class="managepages">
+<div class="row">
   <ProfileNavigation/>
+  <div class="span10">
+  </div>
 </div>

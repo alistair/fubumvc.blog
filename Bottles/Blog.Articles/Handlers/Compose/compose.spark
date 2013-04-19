@@ -1,24 +1,25 @@
 ﻿<viewdata model="Blog.Articles.Compose.ComposeViewModel"/>
 <use namespace="Blog.Articles.Compose"/>
 <header>
-  <h2>Compose Article</h2>
+  <h2><i class="icon-compose"></i> Compose Article</h2>
 </header>
-
+<div class="row">
 <ProfileNavigation/>
-${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
-  <div>
+${this.FormFor<ComposeArticleInputModel>().AddClass("compose span10")}
+  <div class="span7">
     ${this.HiddenInputFor(x=> x.CommentsCount)}
-    ${this.InputFor(x => x.Title).WithCustomLabel("Title").Attr("tabindex", 1)}
-    ${this.InputFor(x => x.Id).WithCustomLabel("Article Url")}
+    ${this.InputFor(x => x.Title).AddClass("input-block-level").WithCustomLabel("Title").Attr("tabindex", 1)}
+    ${this.InputFor(x => x.Id).AddClass("input-block-level").WithCustomLabel("Article Url")}
     <div id="wmd-button-bar">
     </div>
-    ${this.TextAreaFor(x => x.Body)
+    ${this.TextAreaFor(x => x.Body)      .AddClass("input-block-level")
       .Id("wmd-input")
+      .Attr("rows", 10)
       .Attr("tabindex", 2)}
   </div>
 
-  <aside>
-    <h2>Formatting:</h2>
+  <aside class="alert span2">
+    <h3>Formatting:</h3>
     <p>
       Write your article in markdown! Or use basic html.
     </p>
@@ -32,7 +33,7 @@ ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
     </ul>
   </aside>
 
-  <article id="preview">
+  <article id="preview" class="span10">
     <header>
       <h2>
       </h2>
@@ -40,14 +41,19 @@ ${this.FormFor<ComposeArticleInputModel>().AddClass("compose")}
     <section id="wmd-preview">
     </section>
   </article>
-  ${this.Button("Cancel")}
-  <if condition="Model.IsPublished">
-    ${this.Button("Update")}
-    ${this.Button("Archive")}
-  </if>
-  <else>
-    ${this.Button("Post Article")}
-    ${this.Button("Save Draft")}
-  </else>
+  <div class="span8">
+    ${this.Button("Cancel").AddClass("btn")}
+    <if condition="Model.IsPublished">
+      ${this.Button("Update").AddClass("btn btn-info")}
+      ${this.Button("Archive").AddClass("btn btn-archive")}
+    </if>
+    <else>
+      ${this.Button("Post Article").AddClass("btn btn-success")}
+      ${this.Button("Save Draft").AddClass("btn btn-warning")}
+    </else>
+  </div>
+</div>
 
   # this.Asset("compose.js");
+  
+</div>

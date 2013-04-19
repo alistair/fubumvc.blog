@@ -4,14 +4,12 @@
 # this.Asset("dashboard-graph-helper.js");
 
 <header>
-  <h2>Dashboard</h2>
+  <h2><i class="icon-dashboard"></i> Dashboard</h2>
 </header>
-<div class="dashboard">
+<div class="row">
   <ProfileNavigation/>
-  <div>
-      <!--<svg id="chart-articles">
+  <div class="span10">      <!--<svg id="chart-articles">
       </svg>
-
 
       <svg id="chart-comments">
       </svg>-->

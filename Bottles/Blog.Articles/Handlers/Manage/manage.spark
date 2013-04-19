@@ -4,11 +4,11 @@
 # this.Asset("managearticles.js");
 
 <header>
-    <h2>Articles</h2>
+    <h2><i class="icon-articles"></i> Articles</h2>
 </header>
-<div class="managearticles">
+<div class="row">
   <ProfileNavigation/>
-  <div>
+  <div class="span10">
     <managearticlesfilters/>
     <table>
       <thead>
@@ -16,7 +16,7 @@
       </thead>
       <tbody>
         <tr each="var article in Model.Articles" class="${article.IsPublished ? '' : 'draft' }">
-          <td ><input type="checkbox"/></td>
+          <td><input type="checkbox"/></td>
           <td><a href="/${article.Id}">${article.Title}</a></td>
           <td><time>${article.PublishedDateString}</time></td>
           <td>${article.Author}</td>

@@ -3,11 +3,11 @@
 # this.Asset("managecomments.js");
 
 <header>
-    <h2>Comments</h2>
+    <h2><i class="icon-comments"></i> Comments</h2>
 </header>
-<div class="managecomments">
+<div class="row">
   <ProfileNavigation/>
-  <div>
+  <div class="span10">
     <managecommentsfilters />
     <table>
       <thead>

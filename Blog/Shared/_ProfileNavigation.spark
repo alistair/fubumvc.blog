@@ -1,2 +1,4 @@
-﻿${ this.Menu(StringConstants.ProfileMenu).AddClass("nav nav-list")}
-${ this.Menu(StringConstants.AdminMenu).AddClass("nav nav-list")}
+﻿<div class="span2">
+  ${ this.Menu(StringConstants.ProfileMenu).AddClass("nav nav-list")}
+  ${ this.Menu(StringConstants.AdminMenu).AddClass("nav nav-list")}
+</div>

@@ -175,8 +175,6 @@
     <Content Include="Content\scripts\bootstrap-transition.js" />
     <Content Include="Content\scripts\bootstrap-typeahead.js" />
     <Content Include="Content\scripts\util\d3.v2.min.js" />
-    <Content Include="Content\scripts\util\pagedown\jquery.pagedown.modal.js" />
-    <Content Include="Content\scripts\util\pagedown\jquery.pagedown.tooltip.js" />
     <Content Include="Content\scripts\util\pagedown.js" />
     <Content Include="Content\scripts\util\pagedown\Markdown.Converter.js" />
     <Content Include="Content\scripts\util\pagedown\Markdown.Editor.js" />

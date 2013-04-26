@@ -20,17 +20,16 @@ ${this.FormFor<CommentInputModel>()}
   ${this.HiddenInputFor(x=> x.Uri)}
   <p>
     ${this.InputFor<CommentInputModel>(x => x.Author)
-          .AddClass("input-block-level input-large")
+          .AddClass("input-large")
           .WithCustomLabel("Name")}
   </p>
   <p>
     ${this.InputFor<CommentInputModel>(x => x.Email)
-          .AddClass("input-block-level input-large")
+          .AddClass("input-large")
           .WithCustomLabel("Email (will not be published)")}
   </p>
   <p>
     ${this.TextAreaFor<CommentInputModel>(x => x.Comment)
-          .AddClass("input-block-level")
           .Attr("rows", "10")}
   </p>
   <p>

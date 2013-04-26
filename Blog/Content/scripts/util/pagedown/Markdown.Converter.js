@@ -101,7 +101,7 @@ else
         }
     };
 
-    Markdown.Converter = function () {
+    Markdown.Converter = function (autolink) {
         var pluginHooks = this.hooks = new HookCollection();
         pluginHooks.addNoop("plainLinkText");  // given a URL that was encountered by itself (without markup), should return the link text that's to be given to this link
         pluginHooks.addNoop("preConversion");  // called with the orignal text as given to makeHtml. The result of this plugin hook is the actual markdown source that will be cooked
@@ -111,6 +111,9 @@ else
         // Private state of the converter instance:
         //
 
+        // Aloow for automatic linking 
+        var g_autolink = (autolink === true);
+        
         // Global hashes, used by various utility routines
         var g_urls;
         var g_titles;
@@ -424,7 +427,9 @@ else
             // Make links out of things like `<http://example.com/>`
             // Must come after _DoAnchors(), because you can use < and >
             // delimiters in inline links like [this](<url>).
-            text = _DoAutoLinks(text);
+            if (g_autolink) {
+                text = _DoAutoLinks(text);
+            }
             
             text = text.replace(/~P/g, "://"); // put in place to prevent autolinking; reset now
             

@@ -9,8 +9,8 @@
 ${this.FormFor<ComposeArticleInputModel>().AddClass("compose span10")}
   <div class="span7">
     ${this.HiddenInputFor(x=> x.CommentsCount)}
-    ${this.InputFor(x => x.Title).AddClass("input-block-level").WithCustomLabel("Title").Attr("tabindex", 1)}
-    ${this.InputFor(x => x.Id).AddClass("input-block-level").WithCustomLabel("Article Url")}
+    ${this.InputFor(x => x.Title).WithCustomLabel("Title").Attr("tabindex", 1)}
+    ${this.InputFor(x => x.Id).WithCustomLabel("Article Url")}
     <div id="wmd-button-bar">
     </div>
     ${this.TextAreaFor(x => x.Body)      .AddClass("input-block-level")

@@ -4,7 +4,7 @@
     <a href="#" class="100">100</a>
     <a class="btn first">&nbsp;<i class="icon-double-angle-left"></i>&nbsp;</a>
     <a class="btn prev">&nbsp;<i class="icon-angle-left"></i>&nbsp;</a>
-    <input type="text" class="input-mini input-block-level paging" name="count" value="1"/>
+    <input type="text" class="input-mini paging" name="count" value="1"/>
     of <span>${totalPages}</span>
     <a class="btn next">&nbsp;<i class="icon-angle-right"></i>&nbsp;</a>
     <a class="btn last">&nbsp;<i class="icon-double-angle-right"></i>&nbsp;</a>

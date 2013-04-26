@@ -12,6 +12,7 @@ namespace Blog
         public BlogRegistry()
         {
             Import<HandlerConvention>();
+            Import<BlogHtmlConventionRegistry>();
 
             Actions.FindBy(s => s.ForBottles(a => s.Applies.ToAssembly(a))
                 .IncludeMethods(m => m.Name == "Execute"));

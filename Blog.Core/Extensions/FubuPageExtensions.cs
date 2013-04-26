@@ -8,6 +8,7 @@ using Blog.Core.HtmlTags;
 using FubuCore;
 using FubuCore.Reflection;
 using FubuMVC.Core;
+using FubuMVC.Core.Registration.Querying;
 using FubuMVC.Core.Security;
 using FubuMVC.Core.UI;
 using FubuMVC.Core.UI.Elements;

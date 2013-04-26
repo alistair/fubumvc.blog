@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Behaviors\ValidationBehavior`1.cs" />
+    <Compile Include="BlogHtmlConventionRegistry.cs" />
     <Compile Include="BlogRegistry.cs" />
     <Compile Include="BlogStructureMapRegistry.cs" />
     <Compile Include="MongoDbRegistry.cs" />

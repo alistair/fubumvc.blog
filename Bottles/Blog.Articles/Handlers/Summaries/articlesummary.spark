@@ -5,22 +5,21 @@
 <section class="home">
   <article each="var summary in Model.Summaries">
     <header class="page-header">
-
       <h2>
-        <a href="${summary.Id}">
-          ${summary.Title}
-        </a>
+          ${this.LinkTo(new Blog.Articles.ArticleInputModel{ Uri = summary.Id }).Text(summary.Title)}
       </h2>
       <time class="date" datetime="${summary.PublishedDate}">
         Posted On: ${summary.PublishedDateString} by
       </time>
-      <a href="/author" rel="author">${summary.Author}</a>
+      ${this.LinkTo<Blog.Information.Authors.AuthorsInputModel>().Text(summary.Author)}
     </header>
     <section>
       !{summary.Summary}
     </section>
     <p>
-      <a href="${summary.Id}" class="btn btn-info btn-mini">Continue Reading</a>
+      ${this.LinkTo(new Blog.Articles.ArticleInputModel{ Uri = summary.Id })
+        .AddClass("btn btn-info btn-mini")
+        .Text("Continue reading " + summary.Title.ToLower())}
       <a href="${summary.Id}#comments" class="btn btn-mini">Comments</a>
     </p>
   </article>

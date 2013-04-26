@@ -11,7 +11,7 @@
 ${this.FormFor<UpdateCommentInputModel>().AddClass("modifycomment")}
 ${this.HiddenInputFor(x=> x.Uri)}
 ${this.HiddenInputFor(x=> x.Id)}
-<ul class="submitcomment">
+<ul class="span9">
   <li>${this.InputFor(x => x.Author).WithCustomLabel("Name")}</li>
   <li>${this.InputFor(x => x.Email).WithCustomLabel("Email (will not be published)")}</li>
   <li>${this.TextAreaFor(x => x.Comment)}</li>

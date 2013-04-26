@@ -1,6 +1,7 @@
 ﻿<viewdata model="Blog.Articles.Archive.ArchiveViewModel"/>
 
-<header>
+<header class="page-header">
+
     <h2>Archive</h2>
 </header>
 <ul class="archive">

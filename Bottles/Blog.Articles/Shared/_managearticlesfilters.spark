@@ -1,16 +1,14 @@
 ﻿<div class="managearticlefilters">
-  <div>
-    <select class="filter" >
-      ${this.Option(x => x.ShowDraft, "All", null)}
+    <select class="input-small">
+      ${this.Option(x => x.ShowDraft, "All", null) }
       ${this.Option(x => x.ShowDraft, "Draft", "True")}
       ${this.Option(x => x.ShowDraft, "Published", "False")}
     </select>
-    <select>
+    <select class="input-medium">
       <option>Bulk Actions</option>
       <option>Delete</option>
       <option>Publish</option>
     </select>
-  </div>
 
   <paging totalPages="Model.TotalPages"/>
 </div>

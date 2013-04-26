@@ -86,7 +86,9 @@
     <None Include="profile.script.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Handlers\BasicInformation\basicinformation.spark" />
+    <None Include="Handlers\BasicInformation\basicinformation.spark">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Handlers\dashboard.spark">
       <SubType>Designer</SubType>
     </None>

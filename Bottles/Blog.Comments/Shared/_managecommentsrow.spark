@@ -1,8 +1,8 @@
 ﻿<tr>
-  <td><input type="checkbox"/></td>
-  <td>Comment</td>
-  <td>Last Modified Date</td>
-  <td>Author</td>
-  <td></td>
-  <td></td>
+  <th><input type="checkbox"/></th>
+  <th>Comment</th>
+  <th>Last Modified Date</th>
+  <th>Author</th>
+  <th></th>
+  <th></th>
 </tr>

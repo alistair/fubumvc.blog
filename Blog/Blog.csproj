@@ -161,13 +161,6 @@
     <None Include=".package-manifest" />
     <None Include="app.script.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Content\images\backward.png" />
-    <Content Include="Content\images\end.png" />
-    <Content Include="Content\images\forward.png" />
-    <Content Include="Content\images\front.png" />
-    <Content Include="Content\images\glyphicons-halflings-white.png" />
-    <Content Include="Content\images\glyphicons-halflings.png" />
-    <Content Include="Content\images\Markdown.Editor.Icons.png" />
     <Content Include="Content\scripts\bootstrap-affix.js" />
     <Content Include="Content\scripts\bootstrap-alert.js" />
     <Content Include="Content\scripts\bootstrap-button.js" />
@@ -300,7 +293,9 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

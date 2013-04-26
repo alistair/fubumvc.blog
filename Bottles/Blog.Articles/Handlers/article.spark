@@ -3,7 +3,8 @@
 # this.Asset("article.js");
 
 <article>
-    <header>
+    <header class="page-header">
+
       <h2>
         ${Model.Title}
       </h2>

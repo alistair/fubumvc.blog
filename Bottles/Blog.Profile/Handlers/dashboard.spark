@@ -3,7 +3,8 @@
 # this.Asset("dashboard.js");
 # this.Asset("dashboard-graph-helper.js");
 
-<header>
+<header class="page-header">
+
   <h2><i class="icon-dashboard"></i> Dashboard</h2>
 </header>
 <div class="row">
@@ -13,8 +14,9 @@
 
       <svg id="chart-comments">
       </svg>-->
-    <div class="box">
-      <header>
+    <div class="span5">
+      <header class="page-header">
+
         <h3>Statistics</h3>
       </header>
       <div>
@@ -44,14 +46,16 @@
       </footer>
     </div>
 
-    <div class="box">
-      <header>
-        <h3>Recent Drafts</h3>
+    <div class="span4">
+      <header class="page-header">
+
+        <h3>Recent Comments</h3>
       </header>
       <div>
-        <ul class="recentDrafts">
+        <ul class="recentComments">
           <li>
-            <label></label> - <a href="">Edit</a>
+            Posted By: <label></label> - <a href="">Edit</a>
+            <p></p>
           </li>
         </ul>
       </div>
@@ -60,15 +64,15 @@
       </footer>
     </div>
 
-    <div class="box">
-      <header>
-        <h3>Recent Comments</h3>
+    <div class="span5">
+      <header class="page-header">
+
+        <h3>Recent Drafts</h3>
       </header>
       <div>
-        <ul class="recentComments">
+        <ul class="recentDrafts">
           <li>
-            Posted By: <label></label> - <a href="">Edit</a>
-            <p></p>
+            <label></label> - <a href="">Edit</a>
           </li>
         </ul>
       </div>

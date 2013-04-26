@@ -1,6 +1,7 @@
 ﻿<viewdata model="Blog.Comments.Modify.ModifyCommentViewModel"/>
 <use namespace="Blog.Comments.Modify"/>
-<header>
+<header class="page-header">
+
     <h2>Modify Comment</h2>
 </header>
 

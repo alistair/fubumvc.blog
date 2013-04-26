@@ -1,16 +1,14 @@
 ﻿<div class="managecommentsfilters">
-  <div>
-    <select class="filter">
+    <select class="input-small">
       ${this.Option(x => x.ShowSpam, "All", null)}
       ${this.Option(x => x.ShowSpam, "Approved", "False")}
       ${this.Option(x => x.ShowSpam, "Spam", "True")}
     </select>
-    <select>
+    <select class="input-medium">
       <option>Bulk Actions</option>
       <option>Approve</option>
       <option>Delete</option>
       <option>Mark As Spam</option>
     </select>
-  </div>
   <paging totalPages="Model.TotalPages"/>
 </div>

@@ -1,5 +1,6 @@
 ﻿<viewdata model="Blog.Information.Authors.AuthorsViewModel"/>
-<header>
+<header class="page-header">
+
     <h2>Authors</h2>
 </header>
 <ul class="authors">

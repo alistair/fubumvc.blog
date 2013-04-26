@@ -1,6 +1,7 @@
 ﻿<viewdata model="Blog.Articles.Compose.ComposeViewModel"/>
 <use namespace="Blog.Articles.Compose"/>
-<header>
+<header class="page-header">
+
   <h2><i class="icon-compose"></i> Compose Article</h2>
 </header>
 <div class="row">
@@ -34,7 +35,8 @@ ${this.FormFor<ComposeArticleInputModel>().AddClass("compose span10")}
   </aside>
 
   <article id="preview" class="span10">
-    <header>
+    <header class="page-header">
+
       <h2>
       </h2>
     </header>

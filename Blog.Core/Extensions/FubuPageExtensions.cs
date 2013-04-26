@@ -32,27 +32,35 @@ namespace Blog.Core.Extensions
             items.Each(x =>
             {
                 var li = new HtmlTag("li");
-                var icon = new HtmlTag("i");
-                icon.AddClass(string.Format("icon-{0}", x.Key.Replace(" ", string.Empty).ToLowerInvariant()));
-                var link = new LinkTag(string.Empty, x.Url);
-                link.AppendHtml(icon.ToHtmlString() + x.Key);
 
-                if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available && user != null)
+                if (x.Key.Equals("Logout") && x.MenuItemState == MenuItemState.Available)
                 {
-                    var aTag = new LinkTag(string.Format("Welcome, {0}", user.FirstName), "/profile");
-                    aTag.AddClass("user");
-                    menu.Append(aTag);
+                    var aTag = new LinkTag(user != null && !string.IsNullOrEmpty(user.FirstName) ? string.Format("{0}'s Profile", user.FirstName) : "Profile", "/profile");
+                    menu.Append(new HtmlTag("li").Append(aTag.AddIcon("user")));
                 }
 
                 if (x.MenuItemState == MenuItemState.Active)
                     li.AddClass("current");
 
                 if (x.MenuItemState == MenuItemState.Active || x.MenuItemState == MenuItemState.Available)
-                    menu.Append(li.Append(link));
+                {
+                    var link = new LinkTag(string.Empty, x.Url);
+                    menu.Append(li.Append(link.AddIcon(x.Key)));
+                }
 
             });
 
             return menu;
+        }
+
+        private static HtmlTag AddIcon(this LinkTag link, string cssClass)
+        {
+            var icon = new HtmlTag("i");
+            var text = link.Text();
+            link.Text(string.Empty);
+            icon.AddClass(string.Format("icon-{0}", cssClass.Replace(" ", string.Empty).ToLowerInvariant()));
+
+            return link.AppendHtml(icon.ToHtmlString() + (string.IsNullOrEmpty(text) ? cssClass : text));
         }
 
         public static HtmlTag Button(this IFubuPage page, string text)

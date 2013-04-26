@@ -1,10 +1,10 @@
 ﻿define('paging', ['jquery', 'query-string'], function ($, qs) {
   var paging = {},
-      firstPageButton = $('.firstpage'),
-      lastPageButton = $('.lastpage'),
-      nextPageButton = $('.nextpage'),
-      previousPageButton = $('.prevpage'),
-      totalCount = parseInt($('label', '.paging:first').text(), 10),
+      firstPageButton = $('.first'),
+      lastPageButton = $('.last'),
+      nextPageButton = $('.next'),
+      previousPageButton = $('.prev'),
+      totalCount = parseInt($('span', '.paging:first').text(), 10),
       pageInfo = function () {
         var params = qs.getParameters();
         return {
@@ -13,7 +13,7 @@
         };
       } (),
       querystring = '?Count=' + pageInfo.count + '&Page=';
-
+  
 
   paging.goToPage = function(input) {
     var val = parseInt(input.val(), 10),

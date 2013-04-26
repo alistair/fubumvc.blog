@@ -4,7 +4,8 @@
 
 <section class="home">
   <article each="var summary in Model.Summaries">
-    <header>
+    <header class="page-header">
+
       <h2>
         <a href="${summary.Id}">
           ${summary.Title}

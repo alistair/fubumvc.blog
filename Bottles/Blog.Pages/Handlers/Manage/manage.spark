@@ -1,6 +1,7 @@
 ﻿<viewdata model="Blog.Pages.Manage.ManagePagesViewModel"/>
 
-<header>
+<header class="page-header">
+
   <h2><i class="icon-pages"></i> Pages</h2>
 </header>
 <div class="row">

@@ -1,5 +1,6 @@
 ﻿<viewdata model="Blog.Settings.SettingsViewModel"/>
-<header>
+<header class="page-header">
+
     <h2><i class="icon-settings"></i> Settings</h2>
 </header>
 <div class="row">

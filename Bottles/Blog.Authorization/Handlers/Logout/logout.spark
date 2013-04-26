@@ -2,7 +2,8 @@
 
 # this.Asset("logout");
 
-<header>
+<header class="page-header">
+
   <h2>Logout Successful</h2>
 </header>
 <p>

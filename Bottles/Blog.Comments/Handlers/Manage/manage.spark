@@ -2,14 +2,14 @@
 
 # this.Asset("managecomments.js");
 
-<header>
+<header class="page-header">
     <h2><i class="icon-comments"></i> Comments</h2>
 </header>
 <div class="row">
   <ProfileNavigation/>
   <div class="span10">
     <managecommentsfilters />
-    <table>
+    <table class="table table-striped">
       <thead>
         <managecommentsrow/>
       </thead>
@@ -19,8 +19,8 @@
           <td>${comment.Body}</td>
           <td><time>${comment.PublishedDateString}</time></td>
           <td>${comment.Author}</td>
-          <td><a href="${this.Urls.UrlFor(new Blog.Comments.Modify.ModifyCommentInputModel { Id = comment.Id })}">Edit</a></td>
-          <td><a data-id="${comment.Id}" class="delete-comment" href="#">Delete</a></td>
+          <td><a class="btn" href="${this.Urls.UrlFor(new Blog.Comments.Modify.ModifyCommentInputModel { Id = comment.Id })}">Edit</a></td>
+          <td><a class="btn btn-danger" data-id="${comment.Id}" class="delete-comment" href="#">Delete</a></td>
         </tr>
       </tbody>
       <tfoot>

@@ -3,14 +3,14 @@
 
 # this.Asset("managearticles.js");
 
-<header>
-    <h2><i class="icon-articles"></i> Articles</h2>
+<header class="page-header">
+  <h2><i class="icon-articles"></i> Articles</h2>
 </header>
 <div class="row">
   <ProfileNavigation/>
   <div class="span10">
     <managearticlesfilters/>
-    <table>
+    <table class="table table-striped">
       <thead>
         <managearticlesrow/>
       </thead>
@@ -21,8 +21,8 @@
           <td><time>${article.PublishedDateString}</time></td>
           <td>${article.Author}</td>
           <td>${article.CommentsCount}</td>
-          <td><a href="${this.Urls.UrlFor(new ComposeInputModel { Id =  article.Id} )}">Edit</a></td>
-          <td><a data-id="${article.Id}" class="delete-article" href="#">Delete</a></td>
+          <td><a class="btn" href="${this.Urls.UrlFor(new ComposeInputModel { Id =  article.Id} )}">Edit</a></td>
+          <td><a class="btn btn-danger" data-id="${article.Id}" class="delete-article" href="#">Delete</a></td>
         </tr>
       </tbody>
       <tfoot>

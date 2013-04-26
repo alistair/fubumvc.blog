@@ -10,9 +10,9 @@
   <div class="span10">
   ${this.FormFor<EditBasicInformationInputModel>()}
     <ul class="unstyled">
-      <li>${ this.InputFor(x => x.FirstName).AddClass("input-block-level input-large").WithCustomLabel("First Name") }</li>
-      <li>${ this.InputFor(x => x.LastName).AddClass("input-block-level input-large").WithCustomLabel("Last Name") }</li>
-      <li>${ this.InputFor(x => x.NickName).AddClass("input-block-level input-large").WithCustomLabel("Nick Name") }</li>
+      <li>${ this.InputFor(x => x.FirstName).AddClass("input-block-level input-xlarge").WithCustomLabel("First Name") }</li>
+      <li>${ this.InputFor(x => x.LastName).AddClass("input-block-level input-xlarge").WithCustomLabel("Last Name") }</li>
+      <li>${ this.InputFor(x => x.NickName).AddClass("input-block-level input-xlarge").WithCustomLabel("Nick Name") }</li>
       <li>${ this.InputFor(x => x.EmailAddress).AddClass("input-block-level input-xlarge").WithCustomLabel("E-mail") }</li>
       <li>
           ${ this.Gravatar(Model.GravatarEmailAddress, 22)}

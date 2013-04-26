@@ -1,9 +1,9 @@
 ﻿<tr>
-  <td> <input type="checkbox"/> </td>
-  <td>Title</td>
-  <td>Last Modified Date</td>
-  <td>Author</td>
-  <td>Comments</td>
-  <td></td>
-  <td></td>
+  <th> <input type="checkbox"/> </th>
+  <th>Title</th>
+  <th>Last Modified Date</th>
+  <th>Author</th>
+  <th>Comments</th>
+  <th></th>
+  <th></th>
 </tr>

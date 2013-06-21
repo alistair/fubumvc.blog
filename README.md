@@ -3,8 +3,9 @@ A blogging web application using:
 
 * FubuMVC
 * SparkViewEngine
-* mongoDB
+* mongoDB, <a href="https://github.com/kharlamov/mongo-csharp-adapt">mongoAdapt</a>
 * JavaScript (require, underscore, pagedown, and jQuery)
+* Less, TwitterBootstrap
 
 <h2>Documentation:</h2>
 To setup and run, follow these steps: 
